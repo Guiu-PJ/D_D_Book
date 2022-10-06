@@ -22,10 +22,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D&amp;D Book"
+        android:text="@string/d_amp_d_book"
         android:textAppearance="@style/Theme.DnD_Book"
         android:textColor="#FFC107"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,8 @@
         android:layout_marginBottom="8dp"
         android:adjustViewBounds="false"
         android:background="?selectableItemBackgroundBorderless"
-        android:scaleType="fitXY"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
         android:style="@android:style/Widget.Holo.ImageButton"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/textView"
@@ -67,5 +68,6 @@
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.702"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="TODO" />
 </androidx.constraintlayout.widget.ConstraintLayout>
