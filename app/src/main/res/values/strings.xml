@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Dados</string>
+    <string name="dados">Dados</string>
+    <string name="numero_de_dados">Número de dados</string>
+    <string name="modificador">Modificador</string>
+    <string name="tirar">Tirar</string>
+    <string name="resultado_final">Resultado final:</string>
+    <string name="resultado_de_cada_dado">Resultado de cada dado:</string>
+    <string name="dado1_3_dado2_9_dado3_15_dado4_10_dado5_1_scroll_para_ver_todos_los_dados_si_es_necesario">Dado1: 3, Dado2: 9, Dado3:15, Dado4: 10, Dado5: 1 (Scroll para ver todos los dados (si es necesario))</string>
+
+    <string-array name="programming_languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>CPP</item>
+    </string-array>
+
+</resources>
+
