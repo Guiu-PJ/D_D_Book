@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pagina_de_libro"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="450dp"
+        android:layout_height="100dp"
+        android:background="@drawable/tapa1_2"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-21dp"
+        tools:layout_editor_absoluteY="-12dp" />
+
+    <TextView
+        android:id="@+id/txt_dados"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dados"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <ImageButton
+        android:id="@+id/fotoperfil"
+        android:layout_width="74dp"
+        android:layout_height="67dp"
+        android:labelFor="@id/toolbar"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.016"
+        app:layout_editor_absoluteX="10dp"
+        app:layout_editor_absoluteY="10dp"
+        app:srcCompat="@drawable/creador_del_sexo"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/fotologo"
+        android:layout_width="48dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.878"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/itxt_numero_de_dados"
+        android:layout_width="126dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="120dp"
+        android:hint="@string/numero_de_dados"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/itxt_modificador"
+        android:layout_width="126dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="120dp"
+        android:hint="@string/modificador"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/img_dado"
+        android:layout_width="189dp"
+        android:layout_height="228dp"
+        android:layout_marginBottom="320dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dado" />
+
+    <Button
+        android:id="@+id/btn_tirar"
+        android:layout_width="108dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="240dp"
+        android:backgroundTint="#A30202"
+        android:shadowColor="#A62525"
+        android:text="@string/tirar"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#BA1111"
+        android:textColorHint="#CD1F1F"
+        android:textColorLink="#CD0303"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#651A1A"
+        app:strokeColor="#9F1B1B" />
+
+    <TextView
+        android:id="@+id/txt_resultado_final"
+        android:layout_width="138dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="258dp"
+        android:layout_marginBottom="180dp"
+        android:text="@string/resultado_final"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_titulo_resultado"
+        android:layout_width="179dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="217dp"
+        android:layout_marginBottom="144dp"
+        android:text="@string/resultado_de_cada_dado"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_resultado_dados"
+        android:layout_width="327dp"
+        android:layout_height="132dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="7dp"
+        android:text="@string/dado1_3_dado2_9_dado3_15_dado4_10_dado5_1_scroll_para_ver_todos_los_dados_si_es_necesario"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="81dp"
+        android:layout_height="82dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_resultado_dados"
+        app:srcCompat="@drawable/flecha" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="128dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="27dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_dado"
+        app:layout_constraintEnd_toStartOf="@+id/itxt_modificador"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/itxt_numero_de_dados"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
