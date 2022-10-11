@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_width">277dp</dimen>
+    <dimen name="brn_height">68dp</dimen>
+    <dimen name="layout_margin_start">67dp</dimen>
+    <dimen name="layout_margin_top">89dp</dimen>
+    <dimen name="layout_margin_end">67dp</dimen>
+    <dimen name="btn_txt_size">24sp</dimen>
+</resources>
