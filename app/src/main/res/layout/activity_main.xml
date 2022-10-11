@@ -50,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.731"
-        tools:ignore="MissingConstraints"
+        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
         tools:srcCompat="@drawable/Imagen_Usuario" />
 
     <ImageButton
@@ -69,5 +69,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.702"
         app:srcCompat="@drawable/logo"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="null"
+        android:scaleType="fitCenter"
+        android:style="@android:style/Widget.Holo.ImageButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/Return_Arrow" />
 </androidx.constraintlayout.widget.ConstraintLayout>
