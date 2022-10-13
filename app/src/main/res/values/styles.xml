@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.DnD_Book.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/groc</item>
+    </style>
+    <style name="Widget.DnD_Book.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/groc</item>
+    </style>
+
+</resources>

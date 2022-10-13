@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/tapa"
+    tools:context=".MainActivity">
+
+
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="124dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="32dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="72dp"
+        android:textSize="24sp"
+        android:text="@string/iniciar_sesion"
+        style="@style/Widget.DnD_Book.TextView"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginStart="72dp"
+        android:text="@string/email"
+        android:textSize="18sp"
+        style="@style/Widget.DnD_Book.TextView"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:text="@string/contrase_a"
+        style="@style/Widget.DnD_Book.TextView"
+        android:textSize="18sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:password="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:text="@string/entrar"
+        android:textColor="@color/black"
+        style="@style/Widget.DnD_Book.Button"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="46dp"
+        android:text="@string/has_olvidado_la_contrase_a"
+        android:textSize="16sp"
+        style="@style/Widget.DnD_Book.TextView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:layout_marginStart="24dp"
+        android:text="@string/registrarse"
+        android:textSize="16sp"
+        style="@style/Widget.DnD_Book.TextView"/>
+
+</LinearLayout>
