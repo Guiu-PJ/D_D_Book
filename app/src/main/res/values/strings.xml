@@ -10,7 +10,31 @@
     <string name="resultado_final">Resultado final:</string>
     <string name="resultado_de_cada_dado">Resultado de cada dado:</string>
     <string name="dado1_3_dado2_9_dado3_15_dado4_10_dado5_1_scroll_para_ver_todos_los_dados_si_es_necesario">Dado1: 3, Dado2: 9, Dado3:15, Dado4: 10, Dado5: 1 (Scroll para ver todos los dados (si es necesario))</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="novedades">Novedades</string>
+    <string name="compedios">Compedios</string>
+    <string name="reglas">Reglas</string>
+    <string name="compendios">Compendios</string>
+    <string name="Novedades">Novedades</string>
+    <string name="Reglas">Reglas</string>
+    <string name="Dados">Dados</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="email">Email</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="acepta_los_terminos_de_privacidad">Acepta los terminos de privacidad?</string>
+    <string name="continuar">Continuar</string>
+    <string name="ya_tienes_una_cuenta">Ya tienes una cuenta?</string>
+    <string name="entrar">Entrar</string>
+    <string name="has_olvidado_la_contrase_a">Has olvidado la contraseña?</string>
+    <string name="title_activity_login">login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
     <string-array name="programming_languages">
         <item>Java</item>
