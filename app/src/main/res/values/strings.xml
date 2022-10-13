@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">DnD_Book</string>
     <string name="d_amp_d_book"><![CDATA[D&D Book]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="dados">Dados</string>
+    <string name="titulo">Administración</string>
+    <string name="numero_de_dados">Número de dados</string>
+    <string name="modificador">Modificador</string>
+    <string name="tirar">Tirar</string>
+    <string name="resultado_final">Resultado final:</string>
+    <string name="resultado_de_cada_dado">Resultado de cada dado:</string>
+    <string name="dado1_3_dado2_9_dado3_15_dado4_10_dado5_1_scroll_para_ver_todos_los_dados_si_es_necesario">Dado1: 3, Dado2: 9, Dado3:15, Dado4: 10, Dado5: 1 (Scroll para ver todos los dados (si es necesario))</string>
+    <string name="novedades">Novedades</string>
+
+    <string-array name="programming_languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>CPP</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Pagina_Libro"
+    android:background="@drawable/pagina_libro"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.731"
         tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
-        tools:srcCompat="@drawable/Imagen_Usuario" />
+        tools:srcCompat="@drawable/imagen_usuario" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -209,6 +209,6 @@
         android:style="@android:style/Widget.Holo.ImageButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/Return_Arrow" />
+        app:srcCompat="@drawable/return_arrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
