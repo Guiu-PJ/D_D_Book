@@ -85,6 +85,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <Button
         android:id="@+id/compendios"
         android:layout_width="@dimen/btn_width"
