@@ -44,4 +44,26 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="a_adido">Añadido:</string>
+    <string name="eliminado">Eliminado:</string>
+    <string name="modificado">Modificado:</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="humpty_dumpty">Humpty Dumpty</string>
+    <string name="dumpty_humpty_copernic_cat">dumpty.humpty@copernic.cat</string>
+    <string name="jorge_cerdo">Jorge Cerdo</string>
+    <string name="ricardo_calamar">Ricardo Calamar</string>
+    <string name="calamar_ricardo_copernic_cat">calamar.ricardo@copernic.cat</string>
+    <string name="cerdo_jorge_copernic_cat">cerdo.jorge@copernic.cat</string>
+    <string name="acci_n">Acción</string>
+    <string name="acci_n_bonus">Acciòn Bonus</string>
+    <string name="reacci_n">Reacción</string>
+    <string name="movimiento">Movimiento</string>
+    <string name="estados_alterados">Estados Alterados</string>
+    <string name="alcance">Alcance</string>
+    <string name="cr_ticos">Críticos</string>
+    <string name="equipamiento">Equipamiento</string>
+    <string name="trasfondos">Trasfondos</string>
+    <string name="nivel">Nivel</string>
+    <string name="dotes">Dotes</string>
+    <string name="multiclase">Multiclase</string>
 </resources>

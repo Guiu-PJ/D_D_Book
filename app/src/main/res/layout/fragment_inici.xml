@@ -42,7 +42,6 @@
         android:adjustViewBounds="false"
         android:background="?selectableItemBackgroundBorderless"
         android:scaleType="fitXY"
-        android:style="@android:style/Widget.Holo.ImageButton"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -50,7 +49,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.731"
         tools:ignore="MissingConstraints"
-        tools:srcCompat="@drawable/imagen_usuario" />
+        tools:srcCompat="@drawable/imagen_usuario"
+        android:contentDescription="usuario" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -67,7 +67,8 @@
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.702"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="logo" />
 
     <Button
         android:id="@+id/novedades"

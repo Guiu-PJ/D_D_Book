@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pagina_libro"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/tapa"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/d_amp_d_book"
+        android:textAppearance="@style/Theme.DnD_Book"
+        android:textColor="#FFC107"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="false"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="usuario"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.731"
+        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
+        tools:srcCompat="@drawable/imagen_usuario" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702"
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="logo"/>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/return_arrow"
+        android:contentDescription="flecha" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="544dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_accion"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/acci_n"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_accionbonus"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/acci_n_bonus"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_reaccion"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/reacci_n"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_movimiento"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/movimiento"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_estadosalt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/estados_alterados"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_alcance"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/alcance"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_criticos"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/cr_ticos"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_equipamiento"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/equipamiento"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_transfondos"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/trasfondos"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_dotes"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/dotes"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_nivel"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/nivel"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_multiclase"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/multiclase"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

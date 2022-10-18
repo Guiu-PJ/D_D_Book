@@ -7,4 +7,6 @@
     <dimen name="layout_margin_top">89dp</dimen>
     <dimen name="layout_margin_end">67dp</dimen>
     <dimen name="btn_txt_size">24sp</dimen>
+    <dimen name="margin_top_novedades_txt">15dp</dimen>
+    <dimen name="margin_top_novedades_titulos">50dp</dimen>
 </resources>
