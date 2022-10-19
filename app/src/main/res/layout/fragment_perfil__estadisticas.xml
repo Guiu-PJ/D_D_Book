@@ -209,6 +209,7 @@
         android:style="@android:style/Widget.Holo.ImageButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/Return_Arrow" />
+        app:srcCompat="@drawable/Return_Arrow"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
