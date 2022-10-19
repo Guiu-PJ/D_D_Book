@@ -35,6 +35,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="titulo2">TITULO</string>
 
     <string-array name="programming_languages">
         <item>Java</item>
@@ -55,4 +56,14 @@
     <string name="jorge">Jorge</string>
     <string name="_2">2</string>
     <string name="_20">20</string>
+    <string name="manual_del_jugador">Manual del jugador</string>
+    <string name="manual_del_jugador_5e">manual_del_jugador 5e</string>
+    <string name="manual_de_monstruos">Manual de Monstruos</string>
+    <string name="manual_de_dungeon_master_5e">Manual de dungeon master 5e</string>
+    <string name="manual_de_monstruos_5e">Manual de monstruos 5e</string>
+    <string name="el_resurgir_del_dragon_5e">El resurgir del dragon 5e</string>
+    <string name="escribe_la_regla">Escribe la regla</string>
+    <string name="sube_una_imagen">Sube una imagen</string>
+    <string name="sube_la_url">SUBE LA URL</string>
+    <string name="imagen">IMAGEN</string>
 </resources>

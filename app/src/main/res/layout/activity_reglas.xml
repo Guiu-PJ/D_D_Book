@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pagina_libro"
-    tools:context=".MainActivity">
+    tools:context=".Reglas">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:background="@drawable/tapa"
+        android:background="@drawable/tapa_verde_3"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/d_amp_d_book"
+        android:text="@string/Reglas"
         android:textAppearance="@style/Theme.DnD_Book"
         android:textColor="#FFC107"
         android:textSize="35sp"
@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButton"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -41,7 +41,6 @@
         android:layout_marginBottom="8dp"
         android:adjustViewBounds="false"
         android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="TODO"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/textView"
@@ -49,6 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.731"
+        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
         tools:srcCompat="@drawable/imagen_usuario" />
 
     <ImageButton
@@ -66,17 +66,49 @@
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.702"
-        app:srcCompat="@drawable/logo"
-        android:contentDescription="TODO"/>
+        app:srcCompat="@drawable/logo" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="140dp"
+        android:textSize="20dp"
+        android:text="@string/escribe_la_regla"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="164dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="226dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="196dp"
+            android:layout_height="400dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="69dp"
         android:layout_height="69dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="664dp"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/return_arrow" />
 </androidx.constraintlayout.widget.ConstraintLayout>

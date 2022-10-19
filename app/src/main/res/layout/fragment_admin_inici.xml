@@ -47,7 +47,6 @@
         app:layout_editor_absoluteY="10dp"
         app:srcCompat="@drawable/imagen_usuario"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck"
-        android:style="@android:style/Widget.Holo.ImageButton"
         />
 
     <ImageButton

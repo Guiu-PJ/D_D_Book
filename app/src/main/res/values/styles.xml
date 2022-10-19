@@ -6,5 +6,5 @@
     <style name="Widget.DnD_Book.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/groc</item>
     </style>
-
+        <style name="compendios" parent="Widget.MaterialComponents.TimePicker.ImageButton"/>
 </resources>

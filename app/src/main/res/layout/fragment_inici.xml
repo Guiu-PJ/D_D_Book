@@ -42,7 +42,6 @@
         android:adjustViewBounds="false"
         android:background="?selectableItemBackgroundBorderless"
         android:scaleType="fitXY"
-        android:style="@android:style/Widget.Holo.ImageButton"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.0"

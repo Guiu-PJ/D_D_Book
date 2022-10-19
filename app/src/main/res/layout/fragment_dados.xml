@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="450dp"
         android:layout_height="100dp"
-        android:background="@drawable/Tapa"
+        android:background="@drawable/tapa"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         tools:ignore="MissingConstraints"
@@ -47,7 +47,6 @@
         app:layout_editor_absoluteY="10dp"
         app:srcCompat="@drawable/imagen_usuario"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck"
-        android:style="@android:style/Widget.Holo.ImageButton"
         />
 
     <ImageButton
