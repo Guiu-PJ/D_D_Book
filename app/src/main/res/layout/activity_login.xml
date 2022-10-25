@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/tapa"
     tools:context=".MainActivity">
@@ -17,7 +16,7 @@
         android:layout_marginStart="124dp"
         android:src="@drawable/logo"
         android:layout_marginTop="32dp"
-        />
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,7 +67,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:password="true"
+            android:inputType="textPassword"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
