@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin_inici">
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -32,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/img_perfil"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -52,7 +58,7 @@
         android:contentDescription="usuario" />
 
     <ImageButton
-        android:id="@+id/fotologo"
+        android:id="@+id/img_logo"
         android:layout_width="48dp"
         android:layout_height="70dp"
         android:layout_marginTop="8dp"
@@ -67,67 +73,36 @@
 
     <Button
         android:id="@+id/btn_novedades"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="@dimen/layout_margin_start"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="@dimen/layout_margin_end"
-        android:backgroundTint="@color/gris"
-        android:hapticFeedbackEnabled="false"
+        style="@style/btn_inicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/novedades"
-        android:textColor="@color/btn_txt_color"
-        android:textSize="@dimen/btn_txt_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+         />
 
     <Button
-        android:id="@+id/Usuarios"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="67dp"
-        android:backgroundTint="@color/gris"
-        android:hapticFeedbackEnabled="false"
+        android:id="@+id/btn_usuarios"
         android:text="@string/usuarios"
-        android:textColor="@color/btn_txt_color"
-        android:textSize="@dimen/btn_txt_size"
+        style="@style/btn_inicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Reglas" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_reglas" />
 
     <Button
-        android:id="@+id/Reglas"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="67dp"
-        android:backgroundTint="@color/gris"
-        android:hapticFeedbackEnabled="false"
+        android:id="@+id/btn_reglas"
         android:text="@string/reglas"
-        android:textColor="@color/btn_txt_color"
-        android:textSize="@dimen/btn_txt_size"
+        style="@style/btn_inicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/compendios" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_compendios" />
 
     <Button
-        android:id="@+id/compendios"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="67dp"
-        android:backgroundTint="@color/gris"
-        android:hapticFeedbackEnabled="false"
+        android:id="@+id/btn_compendios"
         android:text="@string/compendios"
-        android:textColor="@color/btn_txt_color"
-        android:textSize="@dimen/btn_txt_size"
+        style="@style/btn_inicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,3 +110,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

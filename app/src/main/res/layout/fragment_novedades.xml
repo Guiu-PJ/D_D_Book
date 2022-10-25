@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".novedades">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pagina_libro"
@@ -19,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Novedades"
@@ -33,7 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/img_perfil"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -41,10 +46,9 @@
         android:layout_marginBottom="8dp"
         android:adjustViewBounds="false"
         android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/usuario"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -53,25 +57,22 @@
         tools:srcCompat="@drawable/imagen_usuario" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/img_logo"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/logo"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.702"
-        app:srcCompat="@drawable/logo"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/logo" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/img_flecha"
         android:layout_width="69dp"
         android:layout_height="69dp"
         android:layout_marginStart="326dp"
@@ -85,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/return_arrow"
         tools:ignore="SpeakableTextPresentCheck"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/flecha" />
 
 
     <ScrollView
@@ -102,68 +103,45 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView21"
-                android:layout_width="157dp"
-                android:layout_height="49dp"
-                android:layout_marginTop="@dimen/margin_top_novedades_titulos"
+                android:id="@+id/txt_titulo_añadido"
                 android:text="@string/a_adido"
-                android:textColor="#000000"
-                android:textSize="34sp"
                 tools:layout_editor_absoluteX="32dp"
-                tools:layout_editor_absoluteY="146dp" />
+                tools:layout_editor_absoluteY="146dp"
+                style="@style/txt_titulos_novedades"
+                />
 
             <TextView
-                android:id="@+id/textView22"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margin_top_novedades_txt"
+                android:id="@+id/txt_info_añadido"
                 android:text="Se a añadido el nuevo manual del jugador"
-                android:textColor="#000000"
-                android:textSize="20sp"
+                style="@style/txt_info_novedades"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
             <TextView
-                android:id="@+id/textView23"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margin_top_novedades_titulos"
+                android:id="@+id/txt_titulo_eliminado"
                 android:text="@string/eliminado"
-                android:textColor="#000000"
-                android:textSize="34sp"
                 tools:layout_editor_absoluteX="32dp"
-                tools:layout_editor_absoluteY="146dp" />
+                tools:layout_editor_absoluteY="146dp"
+                style="@style/txt_titulos_novedades"/>
 
             <TextView
-                android:id="@+id/textView24"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margin_top_novedades_txt"
+                android:id="@+id/txt_info_eliminado"
+                style="@style/txt_info_novedades"
                 android:text="Se a eliminado la regla de los criticos por posibles errores en la información"
-                android:textColor="#000000"
-                android:textSize="20sp"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
             <TextView
-                android:id="@+id/textView25"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margin_top_novedades_titulos"
-                android:text="Modificado:"
-                android:textColor="#000000"
-                android:textSize="34sp"
+                android:id="@+id/txt_titulo_modificado"
+                android:text="@string/modificado"
                 tools:layout_editor_absoluteX="32dp"
-                tools:layout_editor_absoluteY="146dp" />
+                tools:layout_editor_absoluteY="146dp"
+                style="@style/txt_titulos_novedades"/>
 
             <TextView
-                android:id="@+id/textView26"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margin_top_novedades_txt"
+                android:id="@+id/txt_info_modificado"
                 android:text="Se a modificado la ficha de creación de personaje"
-                android:textColor="#000000"
-                android:textSize="20sp"
+                style="@style/txt_info_novedades"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
@@ -176,3 +154,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

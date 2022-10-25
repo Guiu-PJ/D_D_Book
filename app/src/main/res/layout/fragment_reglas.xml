@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".reglas">
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -33,7 +39,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/img_perfil"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -53,7 +59,7 @@
         tools:srcCompat="@drawable/imagen_usuario" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/img_logo"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -71,7 +77,7 @@
         android:contentDescription="logo"/>
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/img_flecha"
         android:layout_width="69dp"
         android:layout_height="69dp"
         android:layout_marginEnd="16dp"
@@ -88,7 +94,7 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintBottom_toTopOf="@+id/img_flecha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,113 +108,78 @@
 
             <Button
                 android:id="@+id/btn_accion"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/acci_n"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_accionbonus"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/acci_n_bonus"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_reaccion"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/reacci_n"
-                android:textSize="20sp" />
+                 />
 
             <Button
                 android:id="@+id/btn_movimiento"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/movimiento"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_estadosalt"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/estados_alterados"
-                android:textSize="20sp" />
+                 />
 
             <Button
                 android:id="@+id/btn_alcance"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/alcance"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_criticos"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/cr_ticos"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_equipamiento"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/equipamiento"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_transfondos"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/trasfondos"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_dotes"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/dotes"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_nivel"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/nivel"
-                android:textSize="20sp" />
+                />
 
             <Button
                 android:id="@+id/btn_multiclase"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="35dp"
+                style="@style/btn_reglas"
                 android:text="@string/multiclase"
-                android:textSize="20sp" />
+                />
 
         </LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

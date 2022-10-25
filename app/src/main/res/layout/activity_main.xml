@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/img_perfil"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -49,11 +49,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.731"
-        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
         tools:srcCompat="@drawable/imagen_usuario" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/img_logo"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -71,7 +70,7 @@
         android:contentDescription="TODO"/>
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/img_flecha"
         android:layout_width="69dp"
         android:layout_height="69dp"
         android:layout_marginEnd="16dp"

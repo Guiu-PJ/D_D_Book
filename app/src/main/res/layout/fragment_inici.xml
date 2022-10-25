@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".inici">
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -33,7 +39,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/img_perfil"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -53,7 +59,7 @@
         android:contentDescription="usuario" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/img_logo"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -86,8 +92,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <Button
-        android:id="@+id/compendios"
+        android:id="@+id/btn_compendios"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/brn_height"
         android:layout_marginStart="67dp"
@@ -105,7 +113,7 @@
         app:layout_constraintVertical_bias="0.652" />
 
     <Button
-        android:id="@+id/Reglas"
+        android:id="@+id/btn_reglas"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/brn_height"
         android:layout_marginStart="136dp"
@@ -136,3 +144,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

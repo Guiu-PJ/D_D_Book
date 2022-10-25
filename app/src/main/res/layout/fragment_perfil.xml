@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".perfil">
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -33,7 +39,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/img_perfil_perfil"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -53,7 +59,7 @@
         tools:srcCompat="@drawable/imagen_usuario" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/img_logo"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
@@ -71,7 +77,7 @@
         android:contentDescription="TODO"/>
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/img_flecha"
         android:layout_width="69dp"
         android:layout_height="69dp"
         android:layout_marginEnd="16dp"
@@ -88,7 +94,7 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintBottom_toTopOf="@+id/img_flecha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -150,3 +156,4 @@
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
