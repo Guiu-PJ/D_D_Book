@@ -76,5 +76,10 @@
     <string name="logo">imagen logo</string>
     <string name="dado">imagen del dado</string>
     <string name="ajustes">ajustes</string>
+    <string name="boton_cerrar_sesion">Boton cerrar sesion</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="boto_editar_perfil">Boto editar perfil</string>
+    <string name="crear_nuevo_personaje">Crear nuevo personaje</string>
 
 </resources>

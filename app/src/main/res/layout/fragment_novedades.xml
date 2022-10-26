@@ -12,90 +12,13 @@
     android:background="@drawable/pagina_libro"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:background="@drawable/tapa"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txt_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Novedades"
-        android:textAppearance="@style/Theme.DnD_Book"
-        android:textColor="@color/TextoTitulo"
-        android:textSize="@dimen/TituloSize"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
-    <ImageButton
-        android:id="@+id/img_perfil"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:adjustViewBounds="false"
-        android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="@string/usuario"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731"
-        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
-        tools:srcCompat="@drawable/imagen_usuario" />
-
-    <ImageButton
-        android:id="@+id/img_logo"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="@string/logo"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702"
-        app:srcCompat="@drawable/logo" />
-
-    <ImageButton
-        android:id="@+id/img_flecha"
-        android:layout_width="69dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="326dp"
-        android:layout_marginTop="546dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@drawable/return_arrow"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:contentDescription="@string/flecha" />
-
 
     <ScrollView
-        android:layout_width="403dp"
-        android:layout_height="541dp"
-        android:layout_marginBottom="84dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="106dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -104,25 +27,24 @@
 
             <TextView
                 android:id="@+id/txt_titulo_añadido"
+                style="@style/txt_titulos_novedades"
                 android:text="@string/a_adido"
                 tools:layout_editor_absoluteX="32dp"
-                tools:layout_editor_absoluteY="146dp"
-                style="@style/txt_titulos_novedades"
-                />
+                tools:layout_editor_absoluteY="146dp" />
 
             <TextView
                 android:id="@+id/txt_info_añadido"
-                android:text="Se a añadido el nuevo manual del jugador"
                 style="@style/txt_info_novedades"
+                android:text="Se a añadido el nuevo manual del jugador"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
             <TextView
                 android:id="@+id/txt_titulo_eliminado"
+                style="@style/txt_titulos_novedades"
                 android:text="@string/eliminado"
                 tools:layout_editor_absoluteX="32dp"
-                tools:layout_editor_absoluteY="146dp"
-                style="@style/txt_titulos_novedades"/>
+                tools:layout_editor_absoluteY="146dp" />
 
             <TextView
                 android:id="@+id/txt_info_eliminado"
@@ -133,18 +55,26 @@
 
             <TextView
                 android:id="@+id/txt_titulo_modificado"
+                style="@style/txt_titulos_novedades"
                 android:text="@string/modificado"
-                tools:layout_editor_absoluteX="32dp"
-                tools:layout_editor_absoluteY="146dp"
-                style="@style/txt_titulos_novedades"/>
-
-            <TextView
-                android:id="@+id/txt_info_modificado"
-                android:text="Se a modificado la ficha de creación de personaje"
-                style="@style/txt_info_novedades"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
+            <TextView
+                android:id="@+id/txt_info_modificado"
+                style="@style/txt_info_novedades"
+                android:text="Se a modificado la ficha de creación de personaje"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="146dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/img_flecha_nov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="340dp"
+                android:clickable="true"
+                android:src="@drawable/flecha"
+                tools:ignore="SpeakableTextPresentCheck"/>
 
 
         </LinearLayout>
