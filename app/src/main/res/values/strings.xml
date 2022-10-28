@@ -85,5 +85,12 @@
     <string name="recuperar">Recuperar</string>
     <string name="imagen_personaje_calamardo">Imagen personaje Calamardo</string>
     <string name="imagen_personaje_jorge">Imagen personaje Jorge</string>
+    <string name="todo">TODO</string>
+    <string name="img_logo">img_logo</string>
+    <string name="player_handbook">player_handbook</string>
+    <string name="imatge4">imatge4</string>
+    <string name="imatge3">imatge3</string>
+    <string name="imatge2">imatge2</string>
+    <string name="imatge1">imatge1</string>
 
 </resources>
