@@ -81,5 +81,9 @@
     <string name="editar_perfil">Editar perfil</string>
     <string name="boto_editar_perfil">Boto editar perfil</string>
     <string name="crear_nuevo_personaje">Crear nuevo personaje</string>
+    <string name="recuperar_contrase_a">Recuperar contraseña</string>
+    <string name="recuperar">Recuperar</string>
+    <string name="imagen_personaje_calamardo">Imagen personaje Calamardo</string>
+    <string name="imagen_personaje_jorge">Imagen personaje Jorge</string>
 
 </resources>

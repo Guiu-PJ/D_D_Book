@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
-class MyAdapter(private val listapersonajes : ArrayList<news>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val listapersonajes : ArrayList<News>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -27,8 +27,8 @@ class MyAdapter(private val listapersonajes : ArrayList<news>) : RecyclerView.Ad
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
-        val image : ShapeableImageView = itemView.findViewById(R.id.imagen)
-        val text : TextView = itemView.findViewById(R.id.iddato)
+        val image : ShapeableImageView = itemView.findViewById(R.id.img_personaje_calamardo)
+        val text : TextView = itemView.findViewById(R.id.txt_personaje_calamardo)
 
     }
 

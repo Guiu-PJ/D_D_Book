@@ -14,32 +14,34 @@
 
 
         <ImageButton
-            android:id="@+id/imagen"
+            android:id="@+id/img_personaje_calamardo"
             android:layout_width="192dp"
             android:layout_height="179dp"
             android:layout_marginStart="110dp"
             android:backgroundTint="#00FFFFFF"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/calamardo" />
+            app:srcCompat="@drawable/calamardo"
+            android:contentDescription="@string/imagen_personaje_calamardo" />
 
         <TextView
-            android:id="@+id/iddato"
+            android:id="@+id/txt_personaje_calamardo"
             style="@style/txt_nombre_personajes"
             android:text="@string/ricardo_calamar"
             tools:layout_editor_absoluteX="48dp"
             tools:layout_editor_absoluteY="72dp" />
 
         <ImageButton
-            android:id="@+id/imagen2"
+            android:id="@+id/img_personaje_jorge"
             android:layout_width="192dp"
             android:layout_height="179dp"
             android:layout_marginStart="110dp"
             android:backgroundTint="#00FFFFFF"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/jorge" />
+            app:srcCompat="@drawable/jorge"
+            android:contentDescription="@string/imagen_personaje_jorge" />
 
         <TextView
-            android:id="@+id/txt_jorgfee"
+            android:id="@+id/txt_personaje_jorge"
             style="@style/txt_nombre_personajes"
             android:text="@string/jorge_cerdo"
             tools:layout_editor_absoluteX="48dp"

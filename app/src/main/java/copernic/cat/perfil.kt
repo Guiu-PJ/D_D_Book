@@ -26,11 +26,10 @@ class perfil : Fragment() {
 
     private lateinit var  adapter : MyAdapter
     private lateinit var recyclerView : RecyclerView
-    private lateinit var newsArrayList : ArrayList<news>
+    private lateinit var newsArrayList : ArrayList<News>
 
     lateinit var imageId : Array<Int>
     lateinit var textId : Array<String>
-    lateinit var news : Array<String>
 
 
 
@@ -86,7 +85,7 @@ class perfil : Fragment() {
     }
 
     private fun dataInitialize(){
-        newsArrayList = arrayListOf<news>()
+        newsArrayList = arrayListOf<News>()
 
         imageId = arrayOf(
             R.drawable.calamardo,
@@ -102,7 +101,7 @@ class perfil : Fragment() {
 
         for(i in imageId.indices){
 
-            val news = news(imageId[i], textId[i])
+            val news = News(imageId[i], textId[i])
             newsArrayList.add(news)
         }
 
