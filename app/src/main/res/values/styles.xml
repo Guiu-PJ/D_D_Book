@@ -6,12 +6,6 @@
     <style name="Widget.DnD_Book.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/groc</item>
     </style>
-    
-    <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splashscreen</item>
-
-    </style>
-    
         <style name="compendios" parent="Widget.MaterialComponents.Button"/>
         <style name="btn_inicio">
             <item name="android:layout_width"> 277dp</item>
@@ -73,5 +67,11 @@
         <item name="colorPrimaryDark">@color/gris</item>
         <item name="colorAccent">@color/groc</item>
     </style>
+<style name="links" parent="Widget.MaterialComponents.TextView">
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColor">@color/purple_200</item>
+
+</style>
+
 
 </resources>
