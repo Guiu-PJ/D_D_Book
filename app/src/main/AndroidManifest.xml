@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="copernic.cat">
-    >
 
     <application
         android:allowBackup="true"
@@ -14,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DnD_Book"
         tools:targetApi="31">
-
+        <activity
+            android:name=".registre"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".login"
             android:exported="false">
