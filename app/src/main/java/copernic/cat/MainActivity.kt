@@ -9,13 +9,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
         setContentView(R.layout.activity_main)
-        remplaceFragment(perfil())
+        //remplaceFragment(perfil())
     }
 
-    private fun remplaceFragment(perfil : Fragment){
+    /*private fun remplaceFragment(perfil : Fragment){
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout,perfil)
         fragmentTransaction.commit()
-    }
+    }*/
 }
