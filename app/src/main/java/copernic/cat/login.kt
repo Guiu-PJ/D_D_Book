@@ -1,5 +1,7 @@
 package copernic.cat
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -15,9 +17,11 @@ class login : AppCompatActivity() {
     private lateinit var loginPassword: EditText
     private lateinit var loginButton: Button
     private lateinit var loginGoRegistreButton: Button
+    private lateinit var recuperarContraseñaButton: Button
 
     private lateinit var auth: FirebaseAuth
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -30,6 +34,7 @@ class login : AppCompatActivity() {
         loginPassword = findViewById(R.id.contrasenyaLogin)
         loginButton = findViewById(R.id.botoLogin)
         loginGoRegistreButton = findViewById(R.id.botoActivityRegistre)
+        recuperarContraseñaButton = findViewById(R.id.botoActivityRecuperarContrasena)
 
 
         loginButton.setOnClickListener{
@@ -47,8 +52,14 @@ class login : AppCompatActivity() {
             finish()
         }
 
+        recuperarContraseñaButton.setOnClickListener{
+            startActivity(Intent(this, recuperar_contrasenya::class.java))
+            finish()
+        }
 
     }
+
+
 
     private fun loginn(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)

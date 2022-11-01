@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="34dp"
-        android:text="No tienes cuenta?"
+        android:text="@string/no_tienes_cuenta"
         android:textSize="16sp"
         style="@style/Widget.DnD_Book.TextView"/>
 
@@ -87,6 +87,16 @@
         android:layout_marginTop="8sp"
         android:layout_marginStart="24dp"
         android:text="@string/registrarse"
+        android:textSize="16sp"
+        style="@style/links"/>
+
+    <Button
+        android:id="@+id/botoActivityRecuperarContrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:layout_marginStart="24dp"
+        android:text="@string/recuperar_contrase_a"
         android:textSize="16sp"
         style="@style/links"/>
 

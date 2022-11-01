@@ -95,5 +95,6 @@
     <string name="favoritos">Favoritos</string>
     <string name="repetir_contrasenya">Repetir Contrasenya</string>
     <string name="repetir_contrase_a">Repetir Contraseña</string>
+    <string name="no_tienes_cuenta">No tienes cuenta?</string>
 
 </resources>
