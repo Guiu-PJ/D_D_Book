@@ -88,7 +88,7 @@
         android:layout_marginStart="24dp"
         android:text="@string/registrarse"
         android:textSize="16sp"
-        style="@style/links"/>
+        style="@style/Widget.DnD_Book.Button"/>
 
     <Button
         android:id="@+id/botoActivityRecuperarContrasena"
@@ -98,6 +98,6 @@
         android:layout_marginStart="24dp"
         android:text="@string/recuperar_contrase_a"
         android:textSize="16sp"
-        style="@style/links"/>
+        style="@style/Widget.DnD_Book.Button"/>
 
 </LinearLayout>
