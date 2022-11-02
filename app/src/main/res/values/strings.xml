@@ -97,4 +97,6 @@
     <string name="repetir_contrase_a">Repetir Contraseña</string>
     <string name="no_tienes_cuenta">No tienes cuenta?</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

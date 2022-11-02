@@ -4,10 +4,12 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/gris</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">#F44336</item>
+        <item name="colorPrimaryVariant">#FFC20C</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">#189F70</item>
+        <item name="colorSecondaryVariant">#037E61</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
