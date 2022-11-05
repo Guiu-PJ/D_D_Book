@@ -66,14 +66,14 @@
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/img_flecha_nov"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <ImageButton
+                android:id="@+id/btn_flecha_novedades"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="340dp"
-                android:clickable="true"
-                android:src="@drawable/flecha"
-                tools:ignore="SpeakableTextPresentCheck"/>
+                android:backgroundTint="#00FFFFFF"
+                android:scaleType="fitXY"
+                android:src="@drawable/return_arrow" />
 
 
         </LinearLayout>

@@ -7,11 +7,14 @@
     android:background="@drawable/pagina_libro"
     tools:context=".MainActivity">
 
-    <FrameLayout
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/contenedor"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:navGraph="@navigation/nav_graph" />
 
-    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

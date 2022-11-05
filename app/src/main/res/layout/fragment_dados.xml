@@ -108,17 +108,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/img_felcha"
-            android:layout_width="81dp"
-            android:layout_height="82dp"
-            android:layout_marginBottom="7dp"
-            android:contentDescription="@string/flecha"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_resultado_dados"
-            app:srcCompat="@drawable/flecha" />
-
         <Spinner
             android:id="@+id/spin_tipodado"
             android:layout_width="128dp"
@@ -131,6 +120,17 @@
             app:layout_constraintStart_toEndOf="@+id/txt_numero_de_dados"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/btn_felcha_dados"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="fitXY"
+            android:src="@drawable/return_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

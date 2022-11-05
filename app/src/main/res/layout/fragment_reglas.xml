@@ -18,7 +18,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="1dp">
+            tools:layout_editor_absoluteY="51dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,6 +84,16 @@
                     android:id="@+id/btn_multiclase"
                     style="@style/btn_reglas"
                     android:text="@string/multiclase" />
+
+                <ImageButton
+                    android:id="@+id/btn_flecha_reglas"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="350dp"
+                    android:clickable="true"
+                    android:src="@drawable/flecha"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    tools:src="@drawable/flecha" />
 
             </LinearLayout>
         </ScrollView>

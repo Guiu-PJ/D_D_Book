@@ -25,6 +25,7 @@ class login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         if (supportActionBar != null)
             supportActionBar!!.hide()
 
@@ -37,16 +38,6 @@ class login : AppCompatActivity() {
         recuperarContraseñaButton = findViewById(R.id.botoActivityRecuperarContrasena)
 
 
-        loginButton.setOnClickListener{
-            val email = loginEmail.text.toString()
-            val password = loginPassword.text.toString()
-
-            if(checkEmpty(email, password)){
-                loginn(email, password)
-
-            }
-        }
-
         loginGoRegistreButton.setOnClickListener {
             startActivity(Intent(this, registre::class.java))
             finish()
@@ -57,11 +48,31 @@ class login : AppCompatActivity() {
             finish()
         }
 
+
+
+
+        loginButton.setOnClickListener{
+            val email = loginEmail.text.toString()
+            val password = loginPassword.text.toString()
+
+            if(checkEmpty(email, password)){
+                login(email, password)
+            }else{
+                if(email.isNotEmpty()&&password.isEmpty()){
+                    Toast.makeText(applicationContext,"La contraseña no puede estar vacia",Toast.LENGTH_LONG).show()
+                }else if(email.isEmpty()&&password.isNotEmpty()){
+                    Toast.makeText(applicationContext,"El usuario no puede estar vacio",Toast.LENGTH_LONG).show()
+                }else if (email.isEmpty()&&password.isEmpty()){
+                    Toast.makeText(applicationContext,"El usuario y la contraseña no pueden estar vacios",Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
     }
 
 
 
-    private fun loginn(email: String, password: String) {
+    private fun login(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this){ task ->
                 if(task.isSuccessful){

@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".inici">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pagina_libro"
     tools:context=".MainActivity">
 
+
     <Button
-        android:id="@+id/novedades"
+        android:id="@+id/btn_novedades"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="67dp"
+        android:layout_marginBottom="76dp"
         android:hapticFeedbackEnabled="false"
-        android:text="@string/compendios"
+        android:text="@string/Novedades"
         android:textColor="@color/btn_txt_color"
         android:textSize="@dimen/btn_txt_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_compendios"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <Button
         android:id="@+id/btn_compendios"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="136dp"
         android:layout_marginEnd="67dp"
+        android:layout_marginBottom="76dp"
         android:hapticFeedbackEnabled="false"
-        android:text="@string/Novedades"
+        android:text="@string/compendios"
         android:textColor="@color/btn_txt_color"
         android:textSize="@dimen/btn_txt_size"
-        app:layout_constraintBottom_toTopOf="@+id/novedades"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reglas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.652" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_reglas"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/brn_height"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="424dp"
         android:layout_marginEnd="67dp"
+        android:layout_marginBottom="76dp"
         android:hapticFeedbackEnabled="false"
         android:text="@string/Reglas"
         android:textColor="@color/btn_txt_color"
         android:textSize="@dimen/btn_txt_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_dados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/Dados"
+        android:id="@+id/btn_dados"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/brn_height"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="512dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="67dp"
         android:hapticFeedbackEnabled="false"
         android:text="@string/Dados"
@@ -77,6 +77,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_reglas" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

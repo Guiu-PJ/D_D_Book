@@ -4,8 +4,6 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/gris</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorPrimary">#F44336</item>
-        <item name="colorPrimaryVariant">#FFC20C</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#189F70</item>
