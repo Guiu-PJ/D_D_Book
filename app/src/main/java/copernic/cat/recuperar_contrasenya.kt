@@ -1,18 +1,16 @@
 package copernic.cat
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.textfield.TextInputEditText
 
 
 class recuperar_contrasenya : AppCompatActivity() {
@@ -23,7 +21,6 @@ class recuperar_contrasenya : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recuperar_contrasenya)
@@ -36,7 +33,7 @@ class recuperar_contrasenya : AppCompatActivity() {
 
         botoLogin = findViewById(R.id.botoActivityLogin)
         botoRecuperarContraseña = findViewById(R.id.btn_recuperar_contrasenya)
-        txt_correu = findViewById(R.id.input_edit_text_email)
+        txt_correu = findViewById(R.id.txt_email_contrasenya)
 
         botoLogin.setOnClickListener{
             startActivity(Intent(this, login::class.java))
@@ -45,7 +42,7 @@ class recuperar_contrasenya : AppCompatActivity() {
 
 
         botoRecuperarContraseña.setOnClickListener{
-            resetPasword();
+            resetPassword();
         }
 
     }
@@ -53,10 +50,10 @@ class recuperar_contrasenya : AppCompatActivity() {
 
 
 
-    private fun resetPasword(){
+    private fun resetPassword(){
         auth= FirebaseAuth.getInstance();
 
-        auth.sendPasswordResetEmail(txt_correu.toString()).addOnCompleteListener(this){task ->
+        auth.sendPasswordResetEmail(txt_correu.text.toString()).addOnCompleteListener(){task ->
             if(task.isSuccessful){
                 startActivity(Intent(this, login::class.java))
                 finish()
