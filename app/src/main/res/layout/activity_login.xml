@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/tapa"
-    tools:context=".login">
+    tools:context=".PreInici.login">
 
     <ImageView
         android:layout_width="150dp"
@@ -39,7 +39,9 @@
         android:layout_marginStart="72dp"
         android:id="@+id/correuLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/groc"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"/>
 
     <TextView
         android:layout_width="wrap_content"

@@ -13,30 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DnD_Book"
         tools:targetApi="31">
-
         <activity
-            android:name=".registre"
+            android:name=".PreInici.registre"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".recuperar_contrasenya"
+            android:name=".PreInici.recuperar_contrasenya"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".login"
+            android:name=".PreInici.login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:name=".Inici.SplashScreen"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -49,7 +48,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Inici.MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
