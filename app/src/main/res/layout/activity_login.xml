@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/tapa"
+    tools:context=".login">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="124dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="72dp"
+        android:textSize="24sp"
+        android:text="@string/iniciar_sesion"
+        style="@style/Widget.DnD_Book.TextView"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginStart="72dp"
+        android:text="@string/email"
+        android:textSize="18sp"
+        style="@style/Widget.DnD_Book.TextView"
+        />
+
+        <EditText
+        android:layout_marginStart="72dp"
+        android:id="@+id/correuLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:text="@string/contrase_a"
+        style="@style/Widget.DnD_Book.TextView"
+        android:textSize="18sp"/>
+
+
+    <EditText
+        android:layout_marginStart="72dp"
+        android:id="@+id/contrasenyaLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
+
+
+    <Button
+        android:id="@+id/botoLogin"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:text="@string/entrar"
+        android:textColor="@color/black"
+        style="@style/Widget.DnD_Book.Button"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="34dp"
+        android:text="@string/no_tienes_cuenta"
+        android:textSize="16sp"
+        style="@style/Widget.DnD_Book.TextView"/>
+
+    <Button
+        android:id="@+id/botoActivityRegistre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:layout_marginStart="24dp"
+        android:text="@string/registrarse"
+        android:textSize="16sp"
+        style="@style/Widget.DnD_Book.Button"/>
+
+    <Button
+        android:id="@+id/botoActivityRecuperarContrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:layout_marginStart="24dp"
+        android:text="@string/recuperar_contrase_a"
+        android:textSize="16sp"
+        style="@style/Widget.DnD_Book.Button"/>
+
+</LinearLayout>
