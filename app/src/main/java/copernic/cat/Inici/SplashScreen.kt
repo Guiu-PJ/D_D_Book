@@ -1,9 +1,11 @@
-package copernic.cat
+package copernic.cat.Inici
 
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import copernic.cat.PreInici.login
+import copernic.cat.R
 import java.util.*
 import kotlin.concurrent.schedule
 

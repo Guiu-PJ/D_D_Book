@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/inici"
-        android:name="copernic.cat.inici"
+        android:name="copernic.cat.Inici.inici"
         android:label="fragment_inici"
         tools:layout="@layout/fragment_inici" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/novedades"
-        android:name="copernic.cat.novedades"
+        android:name="copernic.cat.Informacio.novedades"
         android:label="fragment_novedades"
         tools:layout="@layout/fragment_novedades" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/reglas"
-        android:name="copernic.cat.reglas"
+        android:name="copernic.cat.Informacio.reglas"
         android:label="fragment_reglas"
         tools:layout="@layout/fragment_reglas" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/dados"
-        android:name="copernic.cat.Dados"
+        android:name="copernic.cat.Informacio.Dados"
         android:label="fragment_dados"
         tools:layout="@layout/fragment_dados" >
         <action

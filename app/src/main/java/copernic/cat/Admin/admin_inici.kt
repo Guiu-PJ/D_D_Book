@@ -1,10 +1,11 @@
-package copernic.cat
+package copernic.cat.Admin
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import copernic.cat.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Ficha_Personaje_General.newInstance] factory method to
+ * Use the [admin_inici.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Ficha_Personaje_General : Fragment() {
+class admin_inici : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +35,7 @@ class Ficha_Personaje_General : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ficha__personaje__general, container, false)
+        return inflater.inflate(R.layout.fragment_admin_inici, container, false)
     }
 
     companion object {
@@ -44,12 +45,12 @@ class Ficha_Personaje_General : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Ficha_Personaje_General.
+         * @return A new instance of fragment admin_inici.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Ficha_Personaje_General().apply {
+            admin_inici().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

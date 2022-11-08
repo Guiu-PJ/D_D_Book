@@ -1,7 +1,5 @@
-package copernic.cat
+package copernic.cat.Perfil
 
-import android.content.Context.MODE_PRIVATE
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
+import copernic.cat.Inutilitats.MyAdapter
+import copernic.cat.Inutilitats.News
+import copernic.cat.R
 
 class perfil : Fragment() {
 

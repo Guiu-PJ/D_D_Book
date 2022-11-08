@@ -1,10 +1,11 @@
-package copernic.cat
+package copernic.cat.Inici
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import copernic.cat.R
 
 
 class inici : Fragment(R.layout.fragment_inici) {

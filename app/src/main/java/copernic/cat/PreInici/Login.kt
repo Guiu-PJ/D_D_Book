@@ -1,11 +1,9 @@
-package copernic.cat
+package copernic.cat.PreInici
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -13,7 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
-import com.google.firebase.auth.EmailAuthProvider
+import copernic.cat.Inici.MainActivity
+import copernic.cat.R
 
 class login : AppCompatActivity() {
 
