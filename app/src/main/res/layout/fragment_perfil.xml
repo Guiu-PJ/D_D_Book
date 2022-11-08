@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#00FFFFFF"
+    tools:context=".perfil">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pagina_libro">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_perfil_perfil"
+                    android:layout_width="131dp"
+                    android:layout_height="175dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="68dp"
+                    android:contentDescription="@string/usuario"
+                    android:src="@drawable/creador_del_sexo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_nombre_perfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="100dp"
+                    android:text="@string/humpty_dumpty"
+                    android:textColor="#000000"
+                    android:textSize="30dp"
+                    app:layout_constraintStart_toEndOf="@+id/img_perfil_perfil"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_correo_perfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/dumpty_humpty_copernic_cat"
+                    android:textColor="#8ACED5"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/img_perfil_perfil"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_nombre_perfil" />
+
+                <ImageButton
+                    android:id="@+id/img_editar_perfil"
+                    android:layout_width="65dp"
+                    android:layout_height="61dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/boto_editar_perfil"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/edit_icon"
+                    app:layout_constraintStart_toEndOf="@+id/txt_editar_perfil"
+                    app:layout_constraintTop_toBottomOf="@+id/img_perfil_perfil" />
+
+                <TextView
+                    android:id="@+id/txt_editar_perfil"
+                    style="@style/txt_perfil"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="7dp"
+                    android:text="@string/editar_perfil"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_perfil_perfil" />
+
+                <TextView
+                    android:id="@+id/txt_cerrar_sesion"
+                    style="@style/txt_perfil"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="64dp"
+                    android:text="@string/cerrar_sesi_n"
+                    app:layout_constraintStart_toEndOf="@+id/img_editar_perfil"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_correo_perfil" />
+
+                <ImageButton
+                    android:id="@+id/img_cerrar_sesion"
+                    android:layout_width="61dp"
+                    android:layout_height="61dp"
+                    android:layout_marginTop="58dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="@string/boton_cerrar_sesion"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/cerrar_sesion"
+                    app:layout_constraintStart_toEndOf="@+id/txt_cerrar_sesion"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_correo_perfil" />
+
+                <Button
+                    android:id="@+id/btn_nuevo_personaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/crear_nuevo_personaje"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_editar_perfil" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_personajes"
+                    android:layout_width="413dp"
+                    android:layout_height="match_parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="-1dp"
+                    tools:layout_editor_absoluteY="424dp"
+
+                    tools:listitem="@layout/item_list_personajes" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

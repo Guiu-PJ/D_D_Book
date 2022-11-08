@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "475805361161",
+    "project_id": "aaaaa-1277e",
+    "storage_bucket": "aaaaa-1277e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475805361161:android:8869a27234c64dd28984d8",
+        "android_client_info": {
+          "package_name": "copernic.cat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475805361161-q7og0k12tq9l575lk8j9m20uog2pr9or.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3GDcb1dDvFs_yVOSvRWYAO9hllapFBfA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475805361161-q7og0k12tq9l575lk8j9m20uog2pr9or.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

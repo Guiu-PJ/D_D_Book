@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">DnD_Book</string>
+    <string name="d_amp_d_book"><![CDATA[D&D Book]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="dados">Dados</string>
+    <string name="titulo">Administración</string>
+    <string name="numero_de_dados">Número de dados</string>
+    <string name="modificador">Modificador</string>
+    <string name="tirar">Tirar</string>
+    <string name="resultado_final">Resultado final:</string>
+    <string name="resultado_de_cada_dado">Resultado de cada dado:</string>
+    <string name="dado1_3_dado2_9_dado3_15_dado4_10_dado5_1_scroll_para_ver_todos_los_dados_si_es_necesario">Dado1: 3, Dado2: 9, Dado3:15, Dado4: 10, Dado5: 1 (Scroll para ver todos los dados (si es necesario))</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="novedades">Novedades</string>
+    <string name="compedios">Compedios</string>
+    <string name="reglas">Reglas</string>
+    <string name="compendios">Compendios</string>
+    <string name="Novedades">Novedades</string>
+    <string name="Reglas">Reglas</string>
+    <string name="Dados">Dados</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="email">Email</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="acepta_los_terminos_de_privacidad">Acepta los terminos de privacidad?</string>
+    <string name="continuar">Continuar</string>
+    <string name="ya_tienes_una_cuenta">Ya tienes una cuenta?</string>
+    <string name="entrar">Entrar</string>
+    <string name="has_olvidado_la_contrase_a">Has olvidado la contraseña?</string>
+    <string name="title_activity_login">login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string-array name="programming_languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>CPP</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="manual_del_jugador">manual del jugador</string>
+    <string name="manual_del_dungeon_master_5e">manual del dungeon master 5e</string>
+    <string name="manual_de_monstruos_5e">manual de monstruos 5e</string>
+    <string name="el_resurgir_del_dragon_5e">el resurgir del dragon 5e</string>
+    <string name="escribe_la_rega">escribe la rega</string>
+    <string name="a_adido">Añadido</string>
+    <string name="eliminado">Eliminado:</string>
+    <string name="modificado">Modificado:</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="humpty_dumpty">Humpty Dumpty</string>
+    <string name="dumpty_humpty_copernic_cat">dumpty.humpty@copernic.cat</string>
+    <string name="jorge_cerdo">Jorge Cerdo</string>
+    <string name="ricardo_calamar">Ricardo Calamar</string>
+    <string name="calamar_ricardo_copernic_cat">calamar.ricardo@copernic.cat</string>
+    <string name="cerdo_jorge_copernic_cat">cerdo.jorge@copernic.cat</string>
+    <string name="acci_n">Acción</string>
+    <string name="acci_n_bonus">Acciòn Bonus</string>
+    <string name="reacci_n">Reacción</string>
+    <string name="movimiento">Movimiento</string>
+    <string name="estados_alterados">Estados Alterados</string>
+    <string name="alcance">Alcance</string>
+    <string name="cr_ticos">Críticos</string>
+    <string name="equipamiento">Equipamiento</string>
+    <string name="trasfondos">Trasfondos</string>
+    <string name="nivel">Nivel</string>
+    <string name="dotes">Dotes</string>
+    <string name="multiclase">Multiclase</string>
+    <string name="flecha">Flecha para volver hacia atras</string>
+    <string name="usuario">imagen de perfil del usuario</string>
+    <string name="logo">imagen logo</string>
+    <string name="dado">imagen del dado</string>
+    <string name="ajustes">ajustes</string>
+    <string name="boton_cerrar_sesion">Boton cerrar sesion</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="boto_editar_perfil">Boto editar perfil</string>
+    <string name="crear_nuevo_personaje">Crear nuevo personaje</string>
+    <string name="recuperar_contrase_a">Recuperar contraseña</string>
+    <string name="recuperar">Recuperar</string>
+    <string name="imagen_personaje_calamardo">Imagen personaje Calamardo</string>
+    <string name="imagen_personaje_jorge">Imagen personaje Jorge</string>
+    <string name="todo">TODO</string>
+    <string name="img_logo">img_logo</string>
+    <string name="player_handbook">player_handbook</string>
+    <string name="imatge4">imatge4</string>
+    <string name="imatge3">imatge3</string>
+    <string name="imatge2">imatge2</string>
+    <string name="imatge1">imatge1</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="repetir_contrasenya">Repetir Contrasenya</string>
+    <string name="repetir_contrase_a">Repetir Contraseña</string>
+    <string name="no_tienes_cuenta">No tienes cuenta?</string>
+
+</resources>

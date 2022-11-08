@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".novedades">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pagina_libro">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="106dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_titulo_añadido"
+                style="@style/txt_titulos_novedades"
+                android:text="@string/a_adido"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="146dp" />
+
+            <TextView
+                android:id="@+id/txt_info_añadido"
+                style="@style/txt_info_novedades"
+                android:text="Se a añadido el nuevo manual del jugador"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="146dp" />
+
+            <TextView
+                android:id="@+id/txt_titulo_eliminado"
+                style="@style/txt_titulos_novedades"
+                android:text="@string/eliminado"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="146dp" />
+
+            <TextView
+                android:id="@+id/txt_info_eliminado"
+                style="@style/txt_info_novedades"
+                android:text="Se a eliminado la regla de los criticos por posibles errores en la información"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="146dp" />
+
+            <TextView
+                android:id="@+id/txt_titulo_modificado"
+                style="@style/txt_titulos_novedades"
+                android:text="@string/modificado"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="146dp" />
+
+            <TextView
+                android:id="@+id/txt_info_modificado"
+                style="@style/txt_info_novedades"
+                android:text="Se a modificado la ficha de creación de personaje"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="146dp" />
+
+            <ImageButton
+                android:id="@+id/btn_flecha_novedades"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="340dp"
+                android:backgroundTint="#00FFFFFF"
+                android:scaleType="fitXY"
+                android:src="@drawable/return_arrow" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
