@@ -40,7 +40,6 @@ class recuperar_contrasenya : AppCompatActivity() {
             finish()
         }
 
-
         botoRecuperarContraseña.setOnClickListener{
             resetPassword();
         }

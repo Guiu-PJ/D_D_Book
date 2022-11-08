@@ -12,6 +12,7 @@ import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
 
 class login : AppCompatActivity() {
+    private lateinit var binding: login
 
     private lateinit var loginEmail: EditText
     private lateinit var loginPassword: EditText
@@ -39,12 +40,12 @@ class login : AppCompatActivity() {
 
         loginGoRegistreButton.setOnClickListener {
             startActivity(Intent(this, registre::class.java))
-            finish()
+            //finish()
         }
 
         recuperarContraseñaButton.setOnClickListener{
             startActivity(Intent(this, recuperar_contrasenya::class.java))
-            finish()
+            //finish()
         }
 
 
@@ -76,7 +77,7 @@ class login : AppCompatActivity() {
             .addOnCompleteListener(this){ task ->
                 if(task.isSuccessful){
                     startActivity(Intent(this, MainActivity::class.java))
-                    finish()
+                    //finish()
                 }else{
                     val builder = AlertDialog.Builder(this)
                     builder.setTitle("Login failed")

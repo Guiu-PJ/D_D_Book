@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_inici_to_dados"
             app:destination="@id/dados" />
+        <action
+            android:id="@+id/action_inici_to_perfil"
+            app:destination="@id/perfil" />
     </fragment>
     <fragment
         android:id="@+id/novedades"
@@ -47,4 +50,9 @@
             android:id="@+id/action_dados_to_inici"
             app:destination="@id/inici" />
     </fragment>
+    <fragment
+        android:id="@+id/perfil"
+        android:name="copernic.cat.perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
 </navigation>
