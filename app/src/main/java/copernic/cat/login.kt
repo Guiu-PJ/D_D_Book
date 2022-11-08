@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import androidx.appcompat.app.AlertDialog
 
 class login : AppCompatActivity() {
 
@@ -79,7 +80,16 @@ class login : AppCompatActivity() {
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }else{
-                    Toast.makeText(applicationContext, "Login failed", Toast.LENGTH_LONG).show()
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Login failed")
+                    builder.setMessage("L'email o la contrasenya no son correctes")
+                    builder.setPositiveButton("OK"){_, _ ->
+                        Toast.makeText(applicationContext,"clicked yes",Toast.LENGTH_LONG).show()
+                    }
+                    val alertDialog: AlertDialog = builder.create()
+                    alertDialog.setCancelable(true)
+                    alertDialog.show()
+
                 }
             }
     }

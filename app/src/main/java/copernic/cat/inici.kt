@@ -31,6 +31,6 @@ class inici : Fragment(R.layout.fragment_inici) {
             findNavController().navigate(R.id.action_inici_to_dados)
         }
 
-
     }
+
 }
