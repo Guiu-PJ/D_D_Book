@@ -43,12 +43,12 @@ class login : AppCompatActivity() {
 
         loginGoRegistreButton.setOnClickListener {
             startActivity(Intent(this, registre::class.java))
-            finish()
+            //finish()
         }
 
         recuperarContraseñaButton.setOnClickListener{
             startActivity(Intent(this, recuperar_contrasenya::class.java))
-            finish()
+            //finish()
         }
 
 
@@ -80,7 +80,7 @@ class login : AppCompatActivity() {
             .addOnCompleteListener(this){ task ->
                 if(task.isSuccessful){
                     startActivity(Intent(this, MainActivity::class.java))
-                    finish()
+                    //finish()
                 }else{
                     val builder = AlertDialog.Builder(this)
                     builder.setTitle("Login failed")

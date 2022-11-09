@@ -35,7 +35,7 @@ class recuperar_contrasenya : AppCompatActivity() {
 
         botoLogin = findViewById(R.id.botoActivityLogin)
         botoRecuperarContraseña = findViewById(R.id.btn_recuperar_contrasenya)
-        txt_correu = findViewById(R.id.input_edit_text_email)
+        txt_correu = findViewById(R.id.txt_email_contrasenya)
 
         botoLogin.setOnClickListener{
             startActivity(Intent(this, login::class.java))
@@ -55,16 +55,15 @@ class recuperar_contrasenya : AppCompatActivity() {
     private fun resetPasword(){
         auth= FirebaseAuth.getInstance();
 
-        auth.sendPasswordResetEmail(txt_correu.toString()).addOnCompleteListener(this){task ->
+        auth.sendPasswordResetEmail(txt_correu.text.toString()).addOnCompleteListener(this){task ->
             if(task.isSuccessful){
                 startActivity(Intent(this, login::class.java))
-                finish()
+                //finish()
             }else{
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Recuperadr contraseña a fallado")
                 builder.setMessage("L'email no es correcte")
                 builder.setPositiveButton("OK"){_, _ ->
-                    Toast.makeText(applicationContext,"clicked yes",Toast.LENGTH_LONG).show()
                 }
                 val alertDialog: AlertDialog = builder.create()
                 alertDialog.setCancelable(true)
