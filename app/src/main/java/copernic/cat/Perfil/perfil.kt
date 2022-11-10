@@ -12,6 +12,18 @@ import com.google.firebase.auth.FirebaseAuth
 import copernic.cat.Inutilitats.MyAdapter
 import copernic.cat.Inutilitats.News
 import copernic.cat.R
+import copernic.cat.Reglas.accion
+
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+
+/**
+ * A simple [Fragment] subclass.
+ * Use the [accion.newInstance] factory method to
+ * create an instance of this fragment.
+ */
 
 class perfil : Fragment() {
 

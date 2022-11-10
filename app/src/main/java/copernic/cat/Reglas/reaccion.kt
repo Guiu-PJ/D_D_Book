@@ -1,15 +1,16 @@
-package copernic.cat.Informacio
+package copernic.cat.Reglas
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import copernic.cat.R
-import copernic.cat.Reglas.accion
-import copernic.cat.databinding.FragmentDadosBinding
+import copernic.cat.databinding.FragmentAccionBinding
+import copernic.cat.databinding.FragmentIniciBinding
+import copernic.cat.databinding.FragmentReaccionBinding
+import copernic.cat.databinding.FragmentReglasBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,25 +22,25 @@ private const val ARG_PARAM2 = "param2"
  * Use the [accion.newInstance] factory method to
  * create an instance of this fragment.
  */
-
-class Dados : Fragment() {
-    private var _binding: FragmentDadosBinding? = null
+class reaccion : Fragment() {
+    private var _binding: FragmentReaccionBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDadosBinding.inflate(inflater, container, false)
+        _binding = FragmentReaccionBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnFelchaDados.setOnClickListener {
-            findNavController().navigate(R.id.action_dados_to_inici)
-
+        binding.btnFlechaReaccion.setOnClickListener{
+            findNavController().navigate(R.id.action_reaccion_to_reglas)
         }
+
     }
 }

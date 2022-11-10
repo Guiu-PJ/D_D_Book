@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pagina_libro"
-    tools:context=".Inici.MainActivity">
+    tools:context=".Ficha_Personaje.Ficha_Personaje_Equipo">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

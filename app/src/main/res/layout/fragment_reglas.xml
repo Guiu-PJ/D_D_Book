@@ -66,7 +66,7 @@
                     android:text="@string/equipamiento" />
 
                 <Button
-                    android:id="@+id/btn_transfondos"
+                    android:id="@+id/btn_trasfondos"
                     style="@style/btn_reglas"
                     android:text="@string/trasfondos" />
 

@@ -29,6 +29,42 @@ class reglas : Fragment() {
         binding.btnFlechaReglas.setOnClickListener {
             findNavController().navigate(R.id.action_reglas_to_inici)
         }
+        binding.btnAccion.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_accion)
+        }
+        binding.btnAccionbonus.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_accion_bonus)
+        }
+        binding.btnAlcance.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_alcance)
+        }
+        binding.btnCriticos.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_criticos)
+        }
+        binding.btnDotes.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_dotes)
+        }
+        binding.btnEquipamiento.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_equipamiento)
+        }
+        binding.btnEstadosalt.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_estados_alterados)
+        }
+        binding.btnMovimiento.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_movimiento)
+        }
+        binding.btnMulticlase.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_multiclase)
+        }
+        binding.btnNivel.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_nivel)
+        }
+        binding.btnReaccion.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_reaccion)
+        }
+        binding.btnTrasfondos.setOnClickListener {
+            findNavController().navigate(R.id.action_reglas_to_trasfondos)
+        }
 
     }
 }

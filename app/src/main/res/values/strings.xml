@@ -97,5 +97,8 @@
     <string name="repetir_contrase_a">Repetir Contraseña</string>
     <string name="no_tienes_cuenta">No tienes cuenta?</string>
     <string name="perfil">perfil</string>
+    <string name="estadisticas">estadisticas</string>
+    <string name="partidas">partidas</string>
+    <string name="inici">inicio</string>
 
 </resources>

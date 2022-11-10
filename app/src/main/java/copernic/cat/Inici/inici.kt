@@ -42,11 +42,6 @@ class inici : Fragment() {
         binding.btnDados.setOnClickListener{
             findNavController().navigate(R.id.action_inici_to_dados)
         }
-        binding.btnCerrarSesion.setOnClickListener{
-            FirebaseAuth.getInstance().signOut()
-            //startActivity(Intent(this, login::class.java))
-            activity?.finish()
-        }
     }
 
 }
