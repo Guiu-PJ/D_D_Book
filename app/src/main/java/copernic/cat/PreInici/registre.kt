@@ -12,41 +12,29 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import copernic.cat.R
+import copernic.cat.databinding.ActivityRecuperarContrasenyaBinding
+import copernic.cat.databinding.ActivityRegistreBinding
 
 
 class registre : AppCompatActivity() {
-
-    private lateinit var registerEmail: EditText
-    private lateinit var registerPassword: EditText
-    private lateinit var registerRepeatPassword: EditText
-    private lateinit var registerButton: Button
-    private lateinit var registerGoLoginButton: Button
-
+    private lateinit var binding: ActivityRegistreBinding
     private  lateinit var auth: FirebaseAuth
-
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registre)
+        binding = ActivityRegistreBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         if (supportActionBar != null)
             supportActionBar!!.hide()
 
         auth = Firebase.auth
 
-        registerEmail = findViewById(R.id.correuRegistre)
-        registerPassword = findViewById(R.id.contrasenyaRegistre)
-        registerRepeatPassword = findViewById(R.id.repetirContrasenya)
-        registerButton = findViewById(R.id.botoRegistre)
-        registerGoLoginButton = findViewById(R.id.botoActivityLogin)
+        binding.botoRegistre.setOnClickListener{
 
-
-
-        registerButton.setOnClickListener{
-
-            val email = registerEmail.text.toString()
-            val password = registerPassword.text.toString()
-            val repeatPassword = registerRepeatPassword.text.toString()
+            val email = binding.correuRegistre.text.toString()
+            val password = binding.contrasenyaRegistre.text.toString()
+            val repeatPassword = binding.repetirContrasenya.text.toString()
 
             if (password.equals(repeatPassword) && checkEmpty(email, password, repeatPassword)){
                 register(email, password)
@@ -54,13 +42,10 @@ class registre : AppCompatActivity() {
 
         }
 
-
-        registerGoLoginButton.setOnClickListener {
+        binding.botoActivityLogin.setOnClickListener {
             startActivity(Intent(this, login::class.java))
             finish()
         }
-
-
     }
 
     private fun register(email: String, password: String) {
@@ -74,7 +59,6 @@ class registre : AppCompatActivity() {
                     builder.setTitle("Login failed")
                     builder.setMessage("L'email o la contrasenya no son correctes")
                     builder.setPositiveButton("OK"){_, _ ->
-                        Toast.makeText(applicationContext,"clicked yes",Toast.LENGTH_LONG).show()
                     }
                     val alertDialog: AlertDialog = builder.create()
                     alertDialog.setCancelable(true)

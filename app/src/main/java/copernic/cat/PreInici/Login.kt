@@ -13,40 +13,32 @@ import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
 import copernic.cat.Inici.MainActivity
 import copernic.cat.R
+import copernic.cat.databinding.ActivityLoginBinding
+import copernic.cat.databinding.ActivityRecuperarContrasenyaBinding
 
 class login : AppCompatActivity() {
-
-    private lateinit var loginEmail: EditText
-    private lateinit var loginPassword: EditText
-    private lateinit var loginButton: Button
-    private lateinit var loginGoRegistreButton: Button
-    private lateinit var recuperarContraseñaButton: Button
-
+    private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         if (supportActionBar != null)
             supportActionBar!!.hide()
 
         auth = Firebase.auth
 
-        loginEmail = findViewById(R.id.correuLogin)
-        loginPassword = findViewById(R.id.contrasenyaLogin)
-        loginButton = findViewById(R.id.botoLogin)
-        loginGoRegistreButton = findViewById(R.id.botoActivityRegistre)
-        recuperarContraseñaButton = findViewById(R.id.botoActivityRecuperarContrasena)
 
 
-        loginGoRegistreButton.setOnClickListener {
+        binding.botoActivityRegistre.setOnClickListener {
             startActivity(Intent(this, registre::class.java))
             //finish()
         }
 
-        recuperarContraseñaButton.setOnClickListener{
+        binding.botoActivityRecuperarContrasena.setOnClickListener{
             startActivity(Intent(this, recuperar_contrasenya::class.java))
             //finish()
         }
@@ -54,9 +46,9 @@ class login : AppCompatActivity() {
 
 
 
-        loginButton.setOnClickListener{
-            val email = loginEmail.text.toString()
-            val password = loginPassword.text.toString()
+        binding.botoLogin.setOnClickListener{
+            val email = binding.correuLogin.text.toString()
+            val password = binding.contrasenyaLogin.text.toString()
 
             if(checkEmpty(email, password)){
                 login(email, password)
@@ -86,7 +78,6 @@ class login : AppCompatActivity() {
                     builder.setTitle("Login failed")
                     builder.setMessage("L'email o la contrasenya no son correctes")
                     builder.setPositiveButton("OK"){_, _ ->
-                        Toast.makeText(applicationContext,"clicked yes",Toast.LENGTH_LONG).show()
                     }
                     val alertDialog: AlertDialog = builder.create()
                     alertDialog.setCancelable(true)

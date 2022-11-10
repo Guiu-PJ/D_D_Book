@@ -12,50 +12,39 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
 import copernic.cat.R
+import copernic.cat.databinding.ActivityRecuperarContrasenyaBinding
 
 
 class recuperar_contrasenya : AppCompatActivity() {
-
-    private lateinit var botoLogin: Button
-    private lateinit var botoRecuperarContraseña: Button
-    private lateinit var txt_correu: TextInputEditText
-
+    private lateinit var binding: ActivityRecuperarContrasenyaBinding
     private lateinit var auth: FirebaseAuth
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recuperar_contrasenya)
+        binding = ActivityRecuperarContrasenyaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         if (supportActionBar != null)
             supportActionBar!!.hide()
 
         auth = Firebase.auth
 
-
-        botoLogin = findViewById(R.id.botoActivityLogin)
-        botoRecuperarContraseña = findViewById(R.id.btn_recuperar_contrasenya)
-        txt_correu = findViewById(R.id.txt_email_contrasenya)
-
-        botoLogin.setOnClickListener{
+        binding.botoActivityLogin.setOnClickListener{
             startActivity(Intent(this, login::class.java))
             finish()
         }
 
-
-        botoRecuperarContraseña.setOnClickListener{
-            resetPasword();
+        binding.btnRecuperarContrasenya.setOnClickListener{
+            resetPasword()
         }
 
     }
 
-
-
-
     private fun resetPasword(){
         auth= FirebaseAuth.getInstance();
 
-        auth.sendPasswordResetEmail(txt_correu.text.toString()).addOnCompleteListener(this){task ->
+        auth.sendPasswordResetEmail(binding.txtEmailContrasenya.text.toString()).addOnCompleteListener(this){task ->
             if(task.isSuccessful){
                 startActivity(Intent(this, login::class.java))
                 //finish()
