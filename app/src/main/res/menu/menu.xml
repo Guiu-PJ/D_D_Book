@@ -14,26 +14,7 @@
         android:icon="@drawable/logo"
         android:title="@string/logo"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/inici"
-        android:title="@string/inici"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/estadisticas"
-        android:title="@string/estadisticas"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/perfil"
-        android:title="@string/perfil"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/partidas"
-        android:title="@string/partidas"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/cerrarsesion"
-        android:title="@string/cerrar_sesi_n"
-        app:showAsAction="never" />
+
 
 
 </menu>

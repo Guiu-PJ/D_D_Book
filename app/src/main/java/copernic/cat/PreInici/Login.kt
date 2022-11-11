@@ -11,10 +11,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import copernic.cat.Inici.MainActivity
+import copernic.cat.Inici.inici
 import copernic.cat.R
 import copernic.cat.databinding.ActivityLoginBinding
 import copernic.cat.databinding.ActivityRecuperarContrasenyaBinding
+import copernic.cat.databinding.FragmentIniciBinding
 
 class login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -54,11 +57,32 @@ class login : AppCompatActivity() {
                 login(email, password)
             }else{
                 if(email.isNotEmpty()&&password.isEmpty()){
-                    Toast.makeText(applicationContext,"La contraseña no puede estar vacia",Toast.LENGTH_LONG).show()
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Login fallido")
+                    builder.setMessage("La contraseña no puede estar vacia")
+                    builder.setPositiveButton("OK"){_, _ ->
+                    }
+                    val alertDialog: AlertDialog = builder.create()
+                    alertDialog.setCancelable(true)
+                    alertDialog.show()
                 }else if(email.isEmpty()&&password.isNotEmpty()){
-                    Toast.makeText(applicationContext,"El usuario no puede estar vacio",Toast.LENGTH_LONG).show()
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Login fallido")
+                    builder.setMessage("El usuario no puede estar vacio")
+                    builder.setPositiveButton("OK"){_, _ ->
+                    }
+                    val alertDialog: AlertDialog = builder.create()
+                    alertDialog.setCancelable(true)
+                    alertDialog.show()
                 }else if (email.isEmpty()&&password.isEmpty()){
-                    Toast.makeText(applicationContext,"El usuario y la contraseña no pueden estar vacios",Toast.LENGTH_LONG).show()
+                        val builder = AlertDialog.Builder(this)
+                        builder.setTitle("Login fallido")
+                        builder.setMessage("El usuario y la contraseña no pueden estar vacios")
+                        builder.setPositiveButton("OK"){_, _ ->
+                        }
+                        val alertDialog: AlertDialog = builder.create()
+                        alertDialog.setCancelable(true)
+                        alertDialog.show()
                 }
             }
         }
@@ -85,6 +109,18 @@ class login : AppCompatActivity() {
 
                 }
             }
+    }
+
+    override fun onStart() {
+        super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
+        auth = Firebase.auth
+        //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
+        val currentUser = auth.currentUser
+
+        if(currentUser != null){
+            startActivity(Intent(this,MainActivity::class.java))
+
+        }
     }
 
     private fun checkEmpty(email: String, password: String): Boolean {

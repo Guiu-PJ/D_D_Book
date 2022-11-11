@@ -10,10 +10,22 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import copernic.cat.R
+import copernic.cat.Reglas.accion
 import copernic.cat.databinding.ActivityMainBinding
 import copernic.cat.databinding.ActivityRecuperarContrasenyaBinding
 import copernic.cat.databinding.FragmentIniciBinding
 import copernic.cat.databinding.FragmentNovedadesBinding
+
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+
+/**
+ * A simple [Fragment] subclass.
+ * Use the [accion.newInstance] factory method to
+ * create an instance of this fragment.
+ */
 
 class inici : Fragment() {
     private var _binding: FragmentIniciBinding? = null
