@@ -12,11 +12,25 @@
         android:background="@drawable/pagina_libro">
 
         <EditText
+            android:id="@+id/txt_modificador_negativo"
+            android:layout_width="126dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="228dp"
+            android:layout_marginTop="92dp"
+            android:hint="@string/modificador_negativo"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
             android:id="@+id/txt_numero_de_dados"
             android:layout_width="126dp"
             android:layout_height="38dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="59dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="32dp"
             android:hint="@string/numero_de_dados"
             android:importantForAutofill="no"
             android:inputType="number"
@@ -26,12 +40,12 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/txt_modificador"
+            android:id="@+id/txt_modificador_positivo"
             android:layout_width="126dp"
             android:layout_height="38dp"
-            android:layout_marginStart="280dp"
-            android:layout_marginTop="59dp"
-            android:hint="@string/modificador"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="88dp"
+            android:hint="@string/modificador_positivo"
             android:importantForAutofill="no"
             android:inputType="number"
             android:textSize="14sp"
@@ -43,11 +57,13 @@
             android:id="@+id/img_dado"
             android:layout_width="189dp"
             android:layout_height="228dp"
+            android:layout_marginTop="17dp"
             android:layout_marginBottom="356dp"
             android:contentDescription="@string/dado"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_modificador_negativo"
             app:srcCompat="@drawable/dado" />
 
         <Button
@@ -55,6 +71,7 @@
             android:layout_width="108dp"
             android:layout_height="65dp"
             android:layout_marginStart="153dp"
+            android:layout_marginTop="27dp"
             android:layout_marginEnd="150dp"
             android:layout_marginBottom="264dp"
             android:backgroundTint="@color/gris"
@@ -64,21 +81,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_dado" />
 
         <TextView
             android:id="@+id/txt_resultado_final"
             style="@style/txt_resultado_dados"
-            android:layout_width="138dp"
-            android:layout_height="34dp"
+            android:layout_width="382dp"
+            android:layout_height="40dp"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="258dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="204dp"
             android:text="@string/resultado_final"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tirar" />
 
         <TextView
             android:id="@+id/txt_titulo_resultado"
@@ -92,45 +109,46 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_resultado_final" />
+
+        <ImageButton
+            android:id="@+id/btn_felcha_dados"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="129dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/flecha"
+            android:scaleType="fitXY"
+            android:src="@drawable/return_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_resultado_final" />
+
+        <EditText
+            android:id="@+id/txt_numero_de_caras"
+            android:layout_width="126dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="228dp"
+            android:layout_marginTop="32dp"
+            android:hint="@string/numero_de_caras"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/txt_resultado_dados"
             style="@style/txt_resultado_dados"
             android:layout_width="327dp"
             android:layout_height="132dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="68dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginStart="14dp"
             android:text="@string/dado1_3_dado2_9_dado3_15_dado4_10_dado5_1_scroll_para_ver_todos_los_dados_si_es_necesario"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Spinner
-            android:id="@+id/spin_tipodado"
-            android:layout_width="128dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="59dp"
-            android:layout_marginEnd="11dp"
-            app:layout_constraintEnd_toStartOf="@+id/txt_modificador"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/txt_numero_de_dados"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/btn_felcha_dados"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginBottom="4dp"
-            android:backgroundTint="#00FFFFFF"
-            android:scaleType="fitXY"
-            android:src="@drawable/return_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_titulo_resultado" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

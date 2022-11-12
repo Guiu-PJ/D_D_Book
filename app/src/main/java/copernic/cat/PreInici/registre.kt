@@ -36,7 +36,7 @@ class registre : AppCompatActivity() {
             val password = binding.contrasenyaRegistre.text.toString()
             val repeatPassword = binding.repetirContrasenya.text.toString()
 
-            if (password.equals(repeatPassword) && checkEmpty(email, password, repeatPassword)){
+            if (password.equals(repeatPassword) && email.isNotEmpty() && password.isNotEmpty() && repeatPassword.isNotEmpty()){
                 register(email, password)
             }
 
@@ -67,7 +67,4 @@ class registre : AppCompatActivity() {
             }
     }
 
-    private fun checkEmpty(email: String, password: String, repeatPassword: String): Boolean {
-        return email.isNotEmpty() && password.isNotEmpty() && repeatPassword.isNotEmpty()
-    }
 }

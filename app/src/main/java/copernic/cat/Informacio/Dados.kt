@@ -1,11 +1,13 @@
 package copernic.cat.Informacio
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import kotlin.random.Random
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import copernic.cat.R
 import copernic.cat.Reglas.accion
@@ -41,5 +43,31 @@ class Dados : Fragment() {
             findNavController().navigate(R.id.action_dados_to_inici)
 
         }
+        binding.btnTirar.setOnClickListener{
+            val arrayresultats = ArrayList<Int>()
+            var restotal = 0
+            var numdados = Integer.parseInt(binding.txtNumeroDeDados.text.toString())
+            val modpositivo = Integer.parseInt(binding.txtModificadorPositivo.text.toString())
+            val numcaras = Integer.parseInt(binding.txtNumeroDeCaras.text.toString())
+            val modnegativo = Integer.parseInt(binding.txtModificadorNegativo.text.toString())
+            var resultat: Int?
+            var string = ""
+            //Toast.makeText(context, (numdados+mod).toString(), Toast.LENGTH_SHORT).show()
+            while (numdados>0){
+                resultat = Random.nextInt((numcaras+1) - 1) + 1
+                arrayresultats.add(resultat)
+                restotal += resultat
+                numdados--
+        }
+            restotal -= modnegativo
+            restotal += modpositivo
+            binding.txtResultadoFinal.text = "Resultado final: " + (restotal).toString()
+            for(i in arrayresultats) {
+                string += "Dado" + i.toString() + ": " + (arrayresultats[i]).toString() + "  "
+            }
+            binding.txtResultadoDados.text = string
+            //Toast.makeText(context, (numdados).toString()+(numcaras+modpositivo).toString(), Toast.LENGTH_SHORT).show()
+        }
     }
+
 }

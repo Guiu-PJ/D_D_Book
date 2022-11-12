@@ -7,7 +7,7 @@
         android:id="@+id/estadisticas"
         android:title="@string/estadisticas"/>
     <item
-        android:id="@+id/perfil"
+        android:id="@+id/novedades"
         android:title="@string/perfil"/>
     <item
         android:id="@+id/partidas"
@@ -15,5 +15,5 @@
 
     <item
         android:id="@+id/cerrarsesion"
-        android:title="Cerrar sesion" />
+        android:title="@string/cerrar_sesion" />
 </menu>

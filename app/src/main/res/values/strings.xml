@@ -5,7 +5,7 @@
     <string name="dados">Dados</string>
     <string name="titulo">Administración</string>
     <string name="numero_de_dados">Número de dados</string>
-    <string name="modificador">Modificador</string>
+    <string name="modificador_positivo">Modificador positivo</string>
     <string name="tirar">Tirar</string>
     <string name="resultado_final">Resultado final:</string>
     <string name="resultado_de_cada_dado">Resultado de cada dado:</string>
@@ -100,5 +100,8 @@
     <string name="estadisticas">estadisticas</string>
     <string name="partidas">partidas</string>
     <string name="inici">inicio</string>
+    <string name="cerrar_sesion">Cerrar sesion</string>
+    <string name="numero_de_caras">Numero de caras</string>
+    <string name="modificador_negativo">Modificador negativo</string>
 
 </resources>

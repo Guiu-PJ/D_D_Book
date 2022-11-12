@@ -8,9 +8,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.activity
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -28,27 +31,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var appBarConfiguration = AppBarConfiguration(
+        val appBarConfiguration = AppBarConfiguration(
             setOf(R.id.inici, R.id.novedades),
             binding.drawerLayout
         )
         setupActionBarWithNavController(NavController(this), appBarConfiguration)
+
         binding.navView.setNavigationItemSelectedListener {
-            when(it.itemId){
+            when(it.itemId) {
                 R.id.inici -> {
-                    var intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
                     true
                 }
                 R.id.novedades -> {
-                    //findNavController().navigate(R.id.action_inici_to_dados)
+
                     true
                 }
                 R.id.cerrarsesion -> {
                     FirebaseAuth.getInstance().signOut()
                     //startActivity(Intent(this, login::class.java))
-                    var intent = Intent(this, login::class.java)
+                    val intent = Intent(this, login::class.java)
                     startActivity(intent)
                     finish()
                     true
@@ -57,6 +61,8 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+
+
     }
 
 
@@ -72,13 +78,15 @@ class MainActivity : AppCompatActivity() {
             R.id.cerrarsesion -> {
                 FirebaseAuth.getInstance().signOut()
                 //startActivity(Intent(this, login::class.java))
-                var intent = Intent(this, login::class.java)
+                val intent = Intent(this, login::class.java)
                 startActivity(intent)
                 finish()}
         }
 
         return super.onOptionsItemSelected(item)
     }
-
+private fun fragmentTransition(fragment: Fragment){
+    //supportFragmentManager.beginTransaction().remplace(R.id.)
+}
 
 }
