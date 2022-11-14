@@ -1,22 +1,17 @@
 package copernic.cat.Inici
 
-import android.content.ClipData
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
-import androidx.navigation.activity
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.firebase.auth.FirebaseAuth
 import copernic.cat.PreInici.login
@@ -27,6 +22,7 @@ import copernic.cat.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -38,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(NavController(this), appBarConfiguration)
 
         binding.navView.setNavigationItemSelectedListener {
+            //val fragmentManager: fragmentManager = supportFragmentManager
+
             when(it.itemId) {
                 R.id.inici -> {
                     val intent = Intent(this, MainActivity::class.java)
@@ -47,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.novedades -> {
 
+                    //replaceFragment(fragment, R.id.container)
                     true
                 }
                 R.id.cerrarsesion -> {
@@ -86,7 +85,13 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 private fun fragmentTransition(fragment: Fragment){
-    //supportFragmentManager.beginTransaction().remplace(R.id.)
+    //supportFragmentManager.beginTransaction().remplace(R.id.novedades)
 }
+    inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
+        beginTransaction().func().commit()
+    }
+    fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int) {
+        supportFragmentManager.inTransaction{replace(frameId, fragment)}
+    }
 
 }

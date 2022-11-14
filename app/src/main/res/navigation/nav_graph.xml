@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_inici_to_perfil"
             app:destination="@id/perfil" />
+        <action
+            android:id="@+id/action_inici_to_compendios"
+            app:destination="@id/compendios" />
     </fragment>
     <fragment
         android:id="@+id/novedades"
@@ -202,4 +205,9 @@
             android:id="@+id/action_trasfondos_to_reglas"
             app:destination="@id/reglas" />
     </fragment>
+    <fragment
+        android:id="@+id/compendios"
+        android:name="copernic.cat.Informacio.compendios"
+        android:label="fragment_compendios"
+        tools:layout="@layout/fragment_compendios" />
 </navigation>

@@ -1,17 +1,19 @@
-package copernic.cat.Perfil
+package copernic.cat.Informacio
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
+import copernic.cat.R
+import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
+import copernic.cat.RecycleViewCompendios.ListaCompendios
 import copernic.cat.RecycleViewPersonajesPerfil.AdapterListaPersonajes
 import copernic.cat.RecycleViewPersonajesPerfil.ListaPersonajes
-import copernic.cat.Reglas.accion
-import copernic.cat.databinding.FragmentPerfilBinding
+import copernic.cat.databinding.FragmentCompendiosBinding
+import copernic.cat.databinding.FragmentDadosBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,40 +22,34 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [accion.newInstance] factory method to
+ * Use the [compendios.newInstance] factory method to
  * create an instance of this fragment.
  */
-
-class perfil : Fragment() {
-
-    private lateinit var botoLogout: Button
-    private var _binding: FragmentPerfilBinding? = null
+class compendios : Fragment() {
+    private var _binding: FragmentCompendiosBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPerfilBinding.inflate(inflater, container, false)
+        // Inflate the layout for this fragment
+        _binding = FragmentCompendiosBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
-        binding.imgCerrarSesion.setOnClickListener{
-            FirebaseAuth.getInstance().signOut()
-        }
     }
+
+
     private fun initRecyclerView(){
-        binding.recyclerPersonajes.layoutManager = LinearLayoutManager(context)
-        binding.recyclerPersonajes.adapter = AdapterListaPersonajes(ListaPersonajes.ListaPersonajeslist)
+        binding.recyclerCompendios.layoutManager = LinearLayoutManager(context)
+        binding.recyclerCompendios.adapter = AdapterListaCompendios(ListaCompendios.ListaCompendioslist)
     }
 
 }

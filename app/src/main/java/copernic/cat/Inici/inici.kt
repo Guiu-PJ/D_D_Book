@@ -47,6 +47,10 @@ class inici : Fragment() {
             findNavController().navigate(R.id.action_inici_to_novedades)
         }
 
+        binding.btnCompendios.setOnClickListener{
+            findNavController().navigate(R.id.action_inici_to_compendios)
+        }
+
         binding.btnReglas.setOnClickListener{
             findNavController().navigate(R.id.action_inici_to_reglas)
         }
