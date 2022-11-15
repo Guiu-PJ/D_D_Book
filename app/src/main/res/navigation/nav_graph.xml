@@ -93,7 +93,11 @@
         android:id="@+id/perfil"
         android:name="copernic.cat.Perfil.perfil"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfil_to_editar_perfil"
+            app:destination="@id/editar_perfil" />
+    </fragment>
     <fragment
         android:id="@+id/accion"
         android:name="copernic.cat.Reglas.accion"
@@ -218,5 +222,14 @@
         <action
             android:id="@+id/action_estadisticas_to_inici"
             app:destination="@id/inici" />
+    </fragment>
+    <fragment
+        android:id="@+id/editar_perfil"
+        android:name="copernic.cat.Perfil.editar_perfil"
+        android:label="fragment_editar_perfil"
+        tools:layout="@layout/fragment_editar_perfil" >
+        <action
+            android:id="@+id/action_editar_perfil_to_perfil"
+            app:destination="@id/perfil" />
     </fragment>
 </navigation>

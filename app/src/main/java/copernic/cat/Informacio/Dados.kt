@@ -62,8 +62,10 @@ class Dados : Fragment() {
             restotal -= modnegativo
             restotal += modpositivo
             binding.txtResultadoFinal.text = "Resultado final: " + (restotal).toString()
+           var num = 0
             for(i in arrayresultats) {
-                string += "Dado" + i.toString() + ": " + (arrayresultats[i]).toString() + "  "
+                string += "Dado" + (num+1).toString() + ": " + (arrayresultats[num]).toString() + "  "
+                num = num+1
             }
             binding.txtResultadoDados.text = string
             //Toast.makeText(context, (numdados).toString()+(numcaras+modpositivo).toString(), Toast.LENGTH_SHORT).show()
