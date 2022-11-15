@@ -7,7 +7,7 @@
         android:id="@+id/estadisticas"
         android:title="@string/estadisticas"/>
     <item
-        android:id="@+id/novedades"
+        android:id="@+id/perfil"
         android:title="@string/perfil"/>
     <item
         android:id="@+id/partidas"

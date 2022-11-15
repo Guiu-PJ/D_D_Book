@@ -1,19 +1,30 @@
 package copernic.cat.Inici
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
+import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.firebase.auth.FirebaseAuth
+import copernic.cat.Informacio.novedades
+import copernic.cat.Perfil.estadisticas
+import copernic.cat.Perfil.partidas
+import copernic.cat.Perfil.perfil
 import copernic.cat.PreInici.login
 import copernic.cat.R
 import copernic.cat.databinding.ActivityMainBinding
@@ -43,9 +54,28 @@ class MainActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-                R.id.novedades -> {
-
-                    //replaceFragment(fragment, R.id.container)
+                R.id.estadisticas -> {
+                    val newFragment = estadisticas()
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.container_main, newFragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                    true
+                }
+                R.id.perfil -> {
+                    val newFragment = perfil()
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.container_main, newFragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                    true
+                }
+                R.id.partidas -> {
+                    val newFragment = partidas()
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.container_main, newFragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
                     true
                 }
                 R.id.cerrarsesion -> {
@@ -57,41 +87,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 else -> super.onOptionsItemSelected(it)
-
             }
         }
-
-
     }
-
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.perfil -> {Toast.makeText(this,"hola", Toast.LENGTH_SHORT).show()}
-            R.id.cerrarsesion -> {
-                FirebaseAuth.getInstance().signOut()
-                //startActivity(Intent(this, login::class.java))
-                val intent = Intent(this, login::class.java)
-                startActivity(intent)
-                finish()}
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-private fun fragmentTransition(fragment: Fragment){
-    //supportFragmentManager.beginTransaction().remplace(R.id.novedades)
-}
-    inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
-        beginTransaction().func().commit()
-    }
-    fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int) {
-        supportFragmentManager.inTransaction{replace(frameId, fragment)}
-    }
-
 }

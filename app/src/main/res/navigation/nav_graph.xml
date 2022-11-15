@@ -210,4 +210,13 @@
         android:name="copernic.cat.Informacio.compendios"
         android:label="fragment_compendios"
         tools:layout="@layout/fragment_compendios" />
+    <fragment
+        android:id="@+id/estadisticas"
+        android:name="copernic.cat.Perfil.estadisticas"
+        android:label="fragment_estadisticas"
+        tools:layout="@layout/fragment_estadisticas" >
+        <action
+            android:id="@+id/action_estadisticas_to_inici"
+            app:destination="@id/inici" />
+    </fragment>
 </navigation>

@@ -16,8 +16,8 @@
 
     <TextView
         android:id="@+id/txt_listacompendios"
-        android:layout_width="295dp"
-        android:layout_height="71dp"
+        android:layout_width="287dp"
+        android:layout_height="46dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="20dp"
