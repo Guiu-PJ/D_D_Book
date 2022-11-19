@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditarPerfilBinding
-import copernic.cat.databinding.FragmentEstadisticasBinding
+import copernic.cat.databinding.FragmentPerfilBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,15 +21,14 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class editar_perfil : Fragment() {
+
     private var _binding: FragmentEditarPerfilBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         _binding = FragmentEditarPerfilBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -40,7 +39,6 @@ class editar_perfil : Fragment() {
         binding.btnAceptar.setOnClickListener {
             findNavController().navigate(R.id.action_editar_perfil_to_perfil)
         }
-
     }
 
 }

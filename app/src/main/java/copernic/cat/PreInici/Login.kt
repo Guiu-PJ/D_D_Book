@@ -4,24 +4,21 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
+import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.Inici.MainActivity
-import copernic.cat.Inici.inici
-import copernic.cat.R
+import copernic.cat.classes.usuaris
 import copernic.cat.databinding.ActivityLoginBinding
-import copernic.cat.databinding.ActivityRecuperarContrasenyaBinding
-import copernic.cat.databinding.FragmentIniciBinding
 
 class login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
+    private var bd = FirebaseFirestore.getInstance()
+    //private lateinit var Usuari: usuaris
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +43,17 @@ class login : AppCompatActivity() {
             //finish()
         }
 
+        binding.addBTN.setOnClickListener {
+            val usuaris = llegirDades()
 
+            if(usuaris.Email.isNotEmpty()){
+                bd.collection("Usuari").document("ID Usuario").set(hashMapOf("Email" to binding.correuLogin.text.toString(), "Admin" to false)).addOnSuccessListener {
+                    //Toast.makeText(applicationContext,"L'usuari s'ha afegit correctament", Toast.LENGTH_LONG).show()
+                }.addOnFailureListener{
+                    //Toast.makeText(applicationContext,"L'usuari no s'ha afegit", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
 
 
         binding.botoLogin.setOnClickListener{
@@ -126,4 +133,11 @@ class login : AppCompatActivity() {
     private fun checkEmpty(email: String, password: String): Boolean {
         return email.isNotEmpty() && password.isNotEmpty()
     }
+
+    private fun llegirDades(): usuaris {
+        val email =binding.correuLogin.text.toString()
+
+        return usuaris(email, false)
+    }
+
 }

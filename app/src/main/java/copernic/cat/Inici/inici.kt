@@ -1,20 +1,14 @@
 package copernic.cat.Inici
 
 import android.os.Bundle
-import android.renderscript.ScriptGroup.Binding
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
 import copernic.cat.R
 import copernic.cat.Reglas.accion
-import copernic.cat.databinding.ActivityMainBinding
-import copernic.cat.databinding.ActivityRecuperarContrasenyaBinding
 import copernic.cat.databinding.FragmentIniciBinding
-import copernic.cat.databinding.FragmentNovedadesBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,6 +51,10 @@ class inici : Fragment() {
 
         binding.btnDados.setOnClickListener{
             findNavController().navigate(R.id.action_inici_to_dados)
+        }
+
+        binding.btnAAdirReglas.setOnClickListener{
+            findNavController().navigate(R.id.action_inici_to_anadir_reglas)
         }
     }
 

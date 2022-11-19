@@ -33,13 +33,14 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_enlace_compendio2">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_añadir_nombre_compendio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btn_añadir_foto_compendio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -58,6 +59,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_enlace_compendio">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_añadir_enlace_compendio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="hint" />
@@ -72,6 +74,16 @@
             android:text="Enlace al compendio"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button6" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_añadir_foto_compendio" />
+
+        <ImageView
+            android:id="@+id/img_añadir_compendios"
+            android:layout_width="91dp"
+            android:layout_height="93dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="116dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

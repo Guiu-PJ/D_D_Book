@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import copernic.cat.R
 import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
+import copernic.cat.RecycleViewCompendios.ClassCompendios
 import copernic.cat.RecycleViewCompendios.ListaCompendios
 import copernic.cat.RecycleViewPersonajesPerfil.AdapterListaPersonajes
+import copernic.cat.RecycleViewPersonajesPerfil.ClassListaPersonajes
 import copernic.cat.RecycleViewPersonajesPerfil.ListaPersonajes
 import copernic.cat.databinding.FragmentCompendiosBinding
 import copernic.cat.databinding.FragmentDadosBinding
@@ -44,12 +46,15 @@ class compendios : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
+
     }
 
 
     private fun initRecyclerView(){
         binding.recyclerCompendios.layoutManager = LinearLayoutManager(context)
         binding.recyclerCompendios.adapter = AdapterListaCompendios(ListaCompendios.ListaCompendioslist)
+
     }
+
 
 }

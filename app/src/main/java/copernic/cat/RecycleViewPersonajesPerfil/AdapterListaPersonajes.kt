@@ -8,6 +8,15 @@ import copernic.cat.databinding.ItemListapersonajesBinding
 class AdapterListaPersonajes(private val ListaPersonajes:List<ClassListaPersonajes>) : RecyclerView.Adapter<AdapterListaPersonajes.ListaPersonajesViewHolder>(){
     inner class ListaPersonajesViewHolder(val binding: ItemListapersonajesBinding):RecyclerView.ViewHolder(binding.root)
     private var binding: ItemListapersonajesBinding? = null
+    private lateinit var mListener: onItemCLickListener
+
+    interface onItemCLickListener{
+        fun onItemCLick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemCLickListener){
+        mListener = listener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListaPersonajesViewHolder {
         //val layoutInflater = LayoutInflater.from(parent.context)
@@ -23,6 +32,7 @@ class AdapterListaPersonajes(private val ListaPersonajes:List<ClassListaPersonaj
                 binding.imgListapersonajes.setImageResource(this.image)
             }
         }
+
     }
 
     override fun getItemCount(): Int {

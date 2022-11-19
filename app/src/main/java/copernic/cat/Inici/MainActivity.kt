@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import copernic.cat.Perfil.editar_perfil
 import copernic.cat.Perfil.estadisticas
 import copernic.cat.Perfil.partidas
 import copernic.cat.Perfil.perfil
@@ -44,6 +45,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 copernic.cat.R.id.perfil -> {
                     val newFragment = perfil()
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.replace(copernic.cat.R.id.container_main, newFragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                    true
+                }
+                copernic.cat.R.id.editar_perfil -> {
+                    val newFragment = editar_perfil()
                     val transaction = supportFragmentManager.beginTransaction()
                     transaction.replace(copernic.cat.R.id.container_main, newFragment)
                     transaction.addToBackStack(null)

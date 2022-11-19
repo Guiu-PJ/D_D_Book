@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_nombre_perfil2" />
 
         <ImageButton
-            android:id="@+id/img_editar_perfil"
+            android:id="@+id/btn_editar_perfil"
             android:layout_width="65dp"
             android:layout_height="61dp"
             android:backgroundTint="#00FFFFFF"
@@ -78,7 +78,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="80dp"
             android:text="@string/cerrar_sesi_n"
-            app:layout_constraintStart_toEndOf="@+id/img_editar_perfil"
+            app:layout_constraintStart_toEndOf="@+id/btn_editar_perfil"
             app:layout_constraintTop_toBottomOf="@+id/txt_correo_perfil2" />
 
         <ImageButton
@@ -102,13 +102,13 @@
             android:text="@string/crear_nuevo_personaje"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_editar_perfil" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_editar_perfil" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_personajes"
             android:layout_width="411dp"
             android:layout_height="335dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_nuevo_personaje"></androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@+id/btn_nuevo_personaje" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

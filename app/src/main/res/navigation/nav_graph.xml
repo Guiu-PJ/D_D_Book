@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_inici_to_compendios"
             app:destination="@id/compendios" />
+        <action
+            android:id="@+id/action_inici_to_anadir_reglas"
+            app:destination="@id/anadir_reglas" />
     </fragment>
     <fragment
         android:id="@+id/novedades"
@@ -232,4 +235,18 @@
             android:id="@+id/action_editar_perfil_to_perfil"
             app:destination="@id/perfil" />
     </fragment>
+    <fragment
+        android:id="@+id/anadir_reglas"
+        android:name="copernic.cat.Admin.anadir_reglas"
+        android:label="fragment_anadir_reglas"
+        tools:layout="@layout/fragment_anadir_reglas" >
+        <action
+            android:id="@+id/action_anadir_reglas_to_inici"
+            app:destination="@id/inici" />
+    </fragment>
+    <fragment
+        android:id="@+id/anadir_compendios"
+        android:name="copernic.cat.Admin.anadir_compendios"
+        android:label="fragment_anadir_compendios"
+        tools:layout="@layout/fragment_anadir_compendios" />
 </navigation>

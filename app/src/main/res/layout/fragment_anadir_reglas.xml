@@ -31,6 +31,7 @@
             android:layout_marginTop="164dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_titulo_reglas"
                 android:layout_width="196dp"
                 android:layout_height="wrap_content"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -42,12 +43,33 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="108dp"
             android:layout_marginTop="226dp">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txt_descripcion_reglas"
                 android:layout_width="196dp"
                 android:layout_height="400dp"
-                tools:ignore="SpeakableTextPresentCheck"
-                />
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_añadir_regla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginBottom="26dp"
+            android:text="Añadir"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_cancelar_regla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="26dp"
+            android:text="Cancelar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -19,7 +19,6 @@
         android:layout_height="32dp"
         android:layout_marginStart="26dp"
         android:layout_marginTop="110dp"
-        android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/img_listapersonajes"
         app:layout_constraintTop_toTopOf="parent" />

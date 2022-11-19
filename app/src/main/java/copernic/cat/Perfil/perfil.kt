@@ -7,13 +7,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import copernic.cat.R
-import copernic.cat.RecycleViewPersonajesPerfil.AdapterListaPersonajes
-import copernic.cat.RecycleViewPersonajesPerfil.ListaPersonajes
 import copernic.cat.Reglas.accion
-import copernic.cat.databinding.FragmentEstadisticasBinding
 import copernic.cat.databinding.FragmentPerfilBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,10 +38,8 @@ class perfil : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.imgEditarPerfil.setOnClickListener {
+        binding.btnEditarPerfil.setOnClickListener {
             findNavController().navigate(R.id.action_perfil_to_editar_perfil)
         }
-
     }
-
 }

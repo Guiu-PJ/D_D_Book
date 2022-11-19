@@ -1,13 +1,14 @@
 package copernic.cat.RecycleViewCompendios
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import copernic.cat.databinding.ItemLiatcompendiosBinding
 
 class AdapterListaCompendios(private val ListaCompendios:List<ClassCompendios>) : RecyclerView.Adapter<AdapterListaCompendios.ListaCompendiosViewHolder>() {
     inner class ListaCompendiosViewHolder(val binding: ItemLiatcompendiosBinding): RecyclerView.ViewHolder(binding.root)
-    private var binding: ItemLiatcompendiosBinding? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterListaCompendios.ListaCompendiosViewHolder {
         //val layoutInflater = LayoutInflater.from(parent.context)
@@ -28,5 +29,15 @@ class AdapterListaCompendios(private val ListaCompendios:List<ClassCompendios>) 
 
     override fun getItemCount(): Int {
         return ListaCompendios.size
+    }
+    var onItemClick: ((ListaCompendios) -> Unit)? = null
+    var contacts: List<ListaCompendios> = emptyList()
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        init {
+            itemView.setOnClickListener {
+                onItemClick?.invoke(contacts[adapterPosition])
+            }
+        }
     }
 }

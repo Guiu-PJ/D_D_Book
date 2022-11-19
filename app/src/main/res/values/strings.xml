@@ -103,5 +103,6 @@
     <string name="cerrar_sesion">Cerrar sesion</string>
     <string name="numero_de_caras">Numero de caras</string>
     <string name="modificador_negativo">Modificador negativo</string>
+    <string name="afegir">Afegir</string>
 
 </resources>

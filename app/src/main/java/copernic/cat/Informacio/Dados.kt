@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import kotlin.random.Random
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.R
 import copernic.cat.Reglas.accion
 import copernic.cat.databinding.FragmentDadosBinding
@@ -27,6 +28,7 @@ private const val ARG_PARAM2 = "param2"
 class Dados : Fragment() {
     private var _binding: FragmentDadosBinding? = null
     private val binding get() = _binding!!
+    private var bd = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,6 +71,9 @@ class Dados : Fragment() {
             }
             binding.txtResultadoDados.text = string
             //Toast.makeText(context, (numdados).toString()+(numcaras+modpositivo).toString(), Toast.LENGTH_SHORT).show()
+            //bd.collection("Reglas").document("ID Reglas").set(hashMapOf("Nombre" to binding.txtResultadoDados.text.toString(), "Descripcion" to binding.txtResultadoFinal.text.toString()))
+            bd.collection("Usuari").document("ID Usuario").collection("Estadisticas")//Col.lecció
+                .document("ID Estadisticas").set(hashMapOf("Criticos" to binding.txtResultadoDados.text.toString()))
         }
     }
 
