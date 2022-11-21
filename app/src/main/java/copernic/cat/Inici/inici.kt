@@ -53,8 +53,13 @@ class inici : Fragment() {
             findNavController().navigate(R.id.action_inici_to_dados)
         }
 
+
+        ///////////////Pruebas///////////////
         binding.btnAAdirReglas.setOnClickListener{
             findNavController().navigate(R.id.action_inici_to_anadir_reglas)
+        }
+        binding.btnAAdirCompendioInici.setOnClickListener{
+            findNavController().navigate(R.id.action_inici_to_anadir_compendios)
         }
     }
 

@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_inici_to_anadir_reglas"
             app:destination="@id/anadir_reglas" />
+        <action
+            android:id="@+id/action_inici_to_anadir_compendios"
+            app:destination="@id/anadir_compendios" />
     </fragment>
     <fragment
         android:id="@+id/novedades"
@@ -249,4 +252,9 @@
         android:name="copernic.cat.Admin.anadir_compendios"
         android:label="fragment_anadir_compendios"
         tools:layout="@layout/fragment_anadir_compendios" />
+    <fragment
+        android:id="@+id/partidas2"
+        android:name="copernic.cat.Perfil.partidas"
+        android:label="fragment_partidas"
+        tools:layout="@layout/fragment_partidas" />
 </navigation>

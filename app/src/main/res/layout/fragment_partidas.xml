@@ -44,5 +44,12 @@
             android:text="Borrar partida"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_partidas" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reciclerview_partidas"
+            android:layout_width="409dp"
+            android:layout_height="516dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

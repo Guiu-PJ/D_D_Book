@@ -7,7 +7,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import copernic.cat.R
+import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
+import copernic.cat.RecycleViewCompendios.ListaCompendios
+import copernic.cat.RecycleViewPersonajesPerfil.AdapterListaPersonajes
+import copernic.cat.RecycleViewPersonajesPerfil.ListaPersonajes
 import copernic.cat.Reglas.accion
 import copernic.cat.databinding.FragmentPerfilBinding
 
@@ -41,5 +46,13 @@ class perfil : Fragment() {
         binding.btnEditarPerfil.setOnClickListener {
             findNavController().navigate(R.id.action_perfil_to_editar_perfil)
         }
+        initRecyclerView()
     }
+
+    private fun initRecyclerView(){
+        binding.recyclerPersonajes.layoutManager = LinearLayoutManager(context)
+        binding.recyclerPersonajes.adapter = AdapterListaPersonajes(ListaPersonajes.ListaPersonajeslist)
+
+    }
+
 }

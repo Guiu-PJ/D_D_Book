@@ -17,6 +17,8 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import copernic.cat.R
+import copernic.cat.classes.compendios
+import copernic.cat.classes.reglas
 import copernic.cat.databinding.FragmentAnadirCompendiosBinding
 
 
@@ -34,8 +36,6 @@ class anadir_compendios : Fragment() {
     private var _binding: FragmentAnadirCompendiosBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
-    private val SELECT_FILE = 1
-    private val PICK_IMAGE = R.drawable.cachodemadera
     private var photoSelectedUri: Uri?=null
 
     //resultLauncher és l'atribut on guardarem el resultat de la nostra activitat, en el nostre cas obrir la galeria i mitjançant el qual
@@ -59,8 +59,16 @@ class anadir_compendios : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.imgAAdirCompendios.setImageResource(R.drawable.cachodemadera)
         super.onViewCreated(view, savedInstanceState)
-        binding.imgAAdirCompendios.setOnClickListener {
+        binding.btnAAdirFotoCompendio.setOnClickListener {
             afegirImatge()
+        }
+        binding.btnAAdirCompendio.setOnClickListener {
+            val compendios = llegirDades()
+
+            if (compendios.titulo.isNotEmpty() && compendios.enlace.isNotEmpty()) {
+                bd.collection("Compendios").document("ID Compendio").set(hashMapOf("Titulo" to binding.txtAAdirNombreCompendio.text.toString(), "Enlace" to binding.txtAAdirEnlaceCompendio.text.toString()))
+
+                }
         }
     }
     private val guardarImgCamera = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
@@ -83,8 +91,30 @@ class anadir_compendios : Fragment() {
                 }
         }
     }
-}
 
+    fun llegirDades(): compendios {
+        val titulo =binding.txtAAdirNombreCompendio.text.toString()
+        val enlace =binding.txtAAdirEnlaceCompendio.text.toString()
+
+        return compendios(titulo, enlace)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        //if (requestCode == 100 && resultCode == RESULT_OK){
+
+        //}
+
+    }
+
+    private fun selectimg(){
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent, 100)
+    }
+}
+//bd.collection("Reglas").document("ID Reglas").set(hashMapOf("Nombre" to binding.txtTituloReglas.text.toString(), "Descripcion" to binding.txtDescripcionReglas.text.toString())).addOnSuccessListener {
 
 
 

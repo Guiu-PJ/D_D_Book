@@ -5,7 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import copernic.cat.R
+import copernic.cat.RecycleViewPersonajesPerfil.AdapterListaPersonajes
+import copernic.cat.RecycleViewPersonajesPerfil.ListaPersonajes
+import copernic.cat.RecyclerViewPerfil.AdapterListaPerfil
+import copernic.cat.RecyclerViewPerfil.ListaPerfil
 import copernic.cat.databinding.FragmentEstadisticasBinding
 import copernic.cat.databinding.FragmentPartidasBinding
 import copernic.cat.databinding.FragmentPerfilBinding
@@ -27,4 +33,18 @@ class partidas : Fragment() {
         _binding = FragmentPartidasBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView(){
+        binding.reciclerviewPartidas.layoutManager = LinearLayoutManager(context)
+        binding.reciclerviewPartidas.adapter = AdapterListaPerfil(ListaPerfil.ListaPerfil)
+
+    }
+
+
 }
