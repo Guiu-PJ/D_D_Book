@@ -85,4 +85,5 @@ class registre : AppCompatActivity() {
 
         return usuaris(email, false)
     }
+
 }

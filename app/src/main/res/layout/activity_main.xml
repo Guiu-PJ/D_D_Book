@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
-            app:menu="@menu/menu_des" />
+            app:menu="@menu/menu_des"/>
 
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
