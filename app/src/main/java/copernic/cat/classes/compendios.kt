@@ -1,3 +1,3 @@
 package copernic.cat.classes
 
-data class compendios(val titulo: String, val enlace: String)
+data class compendios(val nombre: String, val enlace: String)

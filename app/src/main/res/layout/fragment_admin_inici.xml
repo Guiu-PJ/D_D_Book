@@ -14,8 +14,9 @@
     <Button
         android:id="@+id/btn_novedades"
         style="@style/btn_inicio"
-        android:layout_marginTop="144dp"
-        android:text="@string/novedades"
+        android:layout_marginTop="70dp"
+        android:text="@string/a_adir_novedades"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +24,7 @@
     <Button
         android:id="@+id/btn_usuarios"
         style="@style/btn_inicio"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="76dp"
         android:text="@string/usuarios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,8 +33,8 @@
     <Button
         android:id="@+id/btn_reglas"
         style="@style/btn_inicio"
-        android:layout_marginTop="60dp"
-        android:text="@string/reglas"
+        android:layout_marginTop="76dp"
+        android:text="@string/a_adir_reglas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,8 +43,9 @@
     <Button
         android:id="@+id/btn_compendios"
         style="@style/btn_inicio"
-        android:layout_marginTop="60dp"
-        android:text="@string/compendios"
+        android:layout_marginTop="76dp"
+        android:text="@string/a_adir_compendio"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

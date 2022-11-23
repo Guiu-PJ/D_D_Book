@@ -51,7 +51,7 @@
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="10dp"
                         android:minHeight="48dp"
-                        android:textColor="@color/groc"
+                        android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -85,7 +85,7 @@
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="10dp"
                         android:minHeight="48dp"
-                        android:textColor="@color/groc"
+                        android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -119,21 +119,19 @@
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="10dp"
                         android:minHeight="48dp"
-                        android:textColor="@color/groc"
+                        android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/img_flecha_nov_adm"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btn_aceptar_novedades"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="340dp"
-                    android:clickable="true"
-                    android:src="@drawable/flecha"
-                    tools:ignore="SpeakableTextPresentCheck"/>
+                    android:layout_marginTop="50dp"
+                    android:text="Aceptar" />
 
 
             </LinearLayout>

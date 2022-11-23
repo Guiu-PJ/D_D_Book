@@ -58,11 +58,13 @@ class registre : AppCompatActivity() {
                     val usuaris = llegirDades()
 
                     if(usuaris.Email.isNotEmpty()){
-                        bd.collection("Usuari").document("ID Usuario").set(hashMapOf("Email" to binding.correuRegistre.text.toString(), "Admin" to false)).addOnSuccessListener {
-                            Toast.makeText(applicationContext,"L'usuari s'ha afegit correctament", Toast.LENGTH_LONG).show()
-                        }.addOnFailureListener{
-                            Toast.makeText(applicationContext,"L'usuari no s'ha afegit", Toast.LENGTH_LONG).show()
-                        }
+                        val user = auth.currentUser
+
+                        bd.collection("Usuari").document(user!!.uid).set(hashMapOf("Email" to binding.correuRegistre.text.toString(), "Admin" to false))
+                        bd.collection("Usuari").document(user.uid).collection("Estadisticas")//Col.lecció
+                          .document("ID Estadisticas").set(hashMapOf("numero tiradas" to 0, "criticos" to 0, "numero de personajes" to 0, "numero de partidas" to 0, "clase mas jugada" to "ninguna", "personaje mas jugado" to "ninguno"))
+                        bd.collection("Usuari").document(user.uid).collection("Partidas").document("Plantilla partida").set(hashMapOf("numero de partida" to 0, "id personaje" to 0, "ficha personaje" to "pdf"))
+                        //bd.collection("Usuari").document(binding.correuRegistre.text.toString()).collection("Personajes").document("Plantilla personaje").set(hashMapOf())
                     }
                     startActivity(Intent(this, login::class.java))
                     finish()
@@ -78,7 +80,6 @@ class registre : AppCompatActivity() {
                 }
             }
     }
-
 
     private fun llegirDades(): usuaris {
         val email =binding.correuRegistre.text.toString()

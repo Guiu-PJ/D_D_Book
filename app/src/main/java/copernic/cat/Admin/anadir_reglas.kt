@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Colecciones.Reglas
 import copernic.cat.R
 import copernic.cat.classes.reglas
 import copernic.cat.classes.usuaris
@@ -44,8 +45,8 @@ class anadir_reglas : Fragment() {
         binding.btnAAdirRegla.setOnClickListener {
             val reglas = llegirDades()
 
-            if(reglas.nombre.isNotEmpty() && reglas.Descripcion.isNotEmpty()){
-                bd.collection("Reglas").document("ID Reglas").set(hashMapOf("Nombre" to binding.txtTituloReglas.text.toString(), "Descripcion" to binding.txtDescripcionReglas.text.toString())).addOnSuccessListener {
+            if(reglas.tituloReglas.isNotEmpty() && reglas.descripcionReglas.isNotEmpty()){
+                bd.collection("Reglas").document(binding.txtTituloReglas.text.toString()).set(hashMapOf("Titulo" to binding.txtTituloReglas.text.toString(), "Descripcion" to binding.txtDescripcionReglas.text.toString())).addOnSuccessListener {
                     //val builder = AlertDialog.Builder(this)
                     //builder.setTitle("Correcto")
                     //builder.setMessage("Se a añadido la regla correctamente")
@@ -67,10 +68,10 @@ class anadir_reglas : Fragment() {
     }
 
 
-    fun llegirDades(): reglas {
+    fun llegirDades(): Reglas {
         val titulo =binding.txtTituloReglas.text.toString()
         val descripcion =binding.txtDescripcionReglas.text.toString()
 
-        return reglas(titulo, descripcion)
+        return Reglas(titulo, descripcion)
     }
 }

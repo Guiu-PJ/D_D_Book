@@ -34,7 +34,7 @@
             <TextView
                 android:id="@+id/txt_info_añadido"
                 style="@style/txt_info_novedades"
-                android:text="Se a añadido el nuevo manual del jugador"
+                android:layout_height="wrap_content"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
@@ -48,7 +48,7 @@
             <TextView
                 android:id="@+id/txt_info_eliminado"
                 style="@style/txt_info_novedades"
-                android:text="Se a eliminado la regla de los criticos por posibles errores en la información"
+                android:layout_height="wrap_content"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
@@ -62,7 +62,7 @@
             <TextView
                 android:id="@+id/txt_info_modificado"
                 style="@style/txt_info_novedades"
-                android:text="Se a modificado la ficha de creación de personaje"
+                android:layout_height="wrap_content"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 

@@ -43,19 +43,6 @@ class login : AppCompatActivity() {
             //finish()
         }
 
-        binding.addBTN.setOnClickListener {
-            val usuaris = llegirDades()
-
-            if(usuaris.Email.isNotEmpty()){
-                bd.collection("Usuari").document("ID Usuario").set(hashMapOf("Email" to binding.correuLogin.text.toString(), "Admin" to false)).addOnSuccessListener {
-                    //Toast.makeText(applicationContext,"L'usuari s'ha afegit correctament", Toast.LENGTH_LONG).show()
-                }.addOnFailureListener{
-                    //Toast.makeText(applicationContext,"L'usuari no s'ha afegit", Toast.LENGTH_LONG).show()
-                }
-            }
-        }
-
-
         binding.botoLogin.setOnClickListener{
             val email = binding.correuLogin.text.toString()
             val password = binding.contrasenyaLogin.text.toString()

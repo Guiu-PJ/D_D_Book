@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_inici_to_anadir_compendios"
             app:destination="@id/anadir_compendios" />
+        <action
+            android:id="@+id/action_inici_to_admin_inici"
+            app:destination="@id/admin_inici" />
     </fragment>
     <fragment
         android:id="@+id/novedades"
@@ -246,15 +249,58 @@
         <action
             android:id="@+id/action_anadir_reglas_to_inici"
             app:destination="@id/inici" />
+        <action
+            android:id="@+id/action_anadir_reglas_to_admin_inici"
+            app:destination="@id/admin_inici" />
     </fragment>
     <fragment
         android:id="@+id/anadir_compendios"
         android:name="copernic.cat.Admin.anadir_compendios"
         android:label="fragment_anadir_compendios"
-        tools:layout="@layout/fragment_anadir_compendios" />
+        tools:layout="@layout/fragment_anadir_compendios" >
+        <action
+            android:id="@+id/action_anadir_compendios_to_admin_inici"
+            app:destination="@id/admin_inici" />
+    </fragment>
     <fragment
         android:id="@+id/partidas2"
         android:name="copernic.cat.Perfil.partidas"
         android:label="fragment_partidas"
         tools:layout="@layout/fragment_partidas" />
+    <fragment
+        android:id="@+id/novedades_admin"
+        android:name="copernic.cat.Admin.novedades_admin"
+        android:label="fragment_novedades_admin"
+        tools:layout="@layout/fragment_novedades_admin" >
+        <action
+            android:id="@+id/action_novedades_admin_to_admin_inici"
+            app:destination="@id/admin_inici" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_inici"
+        android:name="copernic.cat.Admin.admin_inici"
+        android:label="fragment_admin_inici"
+        tools:layout="@layout/fragment_admin_inici" >
+        <action
+            android:id="@+id/action_admin_inici_to_anadir_reglas"
+            app:destination="@id/anadir_reglas" />
+        <action
+            android:id="@+id/action_admin_inici_to_anadir_compendios"
+            app:destination="@id/anadir_compendios" />
+        <action
+            android:id="@+id/action_admin_inici_to_novedades_admin"
+            app:destination="@id/novedades_admin" />
+        <action
+            android:id="@+id/action_admin_inici_to_usuarios_admin"
+            app:destination="@id/usuarios_admin" />
+    </fragment>
+    <fragment
+        android:id="@+id/usuarios_admin"
+        android:name="copernic.cat.Admin.usuarios_admin"
+        android:label="fragment_usuarios_admin"
+        tools:layout="@layout/fragment_usuarios_admin" >
+        <action
+            android:id="@+id/action_usuarios_admin_to_admin_inici"
+            app:destination="@id/admin_inici" />
+    </fragment>
 </navigation>

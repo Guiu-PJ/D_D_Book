@@ -14,6 +14,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import copernic.cat.R
@@ -38,7 +39,8 @@ class anadir_compendios : Fragment() {
     private var bd = FirebaseFirestore.getInstance()
     private var photoSelectedUri: Uri? = null
     private var storage = FirebaseStorage.getInstance()
-    private var storageRef = storage.getReference().child("image/imatges").child("foto1.jpeg")
+    private var storageRef = storage.getReference().child("image/compendios").child("foto1.jpeg")
+    var nom = ""
 
     //resultLauncher és l'atribut on guardarem el resultat de la nostra activitat, en el nostre cas obrir la galeria i mitjançant el qual
     //cridarem a l'Intent per obrir-la.
@@ -67,16 +69,15 @@ class anadir_compendios : Fragment() {
         binding.btnAAdirCompendio.setOnClickListener {
             val compendios = llegirDades()
 
-            if (compendios.titulo.isNotEmpty() && compendios.enlace.isNotEmpty()) {
-                bd.collection("Compendios").document("ID Compendio").set(
-                    hashMapOf(
-                        "Titulo" to binding.txtAAdirNombreCompendio.text.toString(),
-                        "Enlace" to binding.txtAAdirEnlaceCompendio.text.toString()
-                    )
-                )
-
-            }
-
+            if (compendios.nombre.isNotEmpty() && compendios.enlace.isNotEmpty()) {
+                bd.collection("Compendios").document(binding.txtAAdirNombreCompendio.text.toString()).set(
+                            hashMapOf(
+                                "Nombre" to binding.txtAAdirNombreCompendio.text.toString(),
+                                "Enlace" to binding.txtAAdirEnlaceCompendio.text.toString()
+                            )
+                        )
+                        findNavController().navigate(R.id.action_anadir_compendios_to_admin_inici)
+                    }
         }
     }
 
@@ -87,32 +88,27 @@ class anadir_compendios : Fragment() {
             }
         }
 
-    fun llegirDades(): compendios {
-        val titulo = binding.txtAAdirNombreCompendio.text.toString()
+    private fun llegirDades(): compendios {
+        val nombre = binding.txtAAdirNombreCompendio.text.toString()
         val enlace = binding.txtAAdirEnlaceCompendio.text.toString()
 
-        return compendios(titulo, enlace)
+        return compendios(nombre, enlace)
     }
 
     private fun afegirImatge2(){
         //Obrim la galeria per seleccionar la imatge  //Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         guardarImgCamera.launch(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI))
-
+        storageRef = storage.reference.child("image/compendios").child(binding.txtAAdirNombreCompendio.text.toString())
         //Afegim la imatge seleccionada a storage
-        photoSelectedUri?.let{uri-> //Hem seleccionat una imatge...
-            //Afegim (pujem) la imatge que hem seleccionat mitjançant el mètode putFile de la classe FirebasStorage, passant-li com a
-            //paràmetre l'URI de la imatge.
+        photoSelectedUri?.let{uri->
             storageRef.putFile(uri)
-
                 .addOnSuccessListener {
                     Toast.makeText(context, "La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG).show()
                     binding.imgAAdirCompendios.setImageURI(uri)
                 }
-        }}
-
-
+        }
+    }
 }
-//bd.collection("Reglas").document("ID Reglas").set(hashMapOf("Nombre" to binding.txtTituloReglas.text.toString(), "Descripcion" to binding.txtDescripcionReglas.text.toString())).addOnSuccessListener {
 
 
 
