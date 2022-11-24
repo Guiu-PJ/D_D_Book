@@ -34,7 +34,7 @@ class anadir_reglas : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAnadirReglasBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -60,17 +60,17 @@ class anadir_reglas : Fragment() {
                     //}
                 }
             }
-            findNavController().navigate(R.id.action_anadir_reglas_to_inici)
+            findNavController().navigate(R.id.action_anadir_reglas_to_admin_inici)
         }
         binding.btnCancelarRegla.setOnClickListener {
-            findNavController().navigate(R.id.action_anadir_reglas_to_inici)
+            findNavController().navigate(R.id.action_anadir_reglas_to_admin_inici)
         }
     }
 
 
-    fun llegirDades(): Reglas {
-        val titulo =binding.txtTituloReglas.text.toString()
-        val descripcion =binding.txtDescripcionReglas.text.toString()
+    private fun llegirDades(): Reglas {
+        val titulo = binding.txtTituloReglas.text.toString()
+        val descripcion = binding.txtDescripcionReglas.text.toString()
 
         return Reglas(titulo, descripcion)
     }

@@ -39,7 +39,7 @@ class inici : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentIniciBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -71,8 +71,9 @@ class inici : Fragment() {
                     bd.collection("Usuari").document(user!!.uid).get().addOnSuccessListener {
                         if(it.get("Admin") as Boolean){
                             findNavController().navigate(R.id.action_inici_to_admin_inici)
+                        }else {
+                            Toast.makeText(context, "No ets admin", Toast.LENGTH_SHORT).show()
                         }
-                        Toast.makeText(context, "No ets admin", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

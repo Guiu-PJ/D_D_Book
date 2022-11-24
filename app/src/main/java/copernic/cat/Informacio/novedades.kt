@@ -11,11 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.R
 import copernic.cat.Reglas.accion
-import copernic.cat.databinding.FragmentIniciBinding
 import copernic.cat.databinding.FragmentNovedadesBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,7 +34,7 @@ class novedades : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentNovedadesBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -53,6 +51,7 @@ class novedades : Fragment() {
                 llegirnovedades()
             }
         }
+
     }
  fun llegirnovedades(){
      bd.collection("Novedades").document("Añadir").get().addOnSuccessListener {

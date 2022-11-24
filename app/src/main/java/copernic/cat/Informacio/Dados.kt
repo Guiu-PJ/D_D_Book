@@ -8,11 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 import kotlin.random.Random
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import copernic.cat.R
 import copernic.cat.Reglas.accion
+import copernic.cat.Reglas.criticos
 import copernic.cat.databinding.FragmentDadosBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,6 +39,8 @@ class Dados : Fragment() {
     private var _binding: FragmentDadosBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
+    private  lateinit var auth: FirebaseAuth
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +58,7 @@ class Dados : Fragment() {
 
         }
         binding.btnTirar.setOnClickListener{
+            auth = Firebase.auth
             val arrayresultats = ArrayList<Int>()
             var restotal = 0
             var numdados = Integer.parseInt(binding.txtNumeroDeDados.text.toString())
@@ -54,12 +67,16 @@ class Dados : Fragment() {
             val modnegativo = Integer.parseInt(binding.txtModificadorNegativo.text.toString())
             var resultat: Int?
             var string = ""
+            var criticos = 0
             //Toast.makeText(context, (numdados+mod).toString(), Toast.LENGTH_SHORT).show()
             while (numdados>0){
                 resultat = Random.nextInt((numcaras+1) - 1) + 1
                 arrayresultats.add(resultat)
                 restotal += resultat
                 numdados--
+                if(resultat == 20){
+                    criticos += 1
+                }
         }
             restotal -= modnegativo
             restotal += modpositivo
@@ -71,10 +88,36 @@ class Dados : Fragment() {
             }
             binding.txtResultadoDados.text = string
             //Toast.makeText(context, (numdados).toString()+(numcaras+modpositivo).toString(), Toast.LENGTH_SHORT).show()
-            //bd.collection("Reglas").document("ID Reglas").set(hashMapOf("Nombre" to binding.txtResultadoDados.text.toString(), "Descripcion" to binding.txtResultadoFinal.text.toString()))
-            bd.collection("Usuari").document("ID Usuario").collection("Estadisticas")//Col.lecció
-                .document("ID Estadisticas").set(hashMapOf("Criticos" to binding.txtResultadoDados.text.toString()))
+            lifecycleScope.launch{
+                withContext(Dispatchers.Unconfined){//llegir dades de la base de dades
+                    actualizarbdcriticos(criticos.toString())
+                }
+                withContext(Dispatchers.Unconfined){//llegir dades de la base de dades
+                    actualizarbdtiradas()
+                }
+            }
         }
     }
 
+    fun actualizarbdcriticos(criticos: String){
+        val user = auth.currentUser
+        var c = 0
+        var critico = "0"
+         bd.collection("Usuari").document(user!!.uid).collection("Estadisticas").document("IdEstadisticas").get().addOnSuccessListener {
+             critico = it.get("criticos") as String
+             c = critico.toInt() + criticos.toInt()
+             Toast.makeText(context, c.toString(), Toast.LENGTH_SHORT).show()
+             bd.collection("Usuari").document(user.uid).collection("Estadisticas")//Col.lecció
+                 .document("IdEstadisticas").update("criticos", c.toString())
+         }
+
+    }
+    fun actualizarbdtiradas(){
+        val user = auth.currentUser
+        bd.collection("Usuari").document(user!!.uid).collection("Estadisticas").document("IdEstadisticas").get().addOnSuccessListener {
+            val num = it.get("numero_tiradas") as String
+             bd.collection("Usuari").document(user.uid).collection("Estadisticas")//Col.lecció
+                .document("IdEstadisticas").update("numero_tiradas", (num.toInt()+1).toString())
+        }
+    }
 }

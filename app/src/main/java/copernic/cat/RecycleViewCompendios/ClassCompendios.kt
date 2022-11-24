@@ -1,4 +1,6 @@
 package copernic.cat.RecycleViewCompendios
 
-data class ClassCompendios(val nombre : String, val image : Int) {
-}
+data class ClassCompendios(
+    var nombre : String,
+    val image : Int)
+

@@ -5,7 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import copernic.cat.R
+import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
+import copernic.cat.RecycleViewCompendios.ListaCompendios
+import copernic.cat.RecyclerViewAdminUsuarios.AdapterListaAdminUsuarios
+import copernic.cat.RecyclerViewAdminUsuarios.ListaAdminUsuarios
+import copernic.cat.databinding.FragmentCompendiosBinding
+import copernic.cat.databinding.FragmentUsuariosAdminBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,15 +25,12 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class usuarios_admin : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentUsuariosAdminBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -35,26 +39,20 @@ class usuarios_admin : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_usuarios_admin, container, false)
+        _binding = FragmentUsuariosAdminBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment usuarios_admin.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            usuarios_admin().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
+    }
+
+
+
+    private fun initRecyclerView(){
+        binding.recuclerViewAdminUsuarios.layoutManager = LinearLayoutManager(context)
+        binding.recuclerViewAdminUsuarios.adapter = AdapterListaAdminUsuarios(ListaAdminUsuarios.ListaAdminUsuarioslista)
+
     }
 }

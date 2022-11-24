@@ -7,77 +7,12 @@
     android:background="@drawable/pagina_libro"
     tools:context=".Ficha_Personaje.Ficha_Personaje_General">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:background="@drawable/tapa"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Titulo"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Ficha de Personaje"
-        android:textAlignment="center"
-        android:textAppearance="@style/Theme.DnD_Book"
-        android:textColor="#FFC107"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
-    <ImageButton
-        android:id="@+id/MenuButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:adjustViewBounds="false"
-        android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="TODO"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731"
-        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
-        tools:srcCompat="@drawable/imagen_usuario" />
-
-    <ImageButton
-        android:id="@+id/AdminButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="TODO"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702"
-        app:srcCompat="@drawable/logo"
-        tools:ignore="UnknownIdInLayout" />
-
     <ImageButton
         android:id="@+id/BackButton"
         android:layout_width="50dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="76dp"
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -89,40 +24,25 @@
         android:id="@+id/SaveButton"
         android:layout_width="50dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="76dp"
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/BackButton"
-        app:layout_constraintStart_toEndOf="@+id/DiceButton"
         app:srcCompat="@drawable/save_icon"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/DiceButton"
-        android:layout_width="50dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginBottom="48dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/BackButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/dice_icon"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/PersonajeImg"
         android:layout_width="114dp"
         android:layout_height="135dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cleric_avatar"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -143,13 +63,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/PersonajeImg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/PersonajeImg"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintStart_toEndOf="@+id/PersonajeImg">
 
         <TableRow
             android:layout_width="match_parent"
@@ -164,10 +82,10 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/txtTransfondo"
+                android:id="@+id/txtTrasfondo"
                 android:layout_width="100dp"
                 android:layout_height="25dp"
-                android:text="Transfondo"
+                android:text="Trasfondo"
                 android:textAlignment="center" />
 
             <TextView
@@ -631,9 +549,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/DiceButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout4">
 
@@ -922,47 +838,39 @@
         android:id="@+id/btnEstadisticas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Estadísticas"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnEquipo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DiceButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnEquipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Equipo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnHabilidades"
-        app:layout_constraintStart_toEndOf="@+id/btnEstadisticas"
-        app:layout_constraintTop_toBottomOf="@+id/DiceButton" />
+        app:layout_constraintStart_toEndOf="@+id/btnEstadisticas" />
 
     <Button
         android:id="@+id/btnHabilidades"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
         android:text="Habilidades"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnMagia"
-        app:layout_constraintStart_toEndOf="@+id/btnEquipo"
-        app:layout_constraintTop_toBottomOf="@+id/DiceButton" />
+        app:layout_constraintStart_toEndOf="@+id/btnEquipo" />
 
     <Button
         android:id="@+id/btnMagia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Magia"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnHabilidades"
-        app:layout_constraintTop_toBottomOf="@+id/DiceButton" />
+        app:layout_constraintStart_toEndOf="@+id/btnHabilidades" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

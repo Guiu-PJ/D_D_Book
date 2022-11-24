@@ -62,9 +62,9 @@ class registre : AppCompatActivity() {
 
                         bd.collection("Usuari").document(user!!.uid).set(hashMapOf("Email" to binding.correuRegistre.text.toString(), "Admin" to false))
                         bd.collection("Usuari").document(user.uid).collection("Estadisticas")//Col.lecció
-                          .document("ID Estadisticas").set(hashMapOf("numero tiradas" to 0, "criticos" to 0, "numero de personajes" to 0, "numero de partidas" to 0, "clase mas jugada" to "ninguna", "personaje mas jugado" to "ninguno"))
-                        bd.collection("Usuari").document(user.uid).collection("Partidas").document("Plantilla partida").set(hashMapOf("numero de partida" to 0, "id personaje" to 0, "ficha personaje" to "pdf"))
-                        //bd.collection("Usuari").document(binding.correuRegistre.text.toString()).collection("Personajes").document("Plantilla personaje").set(hashMapOf())
+                          .document("IdEstadisticas").set(hashMapOf("numero_tiradas" to "0", "criticos" to "0", "numero_de_personajes" to "0", "numero_de_partidas" to "0", "clase_mas_jugada" to "ninguna", "personaje_mas_jugado" to "ninguno"))
+                        bd.collection("Usuari").document(user.uid).collection("Partidas").document("Plantilla_partida").set(hashMapOf("numero_de_partida" to "0", "id_personaje" to "0"))
+                        //bd.collection("Usuari").document(user.uid).collection("Personajes").document("Plantilla personaje").set(hashMapOf())
                     }
                     startActivity(Intent(this, login::class.java))
                     finish()

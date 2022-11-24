@@ -69,15 +69,22 @@ class anadir_compendios : Fragment() {
         binding.btnAAdirCompendio.setOnClickListener {
             val compendios = llegirDades()
 
-            if (compendios.nombre.isNotEmpty() && compendios.enlace.isNotEmpty()) {
-                bd.collection("Compendios").document(binding.txtAAdirNombreCompendio.text.toString()).set(
-                            hashMapOf(
-                                "Nombre" to binding.txtAAdirNombreCompendio.text.toString(),
-                                "Enlace" to binding.txtAAdirEnlaceCompendio.text.toString()
+            bd.collection("Compendios").document(binding.txtAAdirNombreCompendio.text.toString()).get().addOnSuccessListener { it ->
+                if(it.exists()){
+                    Toast.makeText(context, "Aquest compendio ja existeix", Toast.LENGTH_SHORT).show()
+                }else{
+                    if (compendios.nombre.isNotEmpty() && compendios.enlace.isNotEmpty()) {
+                        bd.collection("Compendios")
+                            .document(binding.txtAAdirNombreCompendio.text.toString()).set(
+                                hashMapOf(
+                                    "Nombre" to binding.txtAAdirNombreCompendio.text.toString(),
+                                    "Enlace" to binding.txtAAdirEnlaceCompendio.text.toString()
+                                )
                             )
-                        )
                         findNavController().navigate(R.id.action_anadir_compendios_to_admin_inici)
                     }
+                }
+            }
         }
     }
 
@@ -109,6 +116,8 @@ class anadir_compendios : Fragment() {
         }
     }
 }
+
+
 
 
 
