@@ -62,7 +62,7 @@ class registre : AppCompatActivity() {
 
                         bd.collection("Usuari").document(user!!.uid).set(hashMapOf("Email" to binding.correuRegistre.text.toString(), "Admin" to false))
                         bd.collection("Usuari").document(user.uid).collection("Estadisticas")//Col.lecció
-                          .document("IdEstadisticas").set(hashMapOf("numero_tiradas" to "0", "criticos" to "0", "numero_de_personajes" to "0", "numero_de_partidas" to "0", "clase_mas_jugada" to "ninguna", "personaje_mas_jugado" to "ninguno"))
+                          .document("IdEstadisticas").set(hashMapOf("numero_tiradas" to "0", "criticos" to "0", "numero_de_personajes" to "0", "numero_de_partidas" to "0", "clase_mas_jugada" to "ninguna"))
                         bd.collection("Usuari").document(user.uid).collection("Partidas").document("Plantilla_partida").set(hashMapOf("numero_de_partida" to "0", "id_personaje" to "0"))
                         bd.collection("Usuari").document(user.uid).collection("Personajes").document("Plantilla_personaje")
                             .set(hashMapOf(

@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="Personaje favorito:"
+        android:text="Cantidad de personajes:"
         android:textColor="#7E0B02"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,21 +71,21 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/edit_criticos"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="2"
         android:textColor="@color/design_default_color_secondary_variant"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintBottom_toTopOf="@+id/edit_tiradas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toEndOf="@+id/txt_personajes"
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/edit_partidas"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -95,10 +95,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_tiradas" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/edit_tiradas"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -111,7 +111,7 @@
         app:layout_constraintTop_toTopOf="@+id/txt_personajes" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/edit_personaje"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -121,10 +121,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_clase" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/edit_clase"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -134,7 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_partidas" />
 
     <TextView
         android:id="@+id/textView5"
