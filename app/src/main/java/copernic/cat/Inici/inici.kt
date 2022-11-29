@@ -65,6 +65,7 @@ class inici : Fragment() {
         binding.btnDados.setOnClickListener{
             findNavController().navigate(R.id.action_inici_to_dados)
         }
+
         binding.btnAdmin.setOnClickListener{
             lifecycleScope.launch {
                 withContext(Dispatchers.IO){//llegir dades de la base de dades
@@ -78,14 +79,5 @@ class inici : Fragment() {
                 }
             }
         }
-
-        ///////////////Pruebas///////////////
-        binding.btnAAdirReglas.setOnClickListener{
-            findNavController().navigate(R.id.action_inici_to_anadir_reglas)
-        }
-        binding.btnAAdirCompendioInici.setOnClickListener{
-            findNavController().navigate(R.id.action_inici_to_anadir_compendios)
-        }
     }
-
 }

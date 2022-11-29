@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.contentValuesOf
 import androidx.recyclerview.widget.RecyclerView
 import copernic.cat.databinding.ItemLiatcompendiosBinding
 
@@ -24,7 +26,11 @@ class AdapterListaCompendios(private val ListaCompendios:List<ClassCompendios>) 
                 binding.txtListacompendios.text = this.nombre
                 binding.imgListacompendios.setImageResource(this.image)
             }
+            binding.constrantcompendios.setOnClickListener{
+                binding.txtListacompendios.text = "hola"
+            }
         }
+
     }
 
     override fun getItemCount(): Int {

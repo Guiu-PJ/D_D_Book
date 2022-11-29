@@ -47,12 +47,12 @@ class novedades : Fragment() {
         }
 
         lifecycleScope.launch {
-            withContext(Dispatchers.IO){//llegir dades de la base de dades
+            withContext(Dispatchers.Unconfined){//llegir dades de la base de dades
                 llegirnovedades()
             }
         }
-
     }
+
  fun llegirnovedades(){
      bd.collection("Novedades").document("Añadir").get().addOnSuccessListener {
          binding.txtInfoAAdido.text = it.get("añadido") as String?

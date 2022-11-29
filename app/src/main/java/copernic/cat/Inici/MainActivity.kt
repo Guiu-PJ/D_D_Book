@@ -1,11 +1,12 @@
 package copernic.cat.Inici
 
-import android.R
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.firebase.auth.FirebaseAuth
 import copernic.cat.Perfil.editar_perfil
 import copernic.cat.Perfil.estadisticas
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //setupActionBarWithNavController(NavController(this), appBarConfiguration)
+        //setupActionBarWithNavController(NavController(this))
         binding.navView.setNavigationItemSelectedListener {
             //val fragmentManager: fragmentManager = supportFragmentManager
 
@@ -44,11 +45,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 copernic.cat.R.id.perfil -> {
-                    val newFragment = perfil()
-                    val transaction = supportFragmentManager.beginTransaction()
-                    transaction.replace(copernic.cat.R.id.container_main, newFragment)
-                    transaction.addToBackStack(null)
-                    transaction.commit()
+                    cambiarPantalla(perfil())
                     true
                 }
                 copernic.cat.R.id.editar_perfil -> {
@@ -78,5 +75,13 @@ class MainActivity : AppCompatActivity() {
                 else -> super.onOptionsItemSelected(it)
             }
         }
+    }
+
+    fun cambiarPantalla(fragment: Fragment){
+        val newFragment = fragment
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(copernic.cat.R.id.container_main, newFragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

@@ -107,5 +107,26 @@
     <string name="a_adir_novedades">Añadir novedades</string>
     <string name="a_adir_reglas">Añadir reglas</string>
     <string name="a_adir_compendio">Añadir compendio</string>
+    <string name="nombre">Nombre</string>
+    <string name="fallo">Fallo</string>
+    <string name="exito">Exito</string>
+    <string name="tiradas_de_salvaci_n">Tiradas de salvación</string>
+    <string name="dados_de_golpe">Dados de golpe</string>
+    <string name="iniciper">Inici</string>
+    <string name="mov">MOV</string>
+    <string name="sab">SAB</string>
+    <string name="car">CAR</string>
+    <string name="con">CON</string>
+    <string name="intt">INT</string>
+    <string name="des">DES</string>
+    <string name="fue">FUE</string>
+    <string name="actual">Actual</string>
+    <string name="comida_y_objetos">Comida y objetos</string>
+    <string name="platino">Platino</string>
+    <string name="oro">Oro</string>
+    <string name="plata">Plata</string>
+    <string name="cobre">Cobre</string>
+    <string name="dinero">Dinero</string>
+    <string name="armas_y_armaduras">Armas y armaduras</string>
 
 </resources>

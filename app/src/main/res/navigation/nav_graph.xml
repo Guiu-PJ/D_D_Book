@@ -9,7 +9,7 @@
         android:id="@+id/inici"
         android:name="copernic.cat.Inici.inici"
         android:label="fragment_inici"
-        tools:layout="@layout/fragment_inici" >
+        tools:layout="@layout/fragment_inici">
         <action
             android:id="@+id/action_inici_to_novedades"
             app:destination="@id/novedades" />
@@ -26,12 +26,6 @@
             android:id="@+id/action_inici_to_compendios"
             app:destination="@id/compendios" />
         <action
-            android:id="@+id/action_inici_to_anadir_reglas"
-            app:destination="@id/anadir_reglas" />
-        <action
-            android:id="@+id/action_inici_to_anadir_compendios"
-            app:destination="@id/anadir_compendios" />
-        <action
             android:id="@+id/action_inici_to_admin_inici"
             app:destination="@id/admin_inici" />
     </fragment>
@@ -39,7 +33,7 @@
         android:id="@+id/novedades"
         android:name="copernic.cat.Informacio.novedades"
         android:label="fragment_novedades"
-        tools:layout="@layout/fragment_novedades" >
+        tools:layout="@layout/fragment_novedades">
         <action
             android:id="@+id/action_novedades_to_inici"
             app:destination="@id/inici" />
@@ -48,7 +42,7 @@
         android:id="@+id/reglas"
         android:name="copernic.cat.Informacio.reglas"
         android:label="fragment_reglas"
-        tools:layout="@layout/fragment_reglas" >
+        tools:layout="@layout/fragment_reglas">
         <action
             android:id="@+id/action_reglas_to_inici"
             app:destination="@id/inici" />
@@ -93,7 +87,7 @@
         android:id="@+id/dados"
         android:name="copernic.cat.Informacio.Dados"
         android:label="fragment_dados"
-        tools:layout="@layout/fragment_dados" >
+        tools:layout="@layout/fragment_dados">
         <action
             android:id="@+id/action_dados_to_inici"
             app:destination="@id/inici" />
@@ -102,16 +96,19 @@
         android:id="@+id/perfil"
         android:name="copernic.cat.Perfil.perfil"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" >
+        tools:layout="@layout/fragment_perfil">
         <action
             android:id="@+id/action_perfil_to_editar_perfil"
             app:destination="@id/editar_perfil" />
+        <action
+            android:id="@+id/action_perfil_to_ficha_personaje_general"
+            app:destination="@id/ficha_personaje_general" />
     </fragment>
     <fragment
         android:id="@+id/accion"
         android:name="copernic.cat.Reglas.accion"
         android:label="fragment_accion"
-        tools:layout="@layout/fragment_accion" >
+        tools:layout="@layout/fragment_accion">
         <action
             android:id="@+id/action_accion_to_reglas"
             app:destination="@id/reglas" />
@@ -120,7 +117,7 @@
         android:id="@+id/accion_bonus"
         android:name="copernic.cat.Reglas.accion_bonus"
         android:label="fragment_accion_bonus"
-        tools:layout="@layout/fragment_accion_bonus" >
+        tools:layout="@layout/fragment_accion_bonus">
         <action
             android:id="@+id/action_accion_bonus_to_reglas"
             app:destination="@id/reglas" />
@@ -129,7 +126,7 @@
         android:id="@+id/alcance"
         android:name="copernic.cat.Reglas.alcance"
         android:label="fragment_alcance"
-        tools:layout="@layout/fragment_alcance" >
+        tools:layout="@layout/fragment_alcance">
         <action
             android:id="@+id/action_alcance_to_reglas"
             app:destination="@id/reglas" />
@@ -138,7 +135,7 @@
         android:id="@+id/criticos"
         android:name="copernic.cat.Reglas.criticos"
         android:label="fragment_criticos"
-        tools:layout="@layout/fragment_criticos" >
+        tools:layout="@layout/fragment_criticos">
         <action
             android:id="@+id/action_criticos_to_reglas"
             app:destination="@id/reglas" />
@@ -150,7 +147,7 @@
         android:id="@+id/dotes"
         android:name="copernic.cat.Reglas.dotes"
         android:label="fragment_dotes"
-        tools:layout="@layout/fragment_dotes" >
+        tools:layout="@layout/fragment_dotes">
         <action
             android:id="@+id/action_dotes_to_reglas"
             app:destination="@id/reglas" />
@@ -159,7 +156,7 @@
         android:id="@+id/equipamiento"
         android:name="copernic.cat.Reglas.equipamiento"
         android:label="fragment_equipamiento"
-        tools:layout="@layout/fragment_equipamiento" >
+        tools:layout="@layout/fragment_equipamiento">
         <action
             android:id="@+id/action_equipamiento_to_reglas"
             app:destination="@id/reglas" />
@@ -168,7 +165,7 @@
         android:id="@+id/estados_alterados"
         android:name="copernic.cat.Reglas.estados_alterados"
         android:label="fragment_estados_alterados"
-        tools:layout="@layout/fragment_estados_alterados" >
+        tools:layout="@layout/fragment_estados_alterados">
         <action
             android:id="@+id/action_estados_alterados_to_reglas"
             app:destination="@id/reglas" />
@@ -177,7 +174,7 @@
         android:id="@+id/movimiento"
         android:name="copernic.cat.Reglas.movimiento"
         android:label="fragment_movimiento"
-        tools:layout="@layout/fragment_movimiento" >
+        tools:layout="@layout/fragment_movimiento">
         <action
             android:id="@+id/action_movimiento_to_reglas"
             app:destination="@id/reglas" />
@@ -186,7 +183,7 @@
         android:id="@+id/multiclase"
         android:name="copernic.cat.Reglas.multiclase"
         android:label="fragment_multiclase"
-        tools:layout="@layout/fragment_multiclase" >
+        tools:layout="@layout/fragment_multiclase">
         <action
             android:id="@+id/action_multiclase_to_reglas"
             app:destination="@id/reglas" />
@@ -195,7 +192,7 @@
         android:id="@+id/nivel"
         android:name="copernic.cat.Reglas.nivel"
         android:label="fragment_nivel"
-        tools:layout="@layout/fragment_nivel" >
+        tools:layout="@layout/fragment_nivel">
         <action
             android:id="@+id/action_nivel_to_reglas"
             app:destination="@id/reglas" />
@@ -204,7 +201,7 @@
         android:id="@+id/reaccion"
         android:name="copernic.cat.Reglas.reaccion"
         android:label="fragment_reaccion"
-        tools:layout="@layout/fragment_reaccion" >
+        tools:layout="@layout/fragment_reaccion">
         <action
             android:id="@+id/action_reaccion_to_reglas"
             app:destination="@id/reglas" />
@@ -213,7 +210,7 @@
         android:id="@+id/trasfondos"
         android:name="copernic.cat.Reglas.trasfondos"
         android:label="fragment_trasfondos"
-        tools:layout="@layout/fragment_trasfondos" >
+        tools:layout="@layout/fragment_trasfondos">
         <action
             android:id="@+id/action_trasfondos_to_reglas"
             app:destination="@id/reglas" />
@@ -227,7 +224,7 @@
         android:id="@+id/estadisticas"
         android:name="copernic.cat.Perfil.estadisticas"
         android:label="fragment_estadisticas"
-        tools:layout="@layout/fragment_estadisticas" >
+        tools:layout="@layout/fragment_estadisticas">
         <action
             android:id="@+id/action_estadisticas_to_inici"
             app:destination="@id/inici" />
@@ -236,7 +233,7 @@
         android:id="@+id/editar_perfil"
         android:name="copernic.cat.Perfil.editar_perfil"
         android:label="fragment_editar_perfil"
-        tools:layout="@layout/fragment_editar_perfil" >
+        tools:layout="@layout/fragment_editar_perfil">
         <action
             android:id="@+id/action_editar_perfil_to_perfil"
             app:destination="@id/perfil" />
@@ -245,7 +242,7 @@
         android:id="@+id/anadir_reglas"
         android:name="copernic.cat.Admin.anadir_reglas"
         android:label="fragment_anadir_reglas"
-        tools:layout="@layout/fragment_anadir_reglas" >
+        tools:layout="@layout/fragment_anadir_reglas">
         <action
             android:id="@+id/action_anadir_reglas_to_inici"
             app:destination="@id/inici" />
@@ -257,7 +254,7 @@
         android:id="@+id/anadir_compendios"
         android:name="copernic.cat.Admin.anadir_compendios"
         android:label="fragment_anadir_compendios"
-        tools:layout="@layout/fragment_anadir_compendios" >
+        tools:layout="@layout/fragment_anadir_compendios">
         <action
             android:id="@+id/action_anadir_compendios_to_admin_inici"
             app:destination="@id/admin_inici" />
@@ -271,7 +268,7 @@
         android:id="@+id/novedades_admin"
         android:name="copernic.cat.Admin.novedades_admin"
         android:label="fragment_novedades_admin"
-        tools:layout="@layout/fragment_novedades_admin" >
+        tools:layout="@layout/fragment_novedades_admin">
         <action
             android:id="@+id/action_novedades_admin_to_admin_inici"
             app:destination="@id/admin_inici" />
@@ -280,7 +277,7 @@
         android:id="@+id/admin_inici"
         android:name="copernic.cat.Admin.admin_inici"
         android:label="fragment_admin_inici"
-        tools:layout="@layout/fragment_admin_inici" >
+        tools:layout="@layout/fragment_admin_inici">
         <action
             android:id="@+id/action_admin_inici_to_anadir_reglas"
             app:destination="@id/anadir_reglas" />
@@ -298,9 +295,65 @@
         android:id="@+id/usuarios_admin"
         android:name="copernic.cat.Admin.usuarios_admin"
         android:label="fragment_usuarios_admin"
-        tools:layout="@layout/fragment_usuarios_admin" >
+        tools:layout="@layout/fragment_usuarios_admin">
         <action
             android:id="@+id/action_usuarios_admin_to_admin_inici"
             app:destination="@id/admin_inici" />
+    </fragment>
+    <fragment
+        android:id="@+id/ficha_personaje_equipamiento"
+        android:name="copernic.cat.Ficha_Personaje.ficha_personaje_equipamiento"
+        android:label="fragment_ficha_personaje_equipamiento"
+        tools:layout="@layout/fragment_ficha_personaje_equipamiento">
+        <action
+            android:id="@+id/action_ficha_personaje_equipamiento_to_ficha_personaje_estadisticas_secundarias"
+            app:destination="@id/ficha_personaje_estadisticas_secundarias" />
+        <argument
+            android:name="nomPers"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/ficha_personaje_estadisticas_secundarias"
+        android:name="copernic.cat.Ficha_Personaje.ficha_personaje_estadisticas_secundarias"
+        android:label="fragment_ficha_personaje_estadisticas_secundarias"
+        tools:layout="@layout/fragment_ficha_personaje_estadisticas_secundarias">
+        <action
+            android:id="@+id/action_ficha_personaje_estadisticas_secundarias_to_ficha_personaje_habilidades"
+            app:destination="@id/ficha_personaje_habilidades" />
+        <argument
+            android:name="nomPers"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/ficha_personaje_general"
+        android:name="copernic.cat.Ficha_Personaje.ficha_personaje_general"
+        android:label="fragment_ficha_personaje_general"
+        tools:layout="@layout/fragment_ficha_personaje_general">
+        <action
+            android:id="@+id/action_ficha_personaje_general_to_ficha_personaje_equipamiento"
+            app:destination="@id/ficha_personaje_equipamiento" />
+        <argument
+            android:name="nomPers"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/ficha_personaje_habilidades"
+        android:name="copernic.cat.Ficha_Personaje.ficha_personaje_habilidades"
+        android:label="fragment_ficha_personaje_habilidades"
+        tools:layout="@layout/fragment_ficha_personaje_habilidades">
+        <action
+            android:id="@+id/action_ficha_personaje_habilidades_to_perfil"
+            app:destination="@id/perfil" />
+        <argument
+            android:name="nomPers"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>

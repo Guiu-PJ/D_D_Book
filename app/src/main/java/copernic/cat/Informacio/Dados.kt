@@ -39,13 +39,13 @@ class Dados : Fragment() {
     private var _binding: FragmentDadosBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
-    private  lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDadosBinding.inflate(inflater, container, false)
         return binding.root
     }

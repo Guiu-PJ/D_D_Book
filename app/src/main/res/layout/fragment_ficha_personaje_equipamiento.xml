@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ficha_Personaje.ficha_personaje_equipamiento"
+    android:background="@drawable/pagina_libro">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_siguiente_ficha_personaje_equipamineto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="#4FD330"
+            android:text="Siguiente"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_armas_armaduras7"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_armas_armaduras6" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_armas_armaduras6"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_armas_armaduras5" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_armas_armaduras5"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_armas_armaduras4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_comida_objetos4"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_equipamiento_comida_objetos" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_comida_objetos6"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_comida_objetos2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_comida_objetos5"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_comida_objetos4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_comida_objetos3"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_comida_objetos2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_comida_objetos2"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_comida_objetos" />
+
+        <TextView
+            android:id="@+id/txt_equipamiento_comida_objetos"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="40dp"
+            android:background="#BAB7B7"
+            android:text="@string/comida_y_objetos"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_armas_armaduras4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_platino"
+            android:layout_width="65dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="36dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/txt_equipamiento_bonificador3"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_plata" />
+
+        <TextView
+            android:id="@+id/txt_equipamiento_platino"
+            android:layout_width="60dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="36dp"
+            android:background="#BAB7B7"
+            android:text="@string/platino"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_equipamiento_plata" />
+
+        <TextView
+            android:id="@+id/txt_equipamiento_oro"
+            android:layout_width="60dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#BAB7B7"
+            android:text="@string/oro"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_equipamiento_plata" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_oro"
+            android:layout_width="65dp"
+            android:layout_height="39dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/txt_equipamiento_bonificador3"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_plata" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_plata"
+            android:layout_width="65dp"
+            android:layout_height="39dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/txt_equipamiento_bonificador3"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_cobre" />
+
+        <TextView
+            android:id="@+id/txt_equipamiento_plata"
+            android:layout_width="60dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#BAB7B7"
+            android:text="@string/plata"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_equipamiento_bonificador3" />
+
+        <TextView
+            android:id="@+id/txt_equipamiento_bonificador3"
+            android:layout_width="60dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#BAB7B7"
+            android:text="@string/cobre"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_equipamiento_dinero" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_cobre"
+            android:layout_width="65dp"
+            android:layout_height="39dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/txt_equipamiento_bonificador3"
+            app:layout_constraintTop_toBottomOf="@+id/txt_equipamiento_dinero" />
+
+        <TextView
+            android:id="@+id/txt_equipamiento_dinero"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="150dp"
+            android:background="#BAB7B7"
+            android:text="@string/dinero"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_armas_armaduras4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_armas_armaduras4"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_armas_armas_armaduras3" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_armas_armas_armaduras3"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_armas_armaduras2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_armas_armaduras2"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_armas_armaduras" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_armas_armaduras"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_equipamiento_armas_armaduras" />
+
+        <TextView
+            android:id="@+id/txt_equipamiento_armas_armaduras"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:background="#BAB7B7"
+            android:text="@string/armas_y_armaduras"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_comida_objetos"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_equipamiento_comida_objetos" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_equipamiento_comida_objetos7"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="40dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_equipamiento_comida_objetos2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+
+

@@ -6,110 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".Inici.inici">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/pagina_libro"
-    tools:context=".Inici.MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pagina_libro"
+        tools:context=".Inici.MainActivity">
 
 
-    <Button
-        android:id="@+id/btn_novedades"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="76dp"
-        android:backgroundTint="@color/gris"
-        android:hapticFeedbackEnabled="false"
-        android:text="@string/Novedades"
-        android:textColor="@color/btn_txt_color"
-        android:textSize="@dimen/btn_txt_size"
-        app:layout_constraintBottom_toTopOf="@+id/btn_compendios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_novedades"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/brn_height"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="67dp"
+            android:backgroundTint="@color/gris"
+            android:hapticFeedbackEnabled="false"
+            android:text="@string/Novedades"
+            android:textColor="@color/btn_txt_color"
+            android:textSize="@dimen/btn_txt_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_compendios"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="67dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="76dp"
-        android:backgroundTint="@color/gris"
-        android:hapticFeedbackEnabled="false"
-        android:text="@string/compendios"
-        android:textColor="@color/btn_txt_color"
-        android:textSize="@dimen/btn_txt_size"
-        app:layout_constraintBottom_toTopOf="@+id/btn_reglas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btn_reglas"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/brn_height"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="67dp"
+            android:backgroundTint="@color/gris"
+            android:hapticFeedbackEnabled="false"
+            android:text="@string/Reglas"
+            android:textColor="@color/btn_txt_color"
+            android:textSize="@dimen/btn_txt_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_compendios" />
 
-    <Button
-        android:id="@+id/btn_reglas"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="67dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="76dp"
-        android:backgroundTint="@color/gris"
-        android:hapticFeedbackEnabled="false"
-        android:text="@string/Reglas"
-        android:textColor="@color/btn_txt_color"
-        android:textSize="@dimen/btn_txt_size"
-        app:layout_constraintBottom_toTopOf="@+id/btn_dados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btn_dados"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/brn_height"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="67dp"
+            android:backgroundTint="@color/gris"
+            android:hapticFeedbackEnabled="false"
+            android:text="@string/Dados"
+            android:textColor="@color/btn_txt_color"
+            android:textSize="@dimen/btn_txt_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_reglas" />
 
-    <Button
-        android:id="@+id/btn_dados"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/brn_height"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="67dp"
-        android:backgroundTint="@color/gris"
-        android:hapticFeedbackEnabled="false"
-        android:text="@string/Dados"
-        android:textColor="@color/btn_txt_color"
-        android:textSize="@dimen/btn_txt_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_reglas" />
+        <Button
+            android:id="@+id/btn_compendios"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/brn_height"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="67dp"
+            android:backgroundTint="@color/gris"
+            android:hapticFeedbackEnabled="false"
+            android:text="@string/compendios"
+            android:textColor="@color/btn_txt_color"
+            android:textSize="@dimen/btn_txt_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_novedades" />
 
-    <Button
-        android:id="@+id/btn_añadir_reglas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="50dp"
-        android:text="añadir regla"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/btn_admin"
+            android:layout_width="61dp"
+            android:layout_height="63dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/btn_añadir_compendio_inici"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="50dp"
-        android:text="Añadir Compendio"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/btn_admin"
-        android:layout_width="61dp"
-        android:layout_height="63dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

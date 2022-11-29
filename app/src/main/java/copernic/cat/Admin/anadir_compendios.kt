@@ -108,7 +108,7 @@ class anadir_compendios : Fragment() {
         storageRef = storage.reference.child("image/compendios").child(binding.txtAAdirNombreCompendio.text.toString())
         //Afegim la imatge seleccionada a storage
         photoSelectedUri?.let{uri->
-            storageRef.putFile(uri)
+                storageRef.putFile(uri)
                 .addOnSuccessListener {
                     Toast.makeText(context, "La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG).show()
                     binding.imgAAdirCompendios.setImageURI(uri)

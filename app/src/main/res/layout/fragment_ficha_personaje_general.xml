@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ficha_Personaje.ficha_personaje_general"
+    android:background="@drawable/pagina_libro">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_nombre"
+        android:layout_width="180dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/edit_exito"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_nombre" />
+
+    <TextView
+        android:id="@+id/txt_personaje_nombre"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="524dp"
+        android:background="#BAB7B7"
+        android:text="@string/nombre"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_tiradas_de_salvacion"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_fallo"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/txt_fallo"
+        app:layout_constraintTop_toBottomOf="@+id/edit_exito" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_exito"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/txt_fallo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tiradas_de_salvacion" />
+
+    <TextView
+        android:id="@+id/txt_fallo"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="48dp"
+        android:background="#BAB7B7"
+        android:text="@string/fallo"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_exito" />
+
+    <TextView
+        android:id="@+id/txt_exito"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="48dp"
+        android:background="#BAB7B7"
+        android:text="@string/exito"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tiradas_de_salvacion" />
+
+    <TextView
+        android:id="@+id/txt_tiradas_de_salvacion"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="48dp"
+        android:background="#BAB7B7"
+        android:text="@string/tiradas_de_salvaci_n"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_dados_de_golpe" />
+
+    <TextView
+        android:id="@+id/txt_dados_de_golpe"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="64dp"
+        android:background="#BAB7B7"
+        android:text="@string/dados_de_golpe"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_des" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_dados_de_golpe"
+        android:layout_width="127dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dados_de_golpe" />
+
+    <TextView
+        android:id="@+id/txt_inici"
+        android:layout_width="58dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="108dp"
+        android:background="#BAB7B7"
+        android:text="@string/iniciper"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_int"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidaactual" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_inici"
+        android:layout_width="58dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/edit_int"
+        app:layout_constraintTop_toBottomOf="@+id/txt_mov" />
+
+    <TextView
+        android:id="@+id/txt_mov"
+        android:layout_width="58dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="30dp"
+        android:background="#BAB7B7"
+        android:text="@string/mov"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_int"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidaactual" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_mov"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/edit_int"
+        app:layout_constraintTop_toBottomOf="@+id/txt_mov" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_sab"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/edit_int"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fue" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_int"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/edit_des"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fue" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_des"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/edit_car"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fue" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_car"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/edit_con"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fue" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_con"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/edit_fue"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fue" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_fue"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fue" />
+
+    <TextView
+        android:id="@+id/txt_sab"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#BAB7B7"
+        android:text="@string/sab"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_int"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidaactual" />
+
+    <TextView
+        android:id="@+id/txt_int"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#BAB7B7"
+        android:text="@string/intt"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_des"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidaactual" />
+
+    <TextView
+        android:id="@+id/txt_car"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#BAB7B7"
+        android:text="@string/car"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_con"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidamax" />
+
+    <TextView
+        android:id="@+id/txt_con"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#BAB7B7"
+        android:text="@string/con"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_fue"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidamax" />
+
+    <TextView
+        android:id="@+id/txt_des"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#BAB7B7"
+        android:text="@string/des"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_car"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidamax" />
+
+    <TextView
+        android:id="@+id/txt_fue"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#BAB7B7"
+        android:text="@string/fue"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidamax" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_vidaactual"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="216dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_vidaactual" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_vidamax"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_vidamax" />
+
+    <TextView
+        android:id="@+id/txt_personaje_vidaactual"
+        android:layout_width="150dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="236dp"
+        android:background="#BAB7B7"
+        android:text="@string/actual"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_personaje_vidamax"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_personaje_vidamax"
+        android:layout_width="150dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="236dp"
+        android:background="#BAB7B7"
+        android:text="Maxima"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_personaje_puntos_de_vida"
+        android:layout_width="300dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="204dp"
+        android:background="#BAB7B7"
+        android:text="Puntos de vida"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_personaje_alineamiento"
+        android:layout_width="136dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="100dp"
+        android:background="#BAB7B7"
+        android:text="Alineamiento"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_alineamiento"
+        android:layout_width="168dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_classe" />
+
+    <TextView
+        android:id="@+id/txt_personaje_raza"
+        android:layout_width="71dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="104dp"
+        android:background="#BAB7B7"
+        android:text="Raza"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_raza"
+        android:layout_width="162dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_classe" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_nivel"
+        android:layout_width="111dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_nivel" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_trasfondo"
+        android:layout_width="111dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="13dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/edit_personaje_classe"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_trasfondo" />
+
+    <TextView
+        android:id="@+id/txt_personaje_classe"
+        android:layout_width="71dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="16dp"
+        android:background="#BAB7B7"
+        android:text="Classe"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_classe"
+        android:layout_width="111dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_classe" />
+
+    <TextView
+        android:id="@+id/txt_personaje_trasfondo"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="18dp"
+        android:background="#BAB7B7"
+        android:text="Trasfondo"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_personaje_classe"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_personaje_nivel"
+        android:layout_width="90dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="28dp"
+        android:background="#BAB7B7"
+        android:text="Nivel"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_siguiente_ficha_personaje_general"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#4FD330"
+        android:text="Siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
