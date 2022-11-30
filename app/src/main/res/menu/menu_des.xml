@@ -12,9 +12,6 @@
         android:id="@+id/perfil"
         android:title="@string/perfil"/>
     <item
-        android:id="@+id/editar_perfil"
-        android:title="@string/editar_perfil"/>
-    <item
         android:id="@+id/partidas"
         android:title="@string/partidas"/>
     <item

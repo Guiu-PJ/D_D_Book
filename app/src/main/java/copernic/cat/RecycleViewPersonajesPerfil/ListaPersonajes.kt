@@ -4,15 +4,7 @@ import copernic.cat.R
 
 class ListaPersonajes {
     companion object{
-        val ListaPersonajeslist = listOf<ClassListaPersonajes>(
-            ClassListaPersonajes(
-                "Calamardo",
-                R.drawable.calamardo
-            ),
-            ClassListaPersonajes(
-                "Jorge",
-                R.drawable.jorge
-        )
+        val ListaPersonajeslist = ArrayList<ClassListaPersonajes>(
         )
     }
 

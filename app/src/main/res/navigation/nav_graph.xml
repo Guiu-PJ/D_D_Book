@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/estadisticas">
+    app:startDestination="@id/inici">
 
     <fragment
         android:id="@+id/inici"
@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_inici_to_admin_inici"
             app:destination="@id/admin_inici" />
+        <action
+            android:id="@+id/action_inici_to_estadisticas"
+            app:destination="@id/estadisticas" />
+        <action
+            android:id="@+id/action_inici_to_partidas2"
+            app:destination="@id/partidas" />
     </fragment>
     <fragment
         android:id="@+id/novedades"
@@ -37,6 +43,9 @@
         <action
             android:id="@+id/action_novedades_to_inici"
             app:destination="@id/inici" />
+        <action
+            android:id="@+id/action_novedades_to_perfil"
+            app:destination="@id/perfil" />
     </fragment>
     <fragment
         android:id="@+id/reglas"
@@ -260,7 +269,7 @@
             app:destination="@id/admin_inici" />
     </fragment>
     <fragment
-        android:id="@+id/partidas2"
+        android:id="@+id/partidas"
         android:name="copernic.cat.Perfil.partidas"
         android:label="fragment_partidas"
         tools:layout="@layout/fragment_partidas" />
@@ -290,6 +299,9 @@
         <action
             android:id="@+id/action_admin_inici_to_usuarios_admin"
             app:destination="@id/usuarios_admin" />
+        <action
+            android:id="@+id/action_admin_inici_to_inici"
+            app:destination="@id/inici" />
     </fragment>
     <fragment
         android:id="@+id/usuarios_admin"

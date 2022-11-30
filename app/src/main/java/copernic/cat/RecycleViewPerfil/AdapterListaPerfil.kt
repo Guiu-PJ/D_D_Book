@@ -24,7 +24,7 @@ class AdapterListaPerfil(private val ListaPerfil:List<ClassPerfil>) : RecyclerVi
         with(holder) {
             with(ListaPerfil[position]) {
                 binding.txtListaperfil.text = this.nombre
-                binding.imgListaperfil.setImageResource(this.image)
+                binding.txtListapersonaje.text = this.personaje
             }
         }
     }

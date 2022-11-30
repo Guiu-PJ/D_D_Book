@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,6 +19,9 @@ import copernic.cat.RecycleViewPersonajesPerfil.ClassListaPersonajes
 import copernic.cat.RecycleViewPersonajesPerfil.ListaPersonajes
 import copernic.cat.databinding.FragmentCompendiosBinding
 import copernic.cat.databinding.FragmentDadosBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,32 +54,48 @@ class compendios : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerView()
+        initRecyclerView(view)
         //initRecyclerView2()
     }
 
-    private fun initRecyclerView(){
-        binding.recyclerCompendios.layoutManager = LinearLayoutManager(context)
-        binding.recyclerCompendios.adapter = AdapterListaCompendios(ListaCompendios.ListaCompendioslist)
-    }
-
-    private fun initRecyclerView2(){
-        userList = ArrayList()
-        adapterCompendios = AdapterListaCompendios(userList)
-        bd.collection("Compendios").get().addOnSuccessListener{ documents ->
-            for(document in documents){
-                val wallItem = document.toObject(ClassCompendios::class.java)
-                wallItem.nombre = document["Nombre"].toString()
-                binding.recyclerCompendios.adapter = adapterCompendios
-                binding.recyclerCompendios.layoutManager = LinearLayoutManager(context)
-                userList.add(wallItem)
-            }
-
+    private fun initRecyclerView(view: View) {
+        if (ListaCompendios.ListaCompendioslist.isEmpty()) {
+            recycleServicios()
+        } else {
+            binding.recyclerCompendios.layoutManager = LinearLayoutManager(context)
+            binding.recyclerCompendios.adapter = AdapterListaCompendios(ListaCompendios.ListaCompendioslist.toList())
         }
+    }
+    private fun recycleServicios() {
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO){
+                bd.collection("Compendios").get().addOnSuccessListener { documents ->
+                    for (document in documents) {
+                    val wallItem = ClassCompendios(
+                        nombre = document["Nombre"].toString(),
+                        image = R.drawable.monster_manual_5
+                    )
+                    if (ListaCompendios.ListaCompendioslist.isEmpty()) {
+                            ListaCompendios.ListaCompendioslist.add(wallItem)
+                    } else {
+                        var cont = 0
+                        for (i in ListaCompendios.ListaCompendioslist) {
+                            if (wallItem.nombre == i.nombre) {
+                                cont++
 
-        //binding.recyclerCompendios.layoutManager = LinearLayoutManager(context)
-        //binding.recyclerCompendios.adapter = AdapterListaCompendios(ListaCompendios.ListaCompendioslist)
+                            }
 
+                        }
+                        if(cont<1){
+                            ListaCompendios.ListaCompendioslist.add(wallItem)
+                        }
+                    }
+                }
+                    binding.recyclerCompendios.layoutManager = LinearLayoutManager(context)
+                    binding.recyclerCompendios.adapter = AdapterListaCompendios(ListaCompendios.ListaCompendioslist.toList())
+                }
+            }
+        }
     }
 
 

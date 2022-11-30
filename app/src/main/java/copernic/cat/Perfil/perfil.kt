@@ -20,8 +20,10 @@ import copernic.cat.Ficha_Personaje.ficha_personaje_general
 import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
+import copernic.cat.RecycleViewCompendios.ClassCompendios
 import copernic.cat.RecycleViewCompendios.ListaCompendios
 import copernic.cat.RecycleViewPersonajesPerfil.AdapterListaPersonajes
+import copernic.cat.RecycleViewPersonajesPerfil.ClassListaPersonajes
 import copernic.cat.RecycleViewPersonajesPerfil.ListaPersonajes
 import copernic.cat.Reglas.accion
 import copernic.cat.databinding.FragmentPerfilBinding
@@ -47,6 +49,7 @@ class perfil : Fragment() {
     private var bd = FirebaseFirestore.getInstance()
     private  lateinit var auth: FirebaseAuth
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,21 +63,27 @@ class perfil : Fragment() {
 
         auth = Firebase.auth
         binding.btnEditarPerfil.setOnClickListener {
-            (activity as MainActivity?)?.cambiarPantalla(editar_perfil())
-            //findNavController().navigate(R.id.action_perfil_to_editar_perfil)
+            //(activity as MainActivity?)?.cambiarPantalla(editar_perfil())
+            findNavController().navigate(R.id.action_perfil_to_editar_perfil)
+        }
+        binding.btnNuevoPersonaje.setOnClickListener {
+            findNavController().navigate(R.id.action_perfil_to_ficha_personaje_general)
         }
         lifecycleScope.launch{
             withContext(Dispatchers.Unconfined){//llegir dades de la base de dades
                 llegirnovedades()
             }
         }
-        initRecyclerView()
+        initRecyclerView(view)
     }
 
-    private fun initRecyclerView(){
-        binding.recyclerPersonajes.layoutManager = LinearLayoutManager(context)
-        binding.recyclerPersonajes.adapter = AdapterListaPersonajes(ListaPersonajes.ListaPersonajeslist)
-
+    private fun initRecyclerView(view: View) {
+        if (ListaPersonajes.ListaPersonajeslist.isEmpty()) {
+            recycleServicios()
+        } else {
+            binding.recyclerPersonajes.layoutManager = LinearLayoutManager(context)
+            binding.recyclerPersonajes.adapter = AdapterListaPersonajes(ListaPersonajes.ListaPersonajeslist.toList())
+        }
     }
 
     fun llegirnovedades(){
@@ -92,6 +101,39 @@ class perfil : Fragment() {
         //bd.collection("Novedades").document("Modificado").get().addOnSuccessListener {
             //binding.txtInfoModificado.text = it.get("modificado") as String?
         //}
+    }
+
+    private fun recycleServicios() {
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO){
+                auth = Firebase.auth
+                val user = auth.currentUser
+                bd.collection("Usuari").document(user!!.uid).collection("Personajes").get().addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        val wallItem = ClassListaPersonajes(
+                            nombre = document["nombre"].toString(),
+                        )
+                        if (ListaPersonajes.ListaPersonajeslist.isEmpty()) {
+                            ListaPersonajes.ListaPersonajeslist.add(wallItem)
+                        } else {
+                            var cont = 0
+                            for (i in ListaPersonajes.ListaPersonajeslist) {
+                                if (wallItem.nombre == i.nombre) {
+                                    cont++
+
+                                }
+
+                            }
+                            if(cont<1){
+                                ListaPersonajes.ListaPersonajeslist.add(wallItem)
+                            }
+                        }
+                    }
+                    binding.recyclerPersonajes.layoutManager = LinearLayoutManager(context)
+                    binding.recyclerPersonajes.adapter = AdapterListaPersonajes(ListaPersonajes.ListaPersonajeslist.toList())
+                }
+            }
+        }
     }
 
 }

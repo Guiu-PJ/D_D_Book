@@ -43,6 +43,9 @@ class admin_inici : Fragment() {
         auth = Firebase.auth
         val user = auth.currentUser
 
+        binding.btnVolverInicio.setOnClickListener{
+            findNavController().navigate(R.id.action_admin_inici_to_inici)
+        }
         binding.btnNovedades.setOnClickListener {
             findNavController().navigate(R.id.action_admin_inici_to_novedades_admin)
         }
@@ -55,6 +58,5 @@ class admin_inici : Fragment() {
         binding.btnUsuarios.setOnClickListener {
             findNavController().navigate(R.id.action_admin_inici_to_usuarios_admin)
         }
-
     }
 }

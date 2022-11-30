@@ -78,7 +78,8 @@ class anadir_compendios : Fragment() {
                             .document(binding.txtAAdirNombreCompendio.text.toString()).set(
                                 hashMapOf(
                                     "Nombre" to binding.txtAAdirNombreCompendio.text.toString(),
-                                    "Enlace" to binding.txtAAdirEnlaceCompendio.text.toString()
+                                    "Enlace" to binding.txtAAdirEnlaceCompendio.text.toString(),
+                                    "ruta" to "image/compendios/" + binding.txtAAdirNombreCompendio.text.toString()
                                 )
                             )
                         findNavController().navigate(R.id.action_anadir_compendios_to_admin_inici)
@@ -116,11 +117,3 @@ class anadir_compendios : Fragment() {
         }
     }
 }
-
-
-
-
-
-
-
-
