@@ -1,11 +1,17 @@
 package copernic.cat.Ficha_Personaje
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -13,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import copernic.cat.R
 import copernic.cat.databinding.FragmentCompendiosBinding
 import copernic.cat.databinding.FragmentFichaPersonajeGeneralBinding
@@ -35,8 +42,16 @@ class ficha_personaje_general : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
+    private var photoSelectedUri: Uri? = null
+    private var storage = FirebaseStorage.getInstance()
+    private var storageRef = storage.getReference().child("image/compendios").child("foto1.jpeg")
 
-
+    private val resultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                photoSelectedUri = it.data?.data //Assignem l'URI de la imatge
+            }
+        }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,6 +64,9 @@ class ficha_personaje_general : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
+        binding.imgCrearPersonaje.setOnClickListener {
+            afegirImatge2()
+        }
         binding.btnSiguienteFichaPersonajeGeneral.setOnClickListener {
             lifecycleScope.launch {
                 withContext(Dispatchers.Unconfined) {
@@ -84,6 +102,7 @@ class ficha_personaje_general : Fragment() {
                                                 "dados_de_golpe" to binding.editDadosDeGolpe.text.toString(),
                                                 "salvaconExito" to binding.editExito.text.toString(),
                                                 "salvacionFallo" to binding.editFallo.text.toString(),
+                                                "rutafoto" to "image/personajes/" + user.uid + "/" + binding.editPersonajeNombre.text.toString(),
                                                 "habilidad1" to "",
                                                 "habilidad2" to "",
                                                 "habilidad3" to "",
@@ -158,6 +177,28 @@ class ficha_personaje_general : Fragment() {
                     }
                 }
             }
+        }
+    }
+    private val guardarImgCamera =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                photoSelectedUri = result.data?.data //Assignem l'URI de la imatge
+            }
+        }
+
+    private fun afegirImatge2(){
+        auth = Firebase.auth
+        val user = auth.currentUser
+        //Obrim la galeria per seleccionar la imatge  //Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+        guardarImgCamera.launch(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI))
+        storageRef = storage.reference.child("image/personajes/" + user!!.uid).child(binding.editPersonajeNombre.text.toString())
+        //Afegim la imatge seleccionada a storage
+        photoSelectedUri?.let{uri->
+            storageRef.putFile(uri)
+                .addOnSuccessListener {
+                    Toast.makeText(context, "La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG).show()
+                    binding.imgCrearPersonaje.setImageURI(uri)
+                }
         }
     }
 }

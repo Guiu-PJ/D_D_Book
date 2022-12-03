@@ -5,11 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.R
 import copernic.cat.databinding.FragmentAccionBinding
 import copernic.cat.databinding.FragmentCriticosBinding
 import copernic.cat.databinding.FragmentIniciBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,11 +29,12 @@ private const val ARG_PARAM2 = "param2"
 class criticos : Fragment() {
     private var _binding: FragmentCriticosBinding? = null
     private val binding get() = _binding!!
+    private var bd = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCriticosBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -41,5 +47,16 @@ class criticos : Fragment() {
             findNavController().navigate(R.id.action_criticos_to_reglas)
         }
 
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO){//llegir dades de la base de dades
+                llegirnovedades()
+            }
+
+        }
+    }
+    fun llegirnovedades() {
+        bd.collection("Reglas").document("criticos").get().addOnSuccessListener {
+            binding.txtCriticos.text = it.get("Descripcion") as String?
+        }
     }
 }

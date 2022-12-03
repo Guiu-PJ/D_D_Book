@@ -1,6 +1,8 @@
 package copernic.cat.Perfil
 
 import android.R.string
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +18,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.auth.User
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import copernic.cat.Ficha_Personaje.ficha_personaje_general
 import copernic.cat.Inici.MainActivity
 import copernic.cat.R
@@ -30,6 +33,8 @@ import copernic.cat.databinding.FragmentPerfilBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.checkerframework.checker.units.qual.A
+import java.io.File
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -110,8 +115,10 @@ class perfil : Fragment() {
                 val user = auth.currentUser
                 bd.collection("Usuari").document(user!!.uid).collection("Personajes").get().addOnSuccessListener { documents ->
                     for (document in documents) {
+                        //obrirfoto(document["nombre"].toString())
                         val wallItem = ClassListaPersonajes(
                             nombre = document["nombre"].toString(),
+                            img = obrirfoto(document["nombre"].toString())
                         )
                         if (ListaPersonajes.ListaPersonajeslist.isEmpty()) {
                             ListaPersonajes.ListaPersonajeslist.add(wallItem)
@@ -136,4 +143,17 @@ class perfil : Fragment() {
         }
     }
 
+    private fun obrirfoto(nom : String): Bitmap {
+        val user = auth.currentUser
+        val storageRef = FirebaseStorage.getInstance().reference.child("image/personajes/" + user!!.uid + "/" + nom)
+        val localfile = File.createTempFile("tempImage", "jpeg")
+        //var bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+        storageRef.getFile(localfile).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+            binding.imgPerfilPerfil2.setImageBitmap(bitmap)
+        }
+        //no va
+        val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+        return bitmap
+    }
 }

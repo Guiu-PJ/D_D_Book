@@ -38,7 +38,8 @@
                     android:id="@+id/txt_alcance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Norma alcance"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
                     android:textSize="24sp" />
             </LinearLayout>
         </ScrollView>

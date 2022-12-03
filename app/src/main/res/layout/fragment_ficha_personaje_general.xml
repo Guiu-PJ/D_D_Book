@@ -10,22 +10,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edit_personaje_nombre"
-        android:layout_width="180dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="30dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/edit_exito"
-        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_nombre" />
-
     <TextView
         android:id="@+id/txt_personaje_nombre"
         android:layout_width="180dp"
         android:layout_height="31dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="524dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
         android:background="#BAB7B7"
         android:text="@string/nombre"
         android:textAlignment="center"
@@ -33,7 +23,77 @@
         android:textColorHint="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/txt_tiradas_de_salvacion"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_int" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_personaje_nombre"
+        android:layout_width="180dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/edit_exito"
+        app:layout_constraintTop_toBottomOf="@+id/txt_personaje_nombre" />
+
+    <TextView
+        android:id="@+id/txt_dados_de_golpe"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:background="#BAB7B7"
+        android:text="@string/dados_de_golpe"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_des" />
+
+    <TextView
+        android:id="@+id/txt_tiradas_de_salvacion"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:background="#BAB7B7"
+        android:text="@string/tiradas_de_salvaci_n"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_dados_de_golpe" />
+
+    <TextView
+        android:id="@+id/txt_exito"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:background="#BAB7B7"
+        android:text="@string/exito"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tiradas_de_salvacion" />
+
+    <TextView
+        android:id="@+id/txt_fallo"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:background="#BAB7B7"
+        android:text="@string/fallo"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_exito" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_exito"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/txt_fallo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tiradas_de_salvacion" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_fallo"
@@ -46,80 +106,34 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_exito" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edit_exito"
-        android:layout_width="68dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@+id/txt_fallo"
-        app:layout_constraintTop_toBottomOf="@+id/txt_tiradas_de_salvacion" />
-
-    <TextView
-        android:id="@+id/txt_fallo"
-        android:layout_width="60dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="48dp"
-        android:background="#BAB7B7"
-        android:text="@string/fallo"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_exito" />
-
-    <TextView
-        android:id="@+id/txt_exito"
-        android:layout_width="60dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="48dp"
-        android:background="#BAB7B7"
-        android:text="@string/exito"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_tiradas_de_salvacion" />
-
-    <TextView
-        android:id="@+id/txt_tiradas_de_salvacion"
-        android:layout_width="127dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="48dp"
-        android:background="#BAB7B7"
-        android:text="@string/tiradas_de_salvaci_n"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_dados_de_golpe" />
-
-    <TextView
-        android:id="@+id/txt_dados_de_golpe"
-        android:layout_width="127dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="64dp"
-        android:background="#BAB7B7"
-        android:text="@string/dados_de_golpe"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_des" />
-
-    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_dados_de_golpe"
         android:layout_width="127dp"
         android:layout_height="44dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_dados_de_golpe" />
 
     <TextView
+        android:id="@+id/txt_mov"
+        android:layout_width="58dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="8dp"
+        android:background="#BAB7B7"
+        android:text="@string/mov"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/txt_int"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidaactual" />
+
+    <TextView
         android:id="@+id/txt_inici"
         android:layout_width="58dp"
         android:layout_height="36dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="88dp"
         android:background="#BAB7B7"
         android:text="@string/iniciper"
         android:textAlignment="center"
@@ -131,32 +145,19 @@
         android:id="@+id/edit_inici"
         android:layout_width="58dp"
         android:layout_height="44dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="72dp"
         android:ems="10"
         android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/edit_int"
         app:layout_constraintTop_toBottomOf="@+id/txt_mov" />
 
-    <TextView
-        android:id="@+id/txt_mov"
-        android:layout_width="58dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="30dp"
-        android:background="#BAB7B7"
-        android:text="@string/mov"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/txt_int"
-        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_vidaactual" />
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_mov"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="92dp"
         android:ems="10"
         android:inputType="number"
         android:textAlignment="center"
@@ -494,12 +495,22 @@
         android:id="@+id/btn_siguiente_ficha_personaje_general"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#4FD330"
         android:text="Siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_crear_personaje"
+        android:layout_width="112dp"
+        android:layout_height="153dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/cachodemadera"
+        app:layout_constraintStart_toEndOf="@+id/edit_exito"
+        app:layout_constraintTop_toBottomOf="@+id/edit_personaje_nombre" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

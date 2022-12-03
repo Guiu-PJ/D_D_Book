@@ -58,5 +58,9 @@ class admin_inici : Fragment() {
         binding.btnUsuarios.setOnClickListener {
             findNavController().navigate(R.id.action_admin_inici_to_usuarios_admin)
         }
+        binding.btnModificarReglas.setOnClickListener {
+            findNavController().navigate(R.id.action_admin_inici_to_admin_modificarIeliminar_reglas)
+
+        }
     }
 }

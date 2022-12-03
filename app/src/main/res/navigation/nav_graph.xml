@@ -302,6 +302,9 @@
         <action
             android:id="@+id/action_admin_inici_to_inici"
             app:destination="@id/inici" />
+        <action
+            android:id="@+id/action_admin_inici_to_admin_modificarIeliminar_reglas"
+            app:destination="@id/admin_modificarIeliminar_reglas" />
     </fragment>
     <fragment
         android:id="@+id/usuarios_admin"
@@ -367,5 +370,33 @@
             android:defaultValue="@null"
             app:argType="string"
             app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_modificarIeliminar_reglas"
+        android:name="copernic.cat.Admin.admin_modificarIeliminar_reglas"
+        android:label="fragment_admin_modificar_ieliminar_reglas"
+        tools:layout="@layout/fragment_admin_modificar_ieliminar_reglas" >
+        <argument
+            android:name="regla"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_admin_modificarIeliminar_reglas_to_admin_modificar_regla"
+            app:destination="@id/admin_modificar_regla" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_modificar_regla"
+        android:name="copernic.cat.Admin.admin_modificar_regla"
+        android:label="fragment_admin_modificar_regla"
+        tools:layout="@layout/fragment_admin_modificar_regla" >
+        <argument
+            android:name="regla"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_admin_modificar_regla_to_inici"
+            app:destination="@id/inici" />
     </fragment>
 </navigation>

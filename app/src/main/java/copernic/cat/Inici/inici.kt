@@ -68,7 +68,7 @@ class inici : Fragment() {
 
         binding.btnAdmin.setOnClickListener{
             lifecycleScope.launch {
-                withContext(Dispatchers.IO){//llegir dades de la base de dades
+                withContext(Dispatchers.Unconfined){//llegir dades de la base de dades
                     bd.collection("Usuari").document(user!!.uid).get().addOnSuccessListener {
                         if(it.get("Admin") as Boolean){
                             findNavController().navigate(R.id.action_inici_to_admin_inici)

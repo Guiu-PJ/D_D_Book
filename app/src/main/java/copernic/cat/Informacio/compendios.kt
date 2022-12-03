@@ -82,9 +82,7 @@ class compendios : Fragment() {
                         for (i in ListaCompendios.ListaCompendioslist) {
                             if (wallItem.nombre == i.nombre) {
                                 cont++
-
                             }
-
                         }
                         if(cont<1){
                             ListaCompendios.ListaCompendioslist.add(wallItem)

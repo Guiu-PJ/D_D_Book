@@ -30,9 +30,9 @@ class AdapterListaPersonajes(private val ListaPersonajes:List<ClassListaPersonaj
         with(holder) {
             with(ListaPersonajes[position]) {
                 binding.txtListapersonajes.text = this.nombre
+                binding.imgListapersonajes.setImageBitmap(this.img)
             }
         }
-
     }
 
     override fun getItemCount(): Int {

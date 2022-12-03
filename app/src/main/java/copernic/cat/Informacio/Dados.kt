@@ -55,7 +55,6 @@ class Dados : Fragment() {
 
         binding.btnFelchaDados.setOnClickListener {
             findNavController().navigate(R.id.action_dados_to_inici)
-
         }
         binding.btnTirar.setOnClickListener{
             auth = Firebase.auth

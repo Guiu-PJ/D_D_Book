@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Admin.admin_inici">
 
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pagina_libro">
@@ -21,24 +21,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_usuarios"
-        style="@style/btn_inicio"
-        android:layout_marginTop="76dp"
-        android:text="@string/usuarios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_reglas" />
+        <Button
+            android:id="@+id/btn_usuarios"
+            style="@style/btn_inicio"
+            android:layout_marginTop="83dp"
+            android:text="@string/usuarios"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_reglas" />
 
-    <Button
-        android:id="@+id/btn_reglas"
-        style="@style/btn_inicio"
-        android:layout_marginTop="76dp"
-        android:text="@string/a_adir_reglas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_compendios" />
+        <Button
+            android:id="@+id/btn_reglas"
+            style="@style/btn_inicio"
+            android:layout_width="155dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/a_adir_reglas"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_compendios" />
 
     <Button
         android:id="@+id/btn_compendios"
@@ -61,6 +63,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/btn__modificar_reglas"
+            style="@style/btn_inicio"
+            android:layout_width="155dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="45dp"
+            android:text="Modificar reglas"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_compendios" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

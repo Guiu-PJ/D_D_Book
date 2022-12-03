@@ -86,5 +86,4 @@ class ficha_personaje_equipamiento : Fragment() {
             findNavController().navigate(directions)
         }
     }
-
 }

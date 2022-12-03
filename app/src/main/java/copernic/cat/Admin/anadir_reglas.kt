@@ -46,7 +46,7 @@ class anadir_reglas : Fragment() {
             val reglas = llegirDades()
 
             if(reglas.tituloReglas.isNotEmpty() && reglas.descripcionReglas.isNotEmpty()){
-                bd.collection("Reglas").document(binding.txtTituloReglas.text.toString()).set(hashMapOf("Titulo" to binding.txtTituloReglas.text.toString(), "Descripcion" to binding.txtDescripcionReglas.text.toString())).addOnSuccessListener {
+                bd.collection("Reglas").document(binding.txtTituloReglas.text.toString()).set(hashMapOf("titulo" to binding.txtTituloReglas.text.toString(), "Descripcion" to binding.txtDescripcionReglas.text.toString())).addOnSuccessListener {
                     //val builder = AlertDialog.Builder(this)
                     //builder.setTitle("Correcto")
                     //builder.setMessage("Se a añadido la regla correctamente")
