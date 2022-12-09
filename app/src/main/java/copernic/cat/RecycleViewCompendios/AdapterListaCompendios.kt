@@ -24,7 +24,7 @@ class AdapterListaCompendios(private val ListaCompendios:List<ClassCompendios>) 
         with(holder) {
             with(ListaCompendios[position]) {
                 binding.txtListacompendios.text = this.nombre
-                binding.imgListacompendios.setImageResource(this.image)
+                binding.imgListacompendios.setImageResource(this.img)
             }
             binding.constrantcompendios.setOnClickListener{
                 binding.txtListacompendios.text = "hola"

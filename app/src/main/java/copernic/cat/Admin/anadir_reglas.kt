@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.Colecciones.Reglas
@@ -15,6 +16,9 @@ import copernic.cat.classes.reglas
 import copernic.cat.classes.usuaris
 import copernic.cat.databinding.FragmentAnadirReglasBinding
 import copernic.cat.databinding.FragmentIniciBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,23 +49,41 @@ class anadir_reglas : Fragment() {
         binding.btnAAdirRegla.setOnClickListener {
             val reglas = llegirDades()
 
-            if(reglas.tituloReglas.isNotEmpty() && reglas.descripcionReglas.isNotEmpty()){
-                bd.collection("Reglas").document(binding.txtTituloReglas.text.toString()).set(hashMapOf("titulo" to binding.txtTituloReglas.text.toString(), "Descripcion" to binding.txtDescripcionReglas.text.toString())).addOnSuccessListener {
-                    //val builder = AlertDialog.Builder(this)
-                    //builder.setTitle("Correcto")
-                    //builder.setMessage("Se a añadido la regla correctamente")
-                    //builder.setPositiveButton("OK"){_, _ ->
-                    //}
-                }.addOnFailureListener{
-                    //val builder = AlertDialog.Builder(this)
-                    //builder.setTitle("Error")
-                    //builder.setMessage("No se a podido añadir la regla")
-                    //builder.setPositiveButton("OK"){_, _ ->
-                    //}
+            lifecycleScope.launch {
+                withContext(Dispatchers.Unconfined) {
+                    bd.collection("Reglas")
+                        .document(binding.txtTituloReglas.text.toString()).get()
+                        .addOnSuccessListener {
+                            if (it.exists()) {
+                                Toast.makeText(context, "Aquesta regla ja existeix", Toast.LENGTH_SHORT).show()
+                            } else {
+                                if (reglas.tituloReglas.isNotEmpty() && reglas.descripcionReglas.isNotEmpty()) {
+                                    bd.collection("Reglas")
+                                        .document(binding.txtTituloReglas.text.toString()).set(
+                                            hashMapOf(
+                                                "titulo" to binding.txtTituloReglas.text.toString(),
+                                                "Descripcion" to binding.txtDescripcionReglas.text.toString()
+                                            )
+                                        ).addOnSuccessListener {
+                                            //val builder = AlertDialog.Builder(this)
+                                            //builder.setTitle("Correcto")
+                                            //builder.setMessage("Se a añadido la regla correctamente")
+                                            //builder.setPositiveButton("OK"){_, _ ->
+                                            //}
+                                        }.addOnFailureListener {
+                                            //val builder = AlertDialog.Builder(this)
+                                            //builder.setTitle("Error")
+                                            //builder.setMessage("No se a podido añadir la regla")
+                                            //builder.setPositiveButton("OK"){_, _ ->
+                                            //}
+                                        }
+                                }
+                                findNavController().navigate(R.id.action_anadir_reglas_to_admin_inici)
+                            }
+                        }
+                    }
                 }
             }
-            findNavController().navigate(R.id.action_anadir_reglas_to_admin_inici)
-        }
         binding.btnCancelarRegla.setOnClickListener {
             findNavController().navigate(R.id.action_anadir_reglas_to_admin_inici)
         }

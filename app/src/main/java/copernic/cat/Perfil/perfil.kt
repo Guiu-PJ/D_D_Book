@@ -100,12 +100,6 @@ class perfil : Fragment() {
             val nom = str.split("@")
             binding.txtNombrePerfil2.text = nom[0].toString()
         }
-        //bd.collection("Novedades").document("Eliminado").get().addOnSuccessListener {
-            //binding.txtInfoEliminado.text = it.get("eliminado") as String?
-        //}
-        //bd.collection("Novedades").document("Modificado").get().addOnSuccessListener {
-            //binding.txtInfoModificado.text = it.get("modificado") as String?
-        //}
     }
 
     private fun recycleServicios() {
@@ -118,7 +112,7 @@ class perfil : Fragment() {
                         //obrirfoto(document["nombre"].toString())
                         val wallItem = ClassListaPersonajes(
                             nombre = document["nombre"].toString(),
-                            img = obrirfoto(document["nombre"].toString())
+                            img = R.drawable.dungeon_masters_guide
                         )
                         if (ListaPersonajes.ListaPersonajeslist.isEmpty()) {
                             ListaPersonajes.ListaPersonajeslist.add(wallItem)
@@ -148,9 +142,11 @@ class perfil : Fragment() {
         val storageRef = FirebaseStorage.getInstance().reference.child("image/personajes/" + user!!.uid + "/" + nom)
         val localfile = File.createTempFile("tempImage", "jpeg")
         //var bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-        storageRef.getFile(localfile).addOnSuccessListener {
+        storageRef.getFile(localfile).addOnSuccessListener{
             val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
             binding.imgPerfilPerfil2.setImageBitmap(bitmap)
+            val a = ""
+            return@addOnSuccessListener
         }
         //no va
         val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)

@@ -73,7 +73,7 @@ class compendios : Fragment() {
                     for (document in documents) {
                     val wallItem = ClassCompendios(
                         nombre = document["Nombre"].toString(),
-                        image = R.drawable.monster_manual_5
+                        img = R.drawable.monster_manual_5
                     )
                     if (ListaCompendios.ListaCompendioslist.isEmpty()) {
                             ListaCompendios.ListaCompendioslist.add(wallItem)

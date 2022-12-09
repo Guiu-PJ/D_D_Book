@@ -110,7 +110,18 @@
             android:id="@+id/action_perfil_to_editar_perfil"
             app:destination="@id/editar_perfil" />
         <action
+            android:id="@+id/action_perfil_to_editarOEliminarPersonaje"
+            app:destination="@id/editarOEliminarPersonaje" />
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
             android:id="@+id/action_perfil_to_ficha_personaje_general"
+            app:destination="@id/ficha_personaje_general" />
+        <action
+            android:id="@+id/action_perfil_to_ficha_personaje_general2"
             app:destination="@id/ficha_personaje_general" />
     </fragment>
     <fragment
@@ -397,6 +408,79 @@
             android:defaultValue="@null" />
         <action
             android:id="@+id/action_admin_modificar_regla_to_inici"
+            app:destination="@id/inici" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarOEliminarPersonaje"
+        android:name="copernic.cat.EditarPersonaje.editarOEliminarPersonaje"
+        android:label="fragment_editar_o_eliminar_personaje"
+        tools:layout="@layout/fragment_editar_o_eliminar_personaje" >
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_editarOEliminarPersonaje_to_editar_personaje_general"
+            app:destination="@id/editar_personaje_general" />
+        <action
+            android:id="@+id/action_editarOEliminarPersonaje_to_inici"
+            app:destination="@id/inici" />
+    </fragment>
+    <fragment
+        android:id="@+id/editar_personaje_general"
+        android:name="copernic.cat.EditarPersonaje.editar_personaje_general"
+        android:label="fragment_editar_personaje_general"
+        tools:layout="@layout/fragment_editar_personaje_general" >
+        <action
+            android:id="@+id/action_editar_personaje_general_to_edit_personaje_equipamiento"
+            app:destination="@id/edit_personaje_equipamiento" />
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_personaje_equipamiento"
+        android:name="copernic.cat.EditarPersonaje.edit_personaje_equipamiento"
+        android:label="fragment_edit_personaje_equipamiento"
+        tools:layout="@layout/fragment_edit_personaje_equipamiento" >
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_edit_personaje_equipamiento_to_editar_personaje_estadisticas_secundarias"
+            app:destination="@id/editar_personaje_estadisticas_secundarias" />
+    </fragment>
+    <fragment
+        android:id="@+id/editar_personaje_estadisticas_secundarias"
+        android:name="copernic.cat.EditarPersonaje.editar_personaje_estadisticas_secundarias"
+        android:label="fragment_editar_personaje_estadisticas_secundarias"
+        tools:layout="@layout/fragment_editar_personaje_estadisticas_secundarias" >
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_editar_personaje_estadisticas_secundarias_to_editar_personaje_habilidades"
+            app:destination="@id/editar_personaje_habilidades" />
+    </fragment>
+    <fragment
+        android:id="@+id/editar_personaje_habilidades"
+        android:name="copernic.cat.EditarPersonaje.editar_personaje_habilidades"
+        android:label="fragment_editar_personaje_habilidades"
+        tools:layout="@layout/fragment_editar_personaje_habilidades" >
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_editar_personaje_habilidades_to_inici"
             app:destination="@id/inici" />
     </fragment>
 </navigation>

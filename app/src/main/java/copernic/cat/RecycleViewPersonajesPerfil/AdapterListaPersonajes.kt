@@ -1,9 +1,14 @@
 package copernic.cat.RecycleViewPersonajesPerfil
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import copernic.cat.Admin.admin_modificarIeliminar_reglasDirections
+import copernic.cat.Perfil.perfilDirections
 import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
+import copernic.cat.RecyclerViewReglas.ListaReglas
 import copernic.cat.databinding.ItemListapersonajesBinding
 
 class AdapterListaPersonajes(private val ListaPersonajes:List<ClassListaPersonajes>) : RecyclerView.Adapter<AdapterListaPersonajes.ListaPersonajesViewHolder>(){
@@ -30,9 +35,17 @@ class AdapterListaPersonajes(private val ListaPersonajes:List<ClassListaPersonaj
         with(holder) {
             with(ListaPersonajes[position]) {
                 binding.txtListapersonajes.text = this.nombre
-                binding.imgListapersonajes.setImageBitmap(this.img)
+                binding.imgListapersonajes.setImageResource(this.img)
+            }
+            binding.ConstraintPersonajes.setOnClickListener{ view ->
+                //binding.txtReglas.text = R.id.txt_regla_se
+                navigationToEditPers(view, ListaPersonajes[position].nombre)
             }
         }
+    }
+    private fun navigationToEditPers(view: View, datos: String) {
+        val action = perfilDirections.actionPerfilToEditarOEliminarPersonaje(datos)
+        view.findNavController().navigate(action)
     }
 
     override fun getItemCount(): Int {

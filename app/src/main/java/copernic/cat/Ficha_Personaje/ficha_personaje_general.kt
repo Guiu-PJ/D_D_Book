@@ -76,8 +76,7 @@ class ficha_personaje_general : Fragment() {
                             .document(binding.editPersonajeNombre.text.toString()).get()
                             .addOnSuccessListener { it ->
                                 if (it.exists()) {
-                                    Toast.makeText(
-                                        context, "Este personaje ya existe", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(context, "Este personaje ya existe", Toast.LENGTH_SHORT).show()
                                 } else {
                                     bd.collection("Usuari").document(user.uid)
                                         .collection("Personajes")
@@ -85,7 +84,7 @@ class ficha_personaje_general : Fragment() {
                                             hashMapOf(
                                                 "nombre" to binding.editPersonajeNombre.text.toString(),
                                                 "classe" to binding.editPersonajeClasse.text.toString(),
-                                                "Raza" to binding.editPersonajeRaza.text.toString(),
+                                                "raza" to binding.editPersonajeRaza.text.toString(),
                                                 "trasfondo" to binding.editPersonajeTrasfondo.text.toString(),
                                                 "nivel" to binding.editPersonajeNivel.text.toString(),
                                                 "alineamiento" to binding.editPersonajeAlineamiento.text.toString(),
@@ -139,7 +138,7 @@ class ficha_personaje_general : Fragment() {
                                                 "medicina" to false,
                                                 "atletismo" to false,
                                                 "natura" to false,
-                                                "conocimineto_arcano" to false,
+                                                "conocimiento_arcano" to false,
                                                 "percepcion" to false,
                                                 "engaño" to false,
                                                 "perspicacia" to false,
