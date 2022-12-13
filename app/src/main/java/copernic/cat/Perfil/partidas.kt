@@ -51,16 +51,15 @@ class partidas : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initRecyclerView(view)
+        //initRecyclerView(view)
+        recycleServicios()
+        binding.btnPartidaNueva.setOnClickListener {
+            findNavController().navigate(R.id.action_partidas_to_crear_partida)
+        }
     }
 
     private fun initRecyclerView(view: View) {
-        if (ListaPerfil.ListaPerfil.isEmpty()) {
-            recycleServicios()
-        } else {
-            binding.reciclerviewPartidas.layoutManager = LinearLayoutManager(context)
-            binding.reciclerviewPartidas.adapter = AdapterListaPerfil(ListaPerfil.ListaPerfil.toList())
-        }
+
     }
 
     private fun recycleServicios() {
@@ -71,7 +70,7 @@ class partidas : Fragment() {
                 bd.collection("Usuari").document(user!!.uid).collection("Partidas").get().addOnSuccessListener { documents ->
                     for (document in documents) {
                         val wallItem = ClassPerfil(
-                            nombre = document["id_partida"].toString(),
+                            nombre = document["numero_de_partida"].toString(),
                             personaje = document["id_personaje"].toString()
                         )
                         if (ListaPerfil.ListaPerfil.isEmpty()) {

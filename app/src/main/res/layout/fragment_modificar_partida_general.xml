@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarPersonaje.editar_personaje_general"
+    tools:context=".Partidas.modificar_partida_general"
     android:background="@drawable/pagina_libro">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="28dp"
             android:background="#BAB7B7"
-            android:text="Nombre personaje"
+            android:text="Nombre partida"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -33,6 +33,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:ems="10"
+            android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/edit_exito"
@@ -426,6 +427,7 @@
             android:layout_marginEnd="28dp"
             android:ems="10"
             android:inputType="number"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_personaje_nivel" />
 
@@ -444,7 +446,7 @@
             android:layout_width="71dp"
             android:layout_height="31dp"
             android:layout_marginStart="46dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
             android:background="#BAB7B7"
             android:text="Classe"
             android:textAlignment="center"
@@ -497,21 +499,12 @@
             android:id="@+id/btn_siguiente_ficha_personaje_general"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="272dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="50dp"
             android:backgroundTint="#4FD330"
             android:text="Siguiente"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageView
-            android:id="@+id/img_crear_personaje"
-            android:layout_width="112dp"
-            android:layout_height="153dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/cachodemadera"
-            app:layout_constraintStart_toEndOf="@+id/edit_exito"
-            app:layout_constraintTop_toBottomOf="@+id/edit_personaje_nombre2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

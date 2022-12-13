@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -74,6 +76,8 @@ class ficha_personaje_habilidades : Fragment() {
                 }
             }
             findNavController().navigate(R.id.action_ficha_personaje_habilidades_to_perfil)
+            Snackbar.make(view, "Personaje editado correctamente", BaseTransientBottomBar.LENGTH_SHORT
+            ).show()
         }
     }
 

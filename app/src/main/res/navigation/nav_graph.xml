@@ -283,7 +283,19 @@
         android:id="@+id/partidas"
         android:name="copernic.cat.Perfil.partidas"
         android:label="fragment_partidas"
-        tools:layout="@layout/fragment_partidas" />
+        tools:layout="@layout/fragment_partidas" >
+        <action
+            android:id="@+id/action_partidas_to_crear_partida"
+            app:destination="@id/crear_partida" />
+        <action
+            android:id="@+id/action_partidas_to_modificar_o_eliminar_partida"
+            app:destination="@id/modificar_o_eliminar_partida" />
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
     <fragment
         android:id="@+id/novedades_admin"
         android:name="copernic.cat.Admin.novedades_admin"
@@ -481,6 +493,102 @@
             android:defaultValue="@null" />
         <action
             android:id="@+id/action_editar_personaje_habilidades_to_inici"
+            app:destination="@id/inici" />
+    </fragment>
+    <fragment
+        android:id="@+id/crear_partida"
+        android:name="copernic.cat.Partidas.crear_partida"
+        android:label="fragment_crear_partida"
+        tools:layout="@layout/fragment_crear_partida" >
+        <action
+            android:id="@+id/action_crear_partida_to_crear_partida_nom"
+            app:destination="@id/crear_partida_nom" />
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/crear_partida_nom"
+        android:name="copernic.cat.Partidas.crear_partida_nom"
+        android:label="fragment_crear_partida_nom"
+        tools:layout="@layout/fragment_crear_partida_nom" >
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_crear_partida_nom_to_inici"
+            app:destination="@id/inici" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificar_o_eliminar_partida"
+        android:name="copernic.cat.Partidas.modificar_o_eliminar_partida"
+        android:label="fragment_modificar_o_eliminar_partida"
+        tools:layout="@layout/fragment_modificar_o_eliminar_partida" >
+        <action
+            android:id="@+id/action_modificar_o_eliminar_partida_to_modificar_partida_general"
+            app:destination="@id/modificar_partida_general" />
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificar_partida_general"
+        android:name="copernic.cat.Partidas.modificar_partida_general"
+        android:label="fragment_modificar_partida_general"
+        tools:layout="@layout/fragment_modificar_partida_general" >
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_modificar_partida_general_to_modificar_partida_equipamiento"
+            app:destination="@id/modificar_partida_equipamiento" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificar_partida_equipamiento"
+        android:name="copernic.cat.Partidas.modificar_partida_equipamiento"
+        android:label="fragment_modificar_partida_equipamiento"
+        tools:layout="@layout/fragment_modificar_partida_equipamiento" >
+        <argument android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_modificar_partida_equipamiento_to_modificar_partida_estadisticas_secundarias"
+            app:destination="@id/modificar_partida_estadisticas_secundarias" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificar_partida_estadisticas_secundarias"
+        android:name="copernic.cat.Partidas.modificar_partida_estadisticas_secundarias"
+        android:label="fragment_modificar_partida_estadisticas_secundarias"
+        tools:layout="@layout/fragment_modificar_partida_estadisticas_secundarias" >
+        <argument android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_modificar_partida_estadisticas_secundarias_to_modificar_partida_habilidades"
+            app:destination="@id/modificar_partida_habilidades" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificar_partida_habilidades"
+        android:name="copernic.cat.Partidas.modificar_partida_habilidades"
+        android:label="fragment_modificar_partida_habilidades"
+        tools:layout="@layout/fragment_modificar_partida_habilidades" >
+        <argument
+            android:name="nomp"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_modificar_partida_habilidades_to_inici"
             app:destination="@id/inici" />
     </fragment>
 </navigation>

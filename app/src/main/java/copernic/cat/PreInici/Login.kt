@@ -1,7 +1,11 @@
 package copernic.cat.PreInici
 
 import android.annotation.SuppressLint
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,8 +13,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.Inici.MainActivity
+import copernic.cat.R
 import copernic.cat.classes.usuaris
 import copernic.cat.databinding.ActivityLoginBinding
 
@@ -30,7 +38,6 @@ class login : AppCompatActivity() {
             supportActionBar!!.hide()
 
         auth = Firebase.auth
-
 
 
         binding.botoActivityRegistre.setOnClickListener {
@@ -90,6 +97,7 @@ class login : AppCompatActivity() {
             .addOnCompleteListener(this){ task ->
                 if(task.isSuccessful){
                     startActivity(Intent(this, MainActivity::class.java))
+
                     //finish()
                 }else{
                     val builder = AlertDialog.Builder(this)
@@ -110,10 +118,22 @@ class login : AppCompatActivity() {
         auth = Firebase.auth
         //currentUser és un atribut de la classe FirebaseAuth que guarda l'usuari autenticat. Si aquest no està autenticat, el seu valor serà null.
         val currentUser = auth.currentUser
-
+        createNotificationChannel()
         if(currentUser != null){
             startActivity(Intent(this,MainActivity::class.java))
+        }
+    }
 
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "name"
+            val descriptionText = "descripcion"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel("1", name, importance).apply {
+            }
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
         }
     }
 
@@ -126,5 +146,4 @@ class login : AppCompatActivity() {
 
         return usuaris(email, false)
     }
-
 }

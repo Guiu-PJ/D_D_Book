@@ -13,8 +13,12 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import copernic.cat.R
@@ -83,10 +87,23 @@ class anadir_compendios : Fragment() {
                                 )
                             )
                         findNavController().navigate(R.id.action_anadir_compendios_to_admin_inici)
+                        notification(binding.txtAAdirNombreCompendio.text.toString())
+                        Snackbar.make(view, "Compendio añadido correctamente", BaseTransientBottomBar.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }
         }
+    }
+
+    private fun notification(nom:String) {
+        val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
+            noti.setContentTitle("Compendio añadido")
+            noti.setContentText("Compendio: " + nom + " correctamente añadido")
+            noti.setSmallIcon(R.drawable.logo)
+        }.build()
+        val notificationManageer = NotificationManagerCompat.from(requireContext())
+        notificationManageer.notify(1,notification)
     }
 
     private val guardarImgCamera =

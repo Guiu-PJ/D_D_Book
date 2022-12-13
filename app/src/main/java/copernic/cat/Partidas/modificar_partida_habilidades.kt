@@ -1,18 +1,12 @@
-package copernic.cat.EditarPersonaje
+package copernic.cat.Partidas
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
-import android.os.Build
 import android.os.Bundle
-import android.util.Log.v
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.BaseTransientBottomBar
@@ -21,8 +15,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.EditarPersonaje.editar_personaje_habilidadesArgs
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditarPersonajeHabilidadesBinding
+import copernic.cat.databinding.FragmentModificarPartidaHabilidadesBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -34,11 +30,11 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [editar_personaje_habilidades.newInstance] factory method to
+ * Use the [modificar_partida_habilidades.newInstance] factory method to
  * create an instance of this fragment.
  */
-class editar_personaje_habilidades : Fragment() {
-    private var _binding: FragmentEditarPersonajeHabilidadesBinding? = null
+class modificar_partida_habilidades : Fragment() {
+    private var _binding: FragmentModificarPartidaHabilidadesBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
@@ -47,7 +43,7 @@ class editar_personaje_habilidades : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        _binding = FragmentEditarPersonajeHabilidadesBinding.inflate(inflater, container, false)
+        _binding = FragmentModificarPartidaHabilidadesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -57,13 +53,13 @@ class editar_personaje_habilidades : Fragment() {
         val user = auth.currentUser
 
         val bundle = arguments
-        val args = editar_personaje_habilidadesArgs.fromBundle(bundle!!)
+        val args = modificar_partida_habilidadesArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
         lifecycleScope.launch {
             withContext(Dispatchers.Unconfined) {
                 bd.collection("Usuari").document(user!!.uid)
-                    .collection("Personajes")
+                    .collection("PerPartidas")
                     .document(nom.toString()).get()
                     .addOnSuccessListener {
                         binding.editHabilidades.setText(it.get("habilidad1") as String)
@@ -87,7 +83,7 @@ class editar_personaje_habilidades : Fragment() {
             lifecycleScope.launch {
                 withContext(Dispatchers.Unconfined) {
                     bd.collection("Usuari").document(user!!.uid)
-                        .collection("Personajes")
+                        .collection("PerPartidas")
                         .document(nom.toString()).update(
                             "habilidad1", binding.editHabilidades.text.toString(),
                             "habilidad2", binding.editHabilidades2.text.toString(),
@@ -106,19 +102,19 @@ class editar_personaje_habilidades : Fragment() {
                         )
                 }
             }
-            findNavController().navigate(R.id.action_editar_personaje_habilidades_to_inici)
+            findNavController().navigate(R.id.action_modificar_partida_habilidades_to_inici)
             notification(nom.toString())
-            Snackbar.make(view, "Personaje editado correctamente", BaseTransientBottomBar.LENGTH_SHORT
+            Snackbar.make(view, "Partida editada correctamente", BaseTransientBottomBar.LENGTH_SHORT
             ).show()
-
         }
     }
     private fun notification(nom:String) {
-       val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
-           noti.setContentTitle("Personaje editado")
-           noti.setContentText("Se a editado correctamente a: " + nom)
-           noti.setSmallIcon(R.drawable.logo)
-       }.build()
+        val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
+            noti.setContentTitle("Partida editada")
+            noti.setContentText("Se a editado correctamente la partida: " + nom)
+            noti.setSmallIcon(R.drawable.logo)
+        }.build()
+
         val notificationManageer = NotificationManagerCompat.from(requireContext())
         notificationManageer.notify(1,notification)
     }

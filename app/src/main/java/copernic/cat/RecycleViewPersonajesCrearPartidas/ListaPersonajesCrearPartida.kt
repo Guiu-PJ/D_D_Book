@@ -1,4 +1,9 @@
 package copernic.cat.RecycleViewPersonajesCrearPartidas
 
-class ListaPersonajesCrearPartida {
+
+class ListaPersonajes {
+    companion object {
+        val ListaPersonajeslist = ArrayList<ClassPersonajesCrearPartida>(
+        )
+    }
 }

@@ -1,8 +1,12 @@
 package copernic.cat.RecyclerViewPerfil
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import copernic.cat.Partidas.crear_partidaDirections
+import copernic.cat.Perfil.partidasDirections
 import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
 import copernic.cat.RecyclerViewPerfil.ListaPerfil
 import copernic.cat.databinding.ItemLiatcompendiosBinding
@@ -26,7 +30,14 @@ class AdapterListaPerfil(private val ListaPerfil:List<ClassPerfil>) : RecyclerVi
                 binding.txtListaperfil.text = this.nombre
                 binding.txtListapersonaje.text = this.personaje
             }
+            binding.ConstrainListaPerfil.setOnClickListener{ view ->
+                navigationTo(view, ListaPerfil[position].nombre)
+            }
         }
+    }
+    private fun navigationTo(view: View, datos: String) {
+        val action = partidasDirections.actionPartidasToModificarOEliminarPartida(datos)
+        view.findNavController().navigate(action)
     }
 
     override fun getItemCount(): Int {

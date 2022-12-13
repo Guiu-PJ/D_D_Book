@@ -14,14 +14,13 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import copernic.cat.R
-import copernic.cat.databinding.FragmentCompendiosBinding
 import copernic.cat.databinding.FragmentFichaPersonajeGeneralBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -65,7 +64,7 @@ class ficha_personaje_general : Fragment() {
         auth = Firebase.auth
         val user = auth.currentUser
         binding.imgCrearPersonaje.setOnClickListener {
-            afegirImatge2()
+            afegirImatge2(view)
         }
         binding.btnSiguienteFichaPersonajeGeneral.setOnClickListener {
             lifecycleScope.launch {
@@ -151,7 +150,7 @@ class ficha_personaje_general : Fragment() {
                                                 "investigacion" to false,
                                                 "supervivencia" to false,
                                                 "juego_de_manos" to false,
-                                                "Trato_con_animales" to false,
+                                                "trato_con_animales" to false,
                                                 "idioma1" to "",
                                                 "idioma2" to "",
                                                 "idioma3" to "",
@@ -185,7 +184,7 @@ class ficha_personaje_general : Fragment() {
             }
         }
 
-    private fun afegirImatge2(){
+    private fun afegirImatge2(view: View){
         auth = Firebase.auth
         val user = auth.currentUser
         //Obrim la galeria per seleccionar la imatge  //Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI
@@ -195,7 +194,8 @@ class ficha_personaje_general : Fragment() {
         photoSelectedUri?.let{uri->
             storageRef.putFile(uri)
                 .addOnSuccessListener {
-                    Toast.makeText(context, "La imatge s'ha pujat amb èxit", Toast.LENGTH_LONG).show()
+                    Snackbar.make(view, "Imagen subida correctamente", BaseTransientBottomBar.LENGTH_SHORT
+                    ).show()
                     binding.imgCrearPersonaje.setImageURI(uri)
                 }
         }

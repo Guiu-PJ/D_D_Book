@@ -14,21 +14,10 @@
         android:background="@drawable/pagina_libro">
 
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_nombre_partida"
-            android:layout_width="274dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="80dp"
-            android:backgroundTint="#000000"
-            android:hint="Nombre de la partida"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_personajes_crear_partida"
-            android:layout_width="413dp"
-            android:layout_height="434dp"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
             android:layout_marginBottom="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -37,36 +26,13 @@
             android:id="@+id/txt_escoge_personaje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="80dp"
             android:text="Escoge personaje:"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_nombre_partida" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txt_personaje_seleccionado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="40dp"
-            android:text="Personaje seleccioando:"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/recycler_personajes_crear_partida"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/txt_nombre_personaje_seleccionado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="40dp"
-            android:text="Ninguno"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/recycler_personajes_crear_partida"
-            app:layout_constraintStart_toEndOf="@+id/txt_personaje_seleccionado" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

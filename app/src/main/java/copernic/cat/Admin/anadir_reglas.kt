@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.Colecciones.Reglas
 import copernic.cat.R
@@ -65,17 +67,11 @@ class anadir_reglas : Fragment() {
                                                 "Descripcion" to binding.txtDescripcionReglas.text.toString()
                                             )
                                         ).addOnSuccessListener {
-                                            //val builder = AlertDialog.Builder(this)
-                                            //builder.setTitle("Correcto")
-                                            //builder.setMessage("Se a añadido la regla correctamente")
-                                            //builder.setPositiveButton("OK"){_, _ ->
-                                            //}
+                                            Snackbar.make(view, "Regla añadida correctamente", BaseTransientBottomBar.LENGTH_SHORT
+                                            ).show()
                                         }.addOnFailureListener {
-                                            //val builder = AlertDialog.Builder(this)
-                                            //builder.setTitle("Error")
-                                            //builder.setMessage("No se a podido añadir la regla")
-                                            //builder.setPositiveButton("OK"){_, _ ->
-                                            //}
+                                            Snackbar.make(view, "Regla no añadida", BaseTransientBottomBar.LENGTH_SHORT
+                                            ).show()
                                         }
                                 }
                                 findNavController().navigate(R.id.action_anadir_reglas_to_admin_inici)

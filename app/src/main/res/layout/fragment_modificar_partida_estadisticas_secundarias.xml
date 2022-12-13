@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Partidas.modificar_partida_estadisticas_secundarias"
+    android:background="@drawable/pagina_libro">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_esstadisticas_sec_idioma5"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="90dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_esstadisticas_sec_idioma4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_esstadisticas_sec_idioma4"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="90dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_esstadisticas_sec_idioma3" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_esstadisticas_sec_idioma3"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="90dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_esstadisticas_sec_idioma2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_esstadisticas_sec_idioma2"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="90dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_esstadisticas_sec_idioma" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_esstadisticas_sec_idioma"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="90dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_habilidades_sec_idiomes" />
+
+        <TextView
+            android:id="@+id/txt_habilidades_sec_idiomes"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="400dp"
+            android:background="#BAB7B7"
+            android:text="Idiomas"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_tratamineto_animales"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:text="T. Animales"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/txt_esstadisticas_sec_supervivencia" />
+
+        <CheckBox
+            android:id="@+id/check_box_juego_de_manos"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/check_box_investigacion"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_juego_de_manos"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:background="#FFFFFF"
+            android:text="J. de manos"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_esstadisticas_sec_investigacion" />
+
+        <CheckBox
+            android:id="@+id/check_box_tratamineto_animales"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/check_box_supervivencia"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_supervivencia"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:text="Supervivencia"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/txt_esstadisticas_sec_sigilo" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_investigacion"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:background="#FFFFFF"
+            android:text="Investigación"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_box_intimidacion" />
+
+        <CheckBox
+            android:id="@+id/check_box_investigacion"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/check_box_intimidacion"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/check_box_supervivencia"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/check_box_sigilo"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_sigilo"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:text="Sigilo"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/txt_esstadisticas_sec_religion" />
+
+        <CheckBox
+            android:id="@+id/check_box_intimidacion"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/check_box_interpretacion"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/check_box_sigilo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/check_box_religion"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_intimidacion"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:background="#FFFFFF"
+            android:text="Intimidación"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_esstadisticas_sec_interpretacion" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
+            android:background="#BAB7B7"
+            android:text="Habilidades secundarias"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_religion"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="140dp"
+            android:background="#FFFFFF"
+            android:text="Religión"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_interpretacion"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="140dp"
+            android:background="#FFFFFF"
+            android:text="Interpretación"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/check_box_interpretacion"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="140dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/check_box_religion"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="140dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_persuasion"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="112dp"
+            android:background="#FFFFFF"
+            android:text="Persuasion"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_historia"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="112dp"
+            android:background="#FFFFFF"
+            android:text="Historia"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/check_box_historia"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="112dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/check_box_persuasion"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="112dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_perspicacia"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="84dp"
+            android:background="#FFFFFF"
+            android:text="Perspicacia"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_engaño"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="84dp"
+            android:background="#FFFFFF"
+            android:text="Engaño"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/check_box_engaño"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="84dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/check_box_perspicacia"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="84dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_percepcion"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="56dp"
+            android:background="#FFFFFF"
+            android:text="Percepción"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/check_box_percepcion"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="56dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_arcano"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="56dp"
+            android:background="#FFFFFF"
+            android:text="C. Arcano"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/check_box_arcano"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="56dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_natura"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="28dp"
+            android:background="#FFFFFF"
+            android:text="Natura"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/check_box_atletismo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="28dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <CheckBox
+            android:id="@+id/check_box_natura"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="28dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_acrobacias2"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="28dp"
+            android:background="#FFFFFF"
+            android:text="Atletismo"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/check_box_medicina"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_medicina"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_acrobacias"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:background="#FFFFFF"
+            android:text="Acrobacias"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/check_box_acrobacias"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:checked="false"
+            app:layout_constraintStart_toEndOf="@+id/txt_esstadisticas_sec_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_esstadisticas_sec_medicina"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:background="#FFFFFF"
+            android:text="Medicina"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/check_box_acrobacias"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/btn_siguiente_ficha_personaje_estadisticas_secundarias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="#4FD330"
+            android:text="Siguiente"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

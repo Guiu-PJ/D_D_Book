@@ -1,4 +1,4 @@
-package copernic.cat.EditarPersonaje
+package copernic.cat.Partidas
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,10 +11,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.EditarPersonaje.editar_personaje_estadisticas_secundariasArgs
+import copernic.cat.EditarPersonaje.editar_personaje_estadisticas_secundariasDirections
 import copernic.cat.R
-import copernic.cat.databinding.FragmentEditPersonajeEquipamientoBinding
 import copernic.cat.databinding.FragmentEditarPersonajeEstadisticasSecundariasBinding
-import copernic.cat.databinding.FragmentEditarPersonajeGeneralBinding
+import copernic.cat.databinding.FragmentModificarPartidaEstadisticasSecundariasBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -24,8 +25,13 @@ import kotlinx.coroutines.withContext
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class editar_personaje_estadisticas_secundarias : Fragment() {
-    private var _binding: FragmentEditarPersonajeEstadisticasSecundariasBinding? = null
+/**
+ * A simple [Fragment] subclass.
+ * Use the [modificar_partida_estadisticas_secundarias.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class modificar_partida_estadisticas_secundarias : Fragment() {
+    private var _binding: FragmentModificarPartidaEstadisticasSecundariasBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
@@ -35,8 +41,8 @@ class editar_personaje_estadisticas_secundarias : Fragment() {
         savedInstanceState: Bundle?
     ): View{
         // Inflate the layout for this fragment
-            _binding = FragmentEditarPersonajeEstadisticasSecundariasBinding.inflate(inflater, container, false)
-            return binding.root
+        _binding = FragmentModificarPartidaEstadisticasSecundariasBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,13 +51,13 @@ class editar_personaje_estadisticas_secundarias : Fragment() {
         val user = auth.currentUser
 
         val bundle = arguments
-        val args = editar_personaje_estadisticas_secundariasArgs.fromBundle(bundle!!)
+        val args = modificar_partida_estadisticas_secundariasArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
         lifecycleScope.launch {
             withContext(Dispatchers.Unconfined) {
                 bd.collection("Usuari").document(user!!.uid)
-                    .collection("Personajes")
+                    .collection("PerPartidas")
                     .document(nom.toString()).get()
                     .addOnSuccessListener {
                         binding.editEsstadisticasSecIdioma.setText(it.get("idioma1") as String)
@@ -74,7 +80,7 @@ class editar_personaje_estadisticas_secundarias : Fragment() {
                         binding.checkBoxIntimidacion.isChecked = it.get("intimidacion") as Boolean
                         binding.checkBoxSigilo.isChecked = it.get("sigilo") as Boolean
                         binding.checkBoxInvestigacion.isChecked = it.get("investigacion") as Boolean
-                        binding.checkBoxSupervivencia.isChecked = it.get("supervivencia") as Boolean
+                        binding.checkBoxSupervivencia.isChecked = it.get("superviviencia") as Boolean
                         binding.checkBoxJuegoDeManos.isChecked = it.get("juego_de_manos") as Boolean
                         binding.checkBoxTrataminetoAnimales.isChecked = it.get("trato_con_animales") as Boolean
 
@@ -86,7 +92,7 @@ class editar_personaje_estadisticas_secundarias : Fragment() {
             lifecycleScope.launch {
                 withContext(Dispatchers.Unconfined) {
                     bd.collection("Usuari").document(user!!.uid)
-                        .collection("Personajes")
+                        .collection("PerPartidas")
                         .document(nom.toString()).update(
                             "idioma1", binding.editEsstadisticasSecIdioma.text.toString(),
                             "idioma2", binding.editEsstadisticasSecIdioma2.text.toString(),
@@ -114,7 +120,7 @@ class editar_personaje_estadisticas_secundarias : Fragment() {
                         )
                 }
             }
-            val action = editar_personaje_estadisticas_secundariasDirections.actionEditarPersonajeEstadisticasSecundariasToEditarPersonajeHabilidades(nom)
+            val action = modificar_partida_estadisticas_secundariasDirections.actionModificarPartidaEstadisticasSecundariasToModificarPartidaHabilidades(nom)
             view.findNavController().navigate(action)
         }
     }

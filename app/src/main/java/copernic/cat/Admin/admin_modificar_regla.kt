@@ -7,11 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import copernic.cat.Ficha_Personaje.ficha_personaje_estadisticas_secundariasArgs
 import copernic.cat.R
+import copernic.cat.Reglas.accion
 import copernic.cat.databinding.FragmentAdminModificarIeliminarReglasBinding
 import copernic.cat.databinding.FragmentAdminModificarReglaBinding
 import kotlinx.coroutines.Dispatchers
@@ -69,6 +74,9 @@ class admin_modificar_regla : Fragment() {
                             }
                         }
                         findNavController().navigate(R.id.action_admin_modificar_regla_to_inici)
+                        notification(binding.editTituloRegla.text.toString(), "modificada")
+                        Snackbar.make(view, "Regla modificada correctamente", BaseTransientBottomBar.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }
@@ -79,11 +87,23 @@ class admin_modificar_regla : Fragment() {
                 withContext(Dispatchers.Unconfined) {
                     bd.collection("Reglas").document(nom.toString()).delete().addOnSuccessListener {
                         findNavController().navigate(R.id.action_admin_modificar_regla_to_inici)
+                        notification(binding.editTituloRegla.text.toString(), "eliminada")
+                        Snackbar.make(view, "Regla eliminada correctamente", BaseTransientBottomBar.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }
         }
 
+    }
+    private fun notification(nom:String, accion:String) {
+        val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
+            noti.setContentTitle("Regla " + accion)
+            noti.setContentText("Regla correctamente " + accion + ": "+ nom)
+            noti.setSmallIcon(R.drawable.logo)
+        }.build()
+        val notificationManageer = NotificationManagerCompat.from(requireContext())
+        notificationManageer.notify(1,notification)
     }
 }
 
