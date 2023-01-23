@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
 import copernic.cat.RecycleViewCompendios.ClassCompendios
@@ -41,19 +42,24 @@ class compendios : Fragment() {
     private var bd = FirebaseFirestore.getInstance()
 
 
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
+        (requireActivity() as MainActivity).title = getString(R.string.compendios)
         _binding = FragmentCompendiosBinding.inflate(inflater, container, false)
         return binding.root
 
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        ListaCompendios.ListaCompendioslist.clear()
         initRecyclerView(view)
         //initRecyclerView2()
     }
@@ -72,8 +78,8 @@ class compendios : Fragment() {
                 bd.collection("Compendios").get().addOnSuccessListener { documents ->
                     for (document in documents) {
                     val wallItem = ClassCompendios(
-                        nombre = document["Nombre"].toString(),
-                        img = R.drawable.monster_manual_5
+                        nombre = document["nombre"].toString(),
+                        img = R.drawable.jorge
                     )
                     if (ListaCompendios.ListaCompendioslist.isEmpty()) {
                             ListaCompendios.ListaCompendioslist.add(wallItem)

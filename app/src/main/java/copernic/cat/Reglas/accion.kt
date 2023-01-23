@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentAccionBinding
 import copernic.cat.databinding.FragmentIniciBinding
@@ -34,6 +35,7 @@ class accion : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.accion)
         _binding = FragmentAccionBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -54,7 +56,7 @@ class accion : Fragment() {
 }
     fun llegirnovedades() {
         bd.collection("Reglas").document("accion").get().addOnSuccessListener {
-            binding.txtAccion.text = it.get("Descripcion") as String?
+            binding.txtAccion.text = it.get("descripcion") as String?
         }
     }
 }

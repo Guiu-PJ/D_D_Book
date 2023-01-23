@@ -18,7 +18,7 @@
             android:layout_width="@dimen/btn_width"
             android:layout_height="@dimen/brn_height"
             android:layout_marginStart="67dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="150dp"
             android:layout_marginEnd="67dp"
             android:backgroundTint="@color/gris"
             android:hapticFeedbackEnabled="false"
@@ -34,18 +34,18 @@
             android:id="@+id/btn_reglas"
             android:layout_width="@dimen/btn_width"
             android:layout_height="@dimen/brn_height"
-            android:layout_marginStart="67dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="67dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="50dp"
             android:backgroundTint="@color/gris"
             android:hapticFeedbackEnabled="false"
             android:text="@string/Reglas"
             android:textColor="@color/btn_txt_color"
             android:textSize="@dimen/btn_txt_size"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_compendios" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_novedades" />
 
         <Button
             android:id="@+id/btn_dados"
@@ -64,7 +64,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_reglas" />
 
-        <Button
+        <!--<Button
             android:id="@+id/btn_compendios"
             android:layout_width="@dimen/btn_width"
             android:layout_height="@dimen/brn_height"
@@ -79,15 +79,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_novedades" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_novedades" />-->
 
-        <ImageView
+        <Button
             android:id="@+id/btn_admin"
-            android:layout_width="61dp"
-            android:layout_height="63dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="admin"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

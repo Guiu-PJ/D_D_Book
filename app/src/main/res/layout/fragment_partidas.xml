@@ -15,41 +15,36 @@
             android:id="@+id/txt_partidas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="107dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="50dp"
             android:text="@string/partidas"
             android:textColor="#000000"
-            android:textSize="48sp"
+            android:textSize="60sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btn_partida_nueva"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="24dp"
             android:backgroundTint="@color/gris"
-            android:text="Partida nueva"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_partidas" />
-
-        <Button
-            android:id="@+id/btn_borrar_partida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="31dp"
-            android:backgroundTint="@color/gris"
-            android:text="Borrar partida"
+            android:text="@string/partida_nueva"
+            app:layout_constraintBottom_toTopOf="@+id/reciclerview_partidas"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_partidas" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/reciclerview_partidas"
-            android:layout_width="409dp"
-            android:layout_height="516dp"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="38dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_partida_nueva" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -15,6 +15,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import copernic.cat.EditarPersonaje.editar_personaje_generalArgs
 import copernic.cat.EditarPersonaje.editar_personaje_generalDirections
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditarPersonajeGeneralBinding
 import copernic.cat.databinding.FragmentModificarOEliminarPartidaBinding
@@ -39,29 +40,39 @@ class modificar_partida_general : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
+        (requireActivity() as MainActivity).title = getString(R.string.partida_general)
         _binding = FragmentModificarPartidaGeneralBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
 
+        /**
+         * Recoje el nombre de la partida
+         */
         val bundle = arguments
         val args = modificar_partida_generalArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
-        binding.editPersonajeNombre2.text = nom
+        binding.editPersonajeNombre.text = nom
 
+        /**
+         * Lee la base de datos y rellena los campos
+         */
         lifecycleScope.launch {
-            withContext(Dispatchers.Unconfined) {
+            withContext(Dispatchers.IO) {
                 bd.collection("Usuari").document(user!!.uid)
                     .collection("PerPartidas")
                     .document(nom.toString()).get()
@@ -87,6 +98,10 @@ class modificar_partida_general : Fragment() {
                     }
             }
         }
+
+        /**
+         * Actualiza la base de datos con los edit text
+         */
         binding.btnSiguienteFichaPersonajeGeneral.setOnClickListener {
             lifecycleScope.launch {
                 withContext(Dispatchers.Unconfined) {
@@ -114,6 +129,9 @@ class modificar_partida_general : Fragment() {
                         )
                 }
             }
+            /**
+             * Envia el nombre de la partida
+             */
             val action = modificar_partida_generalDirections.actionModificarPartidaGeneralToModificarPartidaEquipamiento(nom)
             view.findNavController().navigate(action)
         }

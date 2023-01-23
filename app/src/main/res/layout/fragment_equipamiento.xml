@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:text="Equipamiento"
+            android:text="@string/equipamiento"
             android:textSize="60sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
                     android:id="@+id/txt_equipamiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Norma equipamiento"
+                    android:text="@string/norma_equipamiento"
                     android:textSize="24sp" />
             </LinearLayout>
         </ScrollView>

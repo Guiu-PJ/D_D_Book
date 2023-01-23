@@ -13,6 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import copernic.cat.EditarPersonaje.editar_personaje_estadisticas_secundariasArgs
 import copernic.cat.EditarPersonaje.editar_personaje_estadisticas_secundariasDirections
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditarPersonajeEstadisticasSecundariasBinding
 import copernic.cat.databinding.FragmentModificarPartidaEstadisticasSecundariasBinding
@@ -35,25 +36,35 @@ class modificar_partida_estadisticas_secundarias : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        // Inflate the layout for this fragment
+        (requireActivity() as MainActivity).title = getString(R.string.estadisticas_secundarias_partida)
         _binding = FragmentModificarPartidaEstadisticasSecundariasBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
 
+        /**
+         * Recive el nombre de la partida
+         */
         val bundle = arguments
         val args = modificar_partida_estadisticas_secundariasArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
+        /**
+         * Lee la base de datos y rellena los campos
+         */
         lifecycleScope.launch {
             withContext(Dispatchers.Unconfined) {
                 bd.collection("Usuari").document(user!!.uid)
@@ -80,7 +91,7 @@ class modificar_partida_estadisticas_secundarias : Fragment() {
                         binding.checkBoxIntimidacion.isChecked = it.get("intimidacion") as Boolean
                         binding.checkBoxSigilo.isChecked = it.get("sigilo") as Boolean
                         binding.checkBoxInvestigacion.isChecked = it.get("investigacion") as Boolean
-                        binding.checkBoxSupervivencia.isChecked = it.get("superviviencia") as Boolean
+                        binding.checkBoxSupervivencia.isChecked = it.get("supervivencia") as Boolean
                         binding.checkBoxJuegoDeManos.isChecked = it.get("juego_de_manos") as Boolean
                         binding.checkBoxTrataminetoAnimales.isChecked = it.get("trato_con_animales") as Boolean
 
@@ -88,6 +99,9 @@ class modificar_partida_estadisticas_secundarias : Fragment() {
             }
         }
 
+        /**
+         * Actualiza la base de datos con los edit text
+         */
         binding.btnSiguienteFichaPersonajeEstadisticasSecundarias.setOnClickListener {
             lifecycleScope.launch {
                 withContext(Dispatchers.Unconfined) {
@@ -120,6 +134,9 @@ class modificar_partida_estadisticas_secundarias : Fragment() {
                         )
                 }
             }
+            /**
+             * Envia el nombre de la partida
+             */
             val action = modificar_partida_estadisticas_secundariasDirections.actionModificarPartidaEstadisticasSecundariasToModificarPartidaHabilidades(nom)
             view.findNavController().navigate(action)
         }

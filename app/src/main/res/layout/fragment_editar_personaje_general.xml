@@ -18,7 +18,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="28dp"
             android:background="#BAB7B7"
-            android:text="Nombre personaje"
+            android:text="@string/nombre_personaje"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -27,7 +27,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_int" />
 
         <TextView
-            android:id="@+id/edit_personaje_nombre2"
+            android:id="@+id/edit_personaje_nombre"
             android:layout_width="180dp"
             android:layout_height="39dp"
             android:layout_marginStart="4dp"
@@ -344,7 +344,7 @@
             android:layout_marginStart="64dp"
             android:layout_marginTop="236dp"
             android:background="#BAB7B7"
-            android:text="Maxima"
+            android:text="@string/maxima"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -359,7 +359,7 @@
             android:layout_marginStart="64dp"
             android:layout_marginTop="204dp"
             android:background="#BAB7B7"
-            android:text="Puntos de vida"
+            android:text="@string/puntos_de_vida"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -374,7 +374,7 @@
             android:layout_marginStart="228dp"
             android:layout_marginTop="100dp"
             android:background="#BAB7B7"
-            android:text="Alineamiento"
+            android:text="@string/alineamiento"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -400,7 +400,7 @@
             android:layout_marginStart="76dp"
             android:layout_marginTop="104dp"
             android:background="#BAB7B7"
-            android:text="Raza"
+            android:text="@string/raza"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -444,9 +444,9 @@
             android:layout_width="71dp"
             android:layout_height="31dp"
             android:layout_marginStart="46dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
             android:background="#BAB7B7"
-            android:text="Classe"
+            android:text="@string/classe"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -470,7 +470,7 @@
             android:layout_height="31dp"
             android:layout_marginTop="18dp"
             android:background="#BAB7B7"
-            android:text="Trasfondo"
+            android:text="@string/trasfondo"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -485,7 +485,7 @@
             android:layout_marginTop="18dp"
             android:layout_marginEnd="28dp"
             android:background="#BAB7B7"
-            android:text="Nivel"
+            android:text="@string/nivel"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -500,7 +500,7 @@
             android:layout_marginEnd="272dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="#4FD330"
-            android:text="Siguiente"
+            android:text="@string/siguiente"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -510,8 +510,7 @@
             android:layout_height="153dp"
             android:layout_marginStart="70dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/cachodemadera"
             app:layout_constraintStart_toEndOf="@+id/edit_exito"
-            app:layout_constraintTop_toBottomOf="@+id/edit_personaje_nombre2" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_personaje_nombre" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

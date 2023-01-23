@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="115dp"
             android:layout_marginTop="30dp"
-            android:text="Criticos"
+            android:text="@string/criticos"
             android:textSize="60sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
                     android:id="@+id/txt_criticos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Norma criticos"
+                    android:text="@string/norma_criticos"
                     android:textSize="24sp" />
             </LinearLayout>
         </ScrollView>

@@ -15,6 +15,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!-- Cargamos el mapa de navegacion en el nav_host_frgment -->
             <fragment
                 android:id="@+id/nav_host_fragment"
                 android:name="androidx.navigation.fragment.NavHostFragment"
@@ -29,6 +30,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <!--Creamos el nav_view que sera el menu desplegable -->
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
             android:layout_width="wrap_content"

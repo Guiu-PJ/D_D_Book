@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
 import copernic.cat.RecycleViewCompendios.ClassCompendios
@@ -38,30 +39,36 @@ class partidas : Fragment() {
     private var _binding: FragmentPartidasBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
-    private  lateinit var auth: FirebaseAuth
-
+    private lateinit var auth: FirebaseAuth
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.partidas)
         _binding = FragmentPartidasBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //initRecyclerView(view)
+        ListaPerfil.ListaPerfil.clear()
+        //recycler view que muetra todas las partidas
         recycleServicios()
+
         binding.btnPartidaNueva.setOnClickListener {
             findNavController().navigate(R.id.action_partidas_to_crear_partida)
         }
     }
 
-    private fun initRecyclerView(view: View) {
 
-    }
-
+    /**
+     * Recycler viey que muestra las partidas
+     */
     private fun recycleServicios() {
         lifecycleScope.launch {
             withContext(Dispatchers.IO){

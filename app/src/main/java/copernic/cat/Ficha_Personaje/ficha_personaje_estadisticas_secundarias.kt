@@ -11,10 +11,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentFichaPersonajeEstadisticasSecundariasBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import org.checkerframework.checker.units.qual.h
 
@@ -33,28 +35,38 @@ class ficha_personaje_estadisticas_secundarias : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-        _binding = copernic.cat.databinding.FragmentFichaPersonajeEstadisticasSecundariasBinding.inflate(inflater, container, false)
+        (requireActivity() as MainActivity).title = getString(R.string.estadisticas_secundarias)
+        _binding = FragmentFichaPersonajeEstadisticasSecundariasBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
 
+        /**
+         * Recojemos le nombre del personaje
+         */
         val bundle = arguments
         val args = ficha_personaje_estadisticas_secundariasArgs.fromBundle(bundle!!)
         val nom = args.nomPers
 
+        /**
+         * Boton para pasar a la siguinete pantalla
+         */
         binding.btnSiguienteFichaPersonajeEstadisticasSecundarias.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {
+                withContext(Dispatchers.IO) {
                         bd.collection("Usuari").document(user!!.uid)
                         .collection("Personajes")
                         .document(nom.toString()).update(
@@ -81,9 +93,12 @@ class ficha_personaje_estadisticas_secundarias : Fragment() {
                                 "idioma3", binding.editEsstadisticasSecIdioma3.text.toString(),
                                 "idioma4", binding.editEsstadisticasSecIdioma4.text.toString(),
                                 "idioma5", binding.editEsstadisticasSecIdioma5.text.toString()
-                        )
+                        ).await()
                 }
             }
+            /**
+             * Enviamos el nombre del personaje
+             */
             val nomp = nom
             val directions = ficha_personaje_estadisticas_secundariasDirections.actionFichaPersonajeEstadisticasSecundariasToFichaPersonajeHabilidades(nomp)
 

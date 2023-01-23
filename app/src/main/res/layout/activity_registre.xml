@@ -103,8 +103,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/correuRegistre"
-                android:layout_width="200dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/groc"
                 tools:ignore="TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,7 +120,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/contrasenyaRegistre"
-                android:layout_width="200dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:textColor="@color/groc"
@@ -149,7 +150,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/repetirContrasenya"
-                android:layout_width="200dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:textColor="@color/groc"

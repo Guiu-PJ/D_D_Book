@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditarPersonajeHabilidadesBinding
 import kotlinx.coroutines.Dispatchers
@@ -42,26 +43,37 @@ class editar_personaje_habilidades : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
+        (requireActivity() as MainActivity).title = getString(R.string.editar_habilidades)
         _binding = FragmentEditarPersonajeHabilidadesBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
 
+        /**
+         * Recojemos el nombre dle personaje
+         */
         val bundle = arguments
         val args = editar_personaje_habilidadesArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
+        /**
+         * Corrutina que rellena los campos con la base de datos
+         */
         lifecycleScope.launch {
-            withContext(Dispatchers.Unconfined) {
+            withContext(Dispatchers.IO) {
                 bd.collection("Usuari").document(user!!.uid)
                     .collection("Personajes")
                     .document(nom.toString()).get()
@@ -83,9 +95,13 @@ class editar_personaje_habilidades : Fragment() {
                     }
             }
         }
+
+        /**
+         * Corrutina que actualiza la base de datos
+         */
         binding.btnSiguienteFichaPersonajeHabilidades.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {
+                withContext(Dispatchers.IO) {
                     bd.collection("Usuari").document(user!!.uid)
                         .collection("Personajes")
                         .document(nom.toString()).update(
@@ -106,17 +122,27 @@ class editar_personaje_habilidades : Fragment() {
                         )
                 }
             }
+
+            /**
+             * Vuelve la inicio y crea al personaje
+             */
             findNavController().navigate(R.id.action_editar_personaje_habilidades_to_inici)
             notification(nom.toString())
-            Snackbar.make(view, "Personaje editado correctamente", BaseTransientBottomBar.LENGTH_SHORT
+            Snackbar.make(view, getString(R.string.personaje_editado_correctamente), BaseTransientBottomBar.LENGTH_SHORT
             ).show()
 
         }
     }
+
+    /**
+     * Envia una notificación al usuario
+     *
+     * @param nom nombre del personaje
+     */
     private fun notification(nom:String) {
        val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
-           noti.setContentTitle("Personaje editado")
-           noti.setContentText("Se a editado correctamente a: " + nom)
+           noti.setContentTitle(getString(R.string.personaje_editado))
+           noti.setContentText(getString(R.string.se_a_editado_correctamente_a) + nom)
            noti.setSmallIcon(R.drawable.logo)
        }.build()
         val notificationManageer = NotificationManagerCompat.from(requireContext())

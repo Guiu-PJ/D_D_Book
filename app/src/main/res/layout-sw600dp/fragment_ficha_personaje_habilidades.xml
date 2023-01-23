@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ficha_Personaje.ficha_personaje_habilidades"
+    android:background="@drawable/pagina_libro">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_siguiente_ficha_personaje_habilidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="44dp"
+            android:backgroundTint="#4FD330"
+            android:text="@string/siguiente"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_magia"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="32dp"
+            android:background="#BAB7B7"
+            android:text="@string/magia"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_habilidades7" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_magia2"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#EAEAEA"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_magia" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_magia3"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_magia2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_magia4"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#EAEAEA"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_magia3" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_magia5"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_magia4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_magia6"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#EAEAEA"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_magia5" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_magia7"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_magia6" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_magia"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_magia" />
+
+        <TextView
+            android:id="@+id/txt_habilidades"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="48dp"
+            android:background="#BAB7B7"
+            android:text="@string/habilidades"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_habilidades"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_habilidades" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_habilidades3"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_habilidades2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_habilidades4"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#EAEAEA"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_habilidades3" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_habilidades5"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_habilidades4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_habilidades6"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#EAEAEA"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_habilidades5" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_habilidades7"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#FFFFFF"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_habilidades6" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_habilidades2"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:background="#EAEAEA"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_habilidades" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

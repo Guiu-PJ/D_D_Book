@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import androidx.appcompat.app.AlertDialog
+import copernic.cat.R
 import copernic.cat.databinding.ActivityRecuperarContrasenyaBinding
 
 
@@ -20,11 +21,18 @@ class recuperar_contrasenya : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     @SuppressLint("MissingInflatedId")
+    /**
+     * En el método onCreate, se infla el layout correspondiente
+     * y se establece el listener para el boton de recuperar contraseña.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecuperarContrasenyaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        /**
+         * Ocultamos la action bar
+         */
         if (supportActionBar != null)
             supportActionBar!!.hide()
 
@@ -36,12 +44,27 @@ class recuperar_contrasenya : AppCompatActivity() {
         }
 
         binding.btnRecuperarContrasenya.setOnClickListener{
-            resetPasword()
+            val email = binding.txtEmailContrasenya.text.toString()
+            if(email.isNotEmpty()){
+                resetPasword()
+            }else {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle(getString(R.string.recuperar_contraseña_fallido))
+                builder.setMessage(getString(R.string.el_campo_no_puede_estar_vacio))
+                builder.setPositiveButton("OK") { _, _ ->
+                }
+                val alertDialog: AlertDialog = builder.create()
+                alertDialog.setCancelable(true)
+                alertDialog.show()
+            }
         }
 
     }
 
-    private fun resetPasword(){
+    /**
+     * Envia el correo para recuperar la contraseña
+     */
+    fun resetPasword(){
         auth= FirebaseAuth.getInstance();
 
         auth.sendPasswordResetEmail(binding.txtEmailContrasenya.text.toString()).addOnCompleteListener(this){task ->
@@ -50,8 +73,8 @@ class recuperar_contrasenya : AppCompatActivity() {
                 //finish()
             }else{
                 val builder = AlertDialog.Builder(this)
-                builder.setTitle("Recuperadr contraseña a fallado")
-                builder.setMessage("L'email no es correcte")
+                builder.setTitle(getString(R.string.recuperar_contrasena_fallido))
+                builder.setMessage(getString(R.string.correo_incorrecto))
                 builder.setPositiveButton("OK"){_, _ ->
                 }
                 val alertDialog: AlertDialog = builder.create()

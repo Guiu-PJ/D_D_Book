@@ -15,6 +15,10 @@ import kotlin.concurrent.schedule
 class SplashScreen : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
         var timer = Timer()
+
+    /**
+     * En el método onCreate, se oculta la barra de acción y se infla el layout correspondiente.
+     */
         override fun onCreate(savedInstanceState: Bundle?){
             super.onCreate(savedInstanceState)
             if (supportActionBar != null)
@@ -22,9 +26,11 @@ class SplashScreen : AppCompatActivity() {
             binding = ActivitySplashScreenBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
-
+            /**
+             * Espera 1 segundo y pasa a la siguiente pantalla
+             */
             timer.schedule(1000){
-                var intent = Intent(this@SplashScreen, login::class.java)
+                val intent = Intent(this@SplashScreen, login::class.java)
                 startActivity(intent)
                 finish()
             }

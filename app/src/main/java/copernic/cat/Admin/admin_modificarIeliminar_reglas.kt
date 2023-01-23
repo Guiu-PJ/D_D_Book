@@ -5,10 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.RecycleViewCompendios.ListaCompendios
 import copernic.cat.RecyclerViewReglas.AdapterListaReglas
@@ -33,31 +33,32 @@ class admin_modificarIeliminar_reglas : Fragment() {
     private var _binding: FragmentAdminModificarIeliminarReglasBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        (requireActivity() as MainActivity).title = getString(R.string.editar_o_eliminar_regla)
         _binding = FragmentAdminModificarIeliminarReglasBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerView(view)
+        ListaReglas.ListaReglasList.clear()
+        recycleServicios()
 
     }
 
-    private fun initRecyclerView(view: View) {
-        if (ListaCompendios.ListaCompendioslist.isEmpty()) {
-            recycleServicios()
-        } else {
-            binding.recyclerReglas.layoutManager = LinearLayoutManager(context)
-            binding.recyclerReglas.adapter = AdapterListaReglas(ListaReglas.ListaReglasList.toList())
-        }
-    }
-    private fun recycleServicios() {
+
+    /**
+     * Recycler view que muestra todas las reglas de la base de datos y tiene un onclick para seleccionar una
+     */
+    fun recycleServicios() {
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
                 bd.collection("Reglas").get().addOnSuccessListener { documents ->

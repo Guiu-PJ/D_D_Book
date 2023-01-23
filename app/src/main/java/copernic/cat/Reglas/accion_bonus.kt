@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentAccionBinding
 import copernic.cat.databinding.FragmentAccionBonusBinding
@@ -34,7 +35,8 @@ class accion_bonus : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
+        (requireActivity() as MainActivity).title = getString(R.string.accion_bonus)
         _binding = FragmentAccionBonusBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -56,7 +58,7 @@ class accion_bonus : Fragment() {
     }
     fun llegirnovedades() {
         bd.collection("Reglas").document("accion_bonus").get().addOnSuccessListener {
-            binding.txtAccionBonus.text = it.get("Descripcion") as String?
+            binding.txtAccionBonus.text = it.get("descripcion") as String?
         }
     }
 }

@@ -12,4 +12,6 @@
     <color name="vermell">#c62828</color>
     <color name="btn_txt_color">#000000</color>
     <color name="gris">#DEF4EF</color>
+    <color name="t">#00DEF4EF</color>
+
 </resources>

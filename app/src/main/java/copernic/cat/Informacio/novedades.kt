@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.Reglas.accion
 import copernic.cat.databinding.FragmentNovedadesBinding
@@ -30,29 +31,38 @@ class novedades : Fragment() {
     private var _binding:FragmentNovedadesBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.novedades)
         _binding = FragmentNovedadesBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnFlechaNovedades.setOnClickListener {
+        /*binding.btnFlechaNovedades.setOnClickListener {
             findNavController().navigate(R.id.action_novedades_to_inici)
-        }
+        }*/
 
+        //llenamos los campos leyendo la base de datos
         lifecycleScope.launch {
-            withContext(Dispatchers.Unconfined){//llegir dades de la base de dades
+            withContext(Dispatchers.IO){//llegir dades de la base de dades
                 llegirnovedades()
             }
         }
     }
 
+    /**
+     * Lee la base de datos y muestra sus campos
+     */
  fun llegirnovedades(){
      bd.collection("Novedades").document("Añadir").get().addOnSuccessListener {
          binding.txtInfoAAdido.text = it.get("añadido") as String?

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentAccionBinding
 import copernic.cat.databinding.FragmentCriticosBinding
@@ -35,6 +36,7 @@ class criticos : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.criticos)
         _binding = FragmentCriticosBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -56,7 +58,7 @@ class criticos : Fragment() {
     }
     fun llegirnovedades() {
         bd.collection("Reglas").document("criticos").get().addOnSuccessListener {
-            binding.txtCriticos.text = it.get("Descripcion") as String?
+            binding.txtCriticos.text = it.get("descripcion") as String?
         }
     }
 }

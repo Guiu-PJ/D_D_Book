@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentAccionBinding
 import copernic.cat.databinding.FragmentAlcanceBinding
@@ -36,6 +37,7 @@ class alcance : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (requireActivity() as MainActivity).title = getString(R.string.alcance)
         _binding = FragmentAlcanceBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -57,7 +59,7 @@ class alcance : Fragment() {
     }
     fun llegirnovedades() {
         bd.collection("Reglas").document("alcance").get().addOnSuccessListener {
-            binding.txtAlcance.text = it.get("Descripcion") as String?
+            binding.txtAlcance.text = it.get("descripcion") as String?
         }
     }
 }

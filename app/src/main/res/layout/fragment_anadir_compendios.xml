@@ -19,7 +19,7 @@
             android:layout_height="39dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="31dp"
-            android:text="Nombre del compendio"
+            android:text="@string/nombre_del_compendio"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
@@ -43,9 +43,9 @@
             android:id="@+id/btn_añadir_foto_compendio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="44dp"
-            android:text="Button"
+            android:layout_marginStart="256dp"
+            android:layout_marginTop="504dp"
+            android:text="@string/foto"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,19 +69,19 @@
             android:id="@+id/txt_enlace_compendio"
             android:layout_width="275dp"
             android:layout_height="39dp"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="53dp"
-            android:text="Enlace al compendio"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="112dp"
+            android:text="@string/enlace_al_compendio"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_añadir_foto_compendio" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/img_añadir_compendios"
             android:layout_width="91dp"
             android:layout_height="93dp"
-            android:layout_marginTop="33dp"
-            android:layout_marginEnd="116dp"
+            android:layout_marginTop="608dp"
+            android:layout_marginEnd="64dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginBottom="40dp"
-            android:text="Añadir"
+            android:text="@string/a_adir"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

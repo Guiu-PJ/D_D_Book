@@ -13,6 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import copernic.cat.EditarPersonaje.edit_personaje_equipamientoDirections
 import copernic.cat.EditarPersonaje.editar_personaje_generalArgs
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentModificarPartidaEquipamientoBinding
 import copernic.cat.databinding.FragmentModificarPartidaGeneralBinding
@@ -35,29 +36,38 @@ class modificar_partida_equipamiento : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
+        (requireActivity() as MainActivity).title = getString(R.string.equipamineto_partida)
         _binding = FragmentModificarPartidaEquipamientoBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
 
+        /**
+         * Recoje el nombre de la partida
+         */
         val bundle = arguments
         val args = modificar_partida_generalArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
-
+        /**
+         * Lee la base de dadtos y llena los campos
+         */
         lifecycleScope.launch {
-            withContext(Dispatchers.Unconfined) {
+            withContext(Dispatchers.IO) {
                 bd.collection("Usuari").document(user!!.uid)
                     .collection("PerPartidas")
                     .document(nom.toString()).get()
@@ -85,10 +95,12 @@ class modificar_partida_equipamiento : Fragment() {
         }
 
 
-
+        /**
+         * Actualiza los campos de la base de datos con los edit text
+         */
         binding.btnSiguienteFichaPersonajeEquipamineto.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {
+                withContext(Dispatchers.IO) {
                     bd.collection("Usuari").document(user!!.uid)
                         .collection("PerPartidas")
                         .document(nom.toString()).update(
@@ -113,6 +125,9 @@ class modificar_partida_equipamiento : Fragment() {
                         )
                 }
             }
+            /**
+             * Envia el nombre de la partida
+             */
             val action = modificar_partida_equipamientoDirections.actionModificarPartidaEquipamientoToModificarPartidaEstadisticasSecundarias(nom)
             view.findNavController().navigate(action)
         }

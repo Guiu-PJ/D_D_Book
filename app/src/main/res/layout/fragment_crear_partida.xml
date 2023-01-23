@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="105dp"
             android:layout_marginTop="80dp"
-            android:text="Escoge personaje:"
+            android:text="@string/escoge_personaje"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"

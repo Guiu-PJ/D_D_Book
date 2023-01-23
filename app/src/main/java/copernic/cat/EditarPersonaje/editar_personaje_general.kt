@@ -10,11 +10,13 @@ import android.view.ViewGroup
 import androidx.databinding.adapters.TextViewBindingAdapter.setText
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditarOEliminarPersonajeBinding
 import copernic.cat.databinding.FragmentEditarPersonajeGeneralBinding
@@ -37,30 +39,42 @@ class editar_personaje_general : Fragment() {
     private var _binding: FragmentEditarPersonajeGeneralBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
-    private lateinit var auth: FirebaseAuth
-
+    private var auth: FirebaseAuth = Firebase.auth
+    val user = auth.currentUser
+    val args: editar_personaje_generalArgs by navArgs()
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.editar_personaje)
         _binding = FragmentEditarPersonajeGeneralBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        auth = Firebase.auth
-        val user = auth.currentUser
 
-        val bundle = arguments
-        val args = editar_personaje_generalArgs.fromBundle(bundle!!)
+
+        //val bundle = arguments
+        //val args = editar_personaje_generalArgs.fromBundle(bundle!!)
+
+        /**
+         * Recive le nombre del personaje seleccionado de la pantalla anterior
+         */
         val nom = args.nomp
 
-        binding.editPersonajeNombre2.setText(nom)
+        binding.editPersonajeNombre.text = nom
 
+        /**
+         * Corrutina que recoje los campos para rellenar la pantalla con las estadisticas
+         */
         lifecycleScope.launch {
-            withContext(Dispatchers.Unconfined) {
+            withContext(Dispatchers.IO) {
                 bd.collection("Usuari").document(user!!.uid)
                     .collection("Personajes")
                     .document(nom.toString()).get()
@@ -87,9 +101,13 @@ class editar_personaje_general : Fragment() {
                     }
             }
         }
+
+        /**
+         * Corrutina que actualiza los campos de la base de datos
+         */
         binding.btnSiguienteFichaPersonajeGeneral.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {
+                withContext(Dispatchers.IO) {
                     bd.collection("Usuari").document(user!!.uid)
                         .collection("Personajes")
                         .document(nom.toString()).update(
@@ -114,12 +132,20 @@ class editar_personaje_general : Fragment() {
                         )
                 }
             }
+            /**
+             * Envia el nombre del personaje a la siguiente pantalla
+             */
             val action = editar_personaje_generalDirections.actionEditarPersonajeGeneralToEditPersonajeEquipamiento(nom)
             view.findNavController().navigate(action)
         }
     }
+
+    /**
+     * Guarda la foto a la base de datos y la muestra
+     *
+     * @param nom nombre del personaje que sera el de la foto
+     */
     private fun obrirfoto(nom : String){
-        val user = auth.currentUser
         val storageRef = FirebaseStorage.getInstance().reference.child("image/personajes/" + user!!.uid + "/" + nom)
         val localfile = File.createTempFile("tempImage", "jpeg")
         //var bitmap = BitmapFactory.decodeFile(localfile.absolutePath)

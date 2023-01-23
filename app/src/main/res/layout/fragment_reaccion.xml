@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:layout_marginTop="30dp"
-            android:text="Reacción"
+            android:text="@string/reacci_n"
             android:textSize="60sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
                     android:id="@+id/txt_reaccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Norma reaccion"
+                    android:text="@string/norma_reaccion"
                     android:textSize="24sp" />
             </LinearLayout>
         </ScrollView>

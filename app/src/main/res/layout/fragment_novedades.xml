@@ -27,6 +27,8 @@
             <TextView
                 android:id="@+id/txt_titulo_añadido"
                 style="@style/txt_titulos_novedades"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/a_adido"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
@@ -35,12 +37,16 @@
                 android:id="@+id/txt_info_añadido"
                 style="@style/txt_info_novedades"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
             <TextView
                 android:id="@+id/txt_titulo_eliminado"
                 style="@style/txt_titulos_novedades"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/eliminado"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
@@ -49,12 +55,16 @@
                 android:id="@+id/txt_info_eliminado"
                 style="@style/txt_info_novedades"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
 
             <TextView
                 android:id="@+id/txt_titulo_modificado"
                 style="@style/txt_titulos_novedades"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/modificado"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
@@ -63,17 +73,10 @@
                 android:id="@+id/txt_info_modificado"
                 style="@style/txt_info_novedades"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="146dp" />
-
-            <ImageButton
-                android:id="@+id/btn_flecha_novedades"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="340dp"
-                android:backgroundTint="#00FFFFFF"
-                android:scaleType="fitXY"
-                android:src="@drawable/return_arrow" />
 
 
         </LinearLayout>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentAccionBinding
 import copernic.cat.databinding.FragmentEstadosAlteradosBinding
@@ -28,7 +29,8 @@ class estados_alterados : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.estados_alterados)
         _binding = FragmentEstadosAlteradosBinding.inflate(inflater, container, false)
         return binding.root
     }

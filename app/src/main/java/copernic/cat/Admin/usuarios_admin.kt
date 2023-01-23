@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.RecycleViewCompendios.AdapterListaCompendios
 import copernic.cat.RecycleViewCompendios.ClassCompendios
@@ -36,36 +37,34 @@ class usuarios_admin : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+/*    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
         }
-    }
-
+    }*/
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View{
+        (requireActivity() as MainActivity).title = getString(R.string.usuarioss)
         _binding = FragmentUsuariosAdminBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerView(view)
+        ListaAdminUsuarios.ListaAdminUsuarioslista.clear()
+        recycleServicios()
     }
 
-
-    private fun initRecyclerView(view: View) {
-        if (ListaAdminUsuarios.ListaAdminUsuarioslista.isEmpty()) {
-            recycleServicios()
-        } else {
-            binding.recuclerViewAdminUsuarios.layoutManager = LinearLayoutManager(context)
-            binding.recuclerViewAdminUsuarios.adapter = AdapterListaAdminUsuarios(ListaAdminUsuarios.ListaAdminUsuarioslista.toList())
-        }
-    }
-
+    /**
+     * Recycler view que muestra todos los usuarios
+     */
     private fun recycleServicios() {
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
@@ -73,7 +72,7 @@ class usuarios_admin : Fragment() {
                     for (document in documents) {
                         val wallItem = ClassAdminUsuarios(
                             correo = document["Email"].toString(),
-                            image = R.drawable.monster_manual_5
+                            image = R.drawable.calamardo
                         )
                         if (ListaAdminUsuarios.ListaAdminUsuarioslista.isEmpty()) {
                             ListaAdminUsuarios.ListaAdminUsuarioslista.add(wallItem)

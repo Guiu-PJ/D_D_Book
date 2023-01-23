@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
-import copernic.cat.Colecciones.Novedades
+import copernic.cat.Inici.MainActivity
+import copernic.cat.Models.Novedades
 import copernic.cat.R
-import copernic.cat.classes.reglas
-import copernic.cat.databinding.FragmentAnadirReglasBinding
 import copernic.cat.databinding.FragmentNovedadesAdminBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,19 +26,25 @@ class novedades_admin : Fragment() {
     private var _binding: FragmentNovedadesAdminBinding? = null
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.novedades_admin)
         _binding = FragmentNovedadesAdminBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val novedades = llegirDades()
 
+        //Al aceptar acutaliza los 3 campos de novedades
         binding.btnAceptarNovedades.setOnClickListener{
             bd.collection("Novedades").document("Añadir").set(hashMapOf("añadido" to binding.inputTxtAAdido.text.toString()))
             bd.collection("Novedades").document("Eliminado").set(hashMapOf("eliminado" to binding.inputTxtEliminado.text.toString()))
@@ -49,6 +54,9 @@ class novedades_admin : Fragment() {
 
     }
 
+    /**
+     * Lee la base de datos
+     */
     fun llegirDades(): Novedades {
         val anadido = binding.inputTxtAAdido.text.toString()
         val eliminado = binding.inputTxtEliminado.text.toString()

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">DnD_Book</string>
-    <string name="d_amp_d_book"><![CDATA[D&D Book]]></string>
+    <string name="app_name" translatable="false">DnD_Book</string>
+    <string name="d_amp_d_book" translatable="false"><![CDATA[D&D Book]]></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="dados">Dados</string>
     <string name="titulo">Administración</string>
@@ -9,10 +9,10 @@
     <string name="tirar">Tirar</string>
     <string name="resultado_final">Resultado final:</string>
     <string name="resultado_de_cada_dado">Resultado de cada dado:</string>
-    <string name="dado1_3_dado2_9_dado3_15_dado4_10_dado5_1_scroll_para_ver_todos_los_dados_si_es_necesario">Dado1: 3, Dado2: 9, Dado3:15, Dado4: 10, Dado5: 1 (Scroll para ver todos los dados (si es necesario))</string>
+    <string name="dado1_3_dado2_9_dado3_15_dado4_10_dado5_1_scroll_para_ver_todos_los_dados_si_es_necesario" translatable="false">Dado1: 3, Dado2: 9, Dado3:15, Dado4: 10, Dado5: 1 (Scroll para ver todos los dados (si es necesario))</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="novedades">Novedades</string>
-    <string name="compedios">Compedios</string>
+    <string name="compedios">Compendios</string>
     <string name="reglas">Reglas</string>
     <string name="compendios">Compendios</string>
     <string name="Novedades">Novedades</string>
@@ -21,20 +21,20 @@
     <string name="registrarse">Registrarse</string>
     <string name="email">Email</string>
     <string name="contrase_a">Contraseña</string>
-    <string name="acepta_los_terminos_de_privacidad">Acepta los terminos de privacidad?</string>
+    <string name="acepta_los_terminos_de_privacidad" translatable="false">Acepta los terminos de privacidad?</string>
     <string name="continuar">Continuar</string>
     <string name="ya_tienes_una_cuenta">Ya tienes una cuenta?</string>
     <string name="entrar">Entrar</string>
     <string name="has_olvidado_la_contrase_a">Has olvidado la contraseña?</string>
     <string name="title_activity_login">login</string>
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in" translatable="false">Sign in or register</string>
+    <string name="action_sign_in_short" translatable="false">Sign in</string>
+    <string name="welcome" translatable="false">"Welcome !"</string>
+    <string name="invalid_username" translatable="false">Not a valid username</string>
+    <string name="invalid_password" translatable="false">Password must be >5 characters</string>
+    <string name="login_failed" translatable="false">"Login failed"</string>
 
     <string-array name="programming_languages">
         <item>Java</item>
@@ -43,22 +43,22 @@
         <item>CPP</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="manual_del_jugador">manual del jugador</string>
-    <string name="manual_del_dungeon_master_5e">manual del dungeon master 5e</string>
-    <string name="manual_de_monstruos_5e">manual de monstruos 5e</string>
-    <string name="el_resurgir_del_dragon_5e">el resurgir del dragon 5e</string>
-    <string name="escribe_la_rega">escribe la rega</string>
-    <string name="a_adido">Añadido</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="manual_del_jugador" translatable="false">manual del jugador</string>
+    <string name="manual_del_dungeon_master_5e" translatable="false">manual del dungeon master 5e</string>
+    <string name="manual_de_monstruos_5e" translatable="false">manual de monstruos 5e</string>
+    <string name="el_resurgir_del_dragon_5e" translatable="false">el resurgir del dragon 5e</string>
+    <string name="escribe_la_rega">Escribe la regla</string>
+    <string name="a_adido">Añadido:</string>
     <string name="eliminado">Eliminado:</string>
     <string name="modificado">Modificado:</string>
     <string name="usuarios">Usuarios</string>
-    <string name="humpty_dumpty">Humpty Dumpty</string>
-    <string name="dumpty_humpty_copernic_cat">dumpty.humpty@copernic.cat</string>
-    <string name="jorge_cerdo">Jorge Cerdo</string>
-    <string name="ricardo_calamar">Ricardo Calamar</string>
-    <string name="calamar_ricardo_copernic_cat">calamar.ricardo@copernic.cat</string>
-    <string name="cerdo_jorge_copernic_cat">cerdo.jorge@copernic.cat</string>
+    <string name="humpty_dumpty" translatable="false">Humpty Dumpty</string>
+    <string name="dumpty_humpty_copernic_cat" translatable="false">dumpty.humpty@copernic.cat</string>
+    <string name="jorge_cerdo" translatable="false">Jorge Cerdo</string>
+    <string name="ricardo_calamar" translatable="false">Ricardo Calamar</string>
+    <string name="calamar_ricardo_copernic_cat" translatable="false">calamar.ricardo@copernic.cat</string>
+    <string name="cerdo_jorge_copernic_cat" translatable="false">cerdo.jorge@copernic.cat</string>
     <string name="acci_n">Acción</string>
     <string name="acci_n_bonus">Acciòn Bonus</string>
     <string name="reacci_n">Reacción</string>
@@ -74,7 +74,7 @@
     <string name="flecha">Flecha para volver hacia atras</string>
     <string name="usuario">imagen de perfil del usuario</string>
     <string name="logo">imagen logo</string>
-    <string name="dado">imagen del dado</string>
+    <string name="dado">dado</string>
     <string name="ajustes">ajustes</string>
     <string name="boton_cerrar_sesion">Boton cerrar sesion</string>
     <string name="cerrar_sesi_n">Cerrar sesión</string>
@@ -83,17 +83,17 @@
     <string name="crear_nuevo_personaje">Crear nuevo personaje</string>
     <string name="recuperar_contrase_a">Recuperar contraseña</string>
     <string name="recuperar">Recuperar</string>
-    <string name="imagen_personaje_calamardo">Imagen personaje Calamardo</string>
-    <string name="imagen_personaje_jorge">Imagen personaje Jorge</string>
-    <string name="todo">TODO</string>
-    <string name="img_logo">img_logo</string>
-    <string name="player_handbook">player_handbook</string>
-    <string name="imatge4">imatge4</string>
-    <string name="imatge3">imatge3</string>
-    <string name="imatge2">imatge2</string>
-    <string name="imatge1">imatge1</string>
+    <string name="imagen_personaje_calamardo" translatable="false">Imagen personaje Calamardo</string>
+    <string name="imagen_personaje_jorge" translatable="false">Imagen personaje Jorge</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="img_logo" translatable="false">img_logo</string>
+    <string name="player_handbook" translatable="false">player_handbook</string>
+    <string name="imatge4" translatable="false">imatge4</string>
+    <string name="imatge3" translatable="false">imatge3</string>
+    <string name="imatge2" translatable="false">imatge2</string>
+    <string name="imatge1" translatable="false">imatge1</string>
     <string name="favoritos">Favoritos</string>
-    <string name="repetir_contrasenya">Repetir Contrasenya</string>
+    <string name="repetir_contrasenya">Repetir Contraseña</string>
     <string name="repetir_contrase_a">Repetir Contraseña</string>
     <string name="no_tienes_cuenta">No tienes cuenta?</string>
     <string name="perfil">perfil</string>
@@ -103,7 +103,7 @@
     <string name="cerrar_sesion">Cerrar sesion</string>
     <string name="numero_de_caras">Numero de caras</string>
     <string name="modificador_negativo">Modificador negativo</string>
-    <string name="afegir">Afegir</string>
+    <string name="afegir">Añadir</string>
     <string name="a_adir_novedades">Añadir novedades</string>
     <string name="a_adir_reglas">Añadir reglas</string>
     <string name="a_adir_compendio">Añadir compendio</string>
@@ -112,7 +112,7 @@
     <string name="exito">Exito</string>
     <string name="tiradas_de_salvaci_n">Tiradas de salvación</string>
     <string name="dados_de_golpe">Dados de golpe</string>
-    <string name="iniciper">Inici</string>
+    <string name="iniciper">Inicio</string>
     <string name="mov">MOV</string>
     <string name="sab">SAB</string>
     <string name="car">CAR</string>
@@ -128,5 +128,147 @@
     <string name="cobre">Cobre</string>
     <string name="dinero">Dinero</string>
     <string name="armas_y_armaduras">Armas y armaduras</string>
+    <string name="admin_inici">Admin inicio</string>
+    <string name="modificar_regla">Modificar regla</string>
+    <string name="editar_o_eliminar_regla">Editar o eliminar regla</string>
+    <string name="anadir_compendio">Añadir compendio</string>
+    <string name="este_compendio_ya_existe">Este compendio ya existe</string>
+    <string name="compendio_anadido">Compendio añadido</string>
+    <string name="el_compendio">"El compendio "</string>
+    <string name="compendio_anadido_correctamente">Compendio añadido correctamente</string>
+    <string name="se_a_anadido">" se a añadido"</string>
+    <string name="imagen_subida_con_exito">Imagen subida con exito</string>
+    <string name="anadir_regla">Añadir regla</string>
+    <string name="esta_regla_ya_existe">Esta regla ya existe</string>
+    <string name="regla_anadida">Regla añadida</string>
+    <string name="la_regla">"La regla "</string>
+    <string name="regla_anadida_correctamente">Regla añadida correctamente</string>
+    <string name="novedades_admin">Novedades admin</string>
+    <string name="usuarioss">Usuarios</string>
+    <string name="eliminar_regla">Eliminar regla</string>
+    <string name="seguro_que_quieres_eliminar_la_regla">"Seguro que quieres eliminar la regla: "</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="regla_eliminada">Regla eliminada</string>
+    <string name="se_a_eliminado_correctamente">" se a eliminado correctamente"</string>
+    <string name="regla_eliminada_correctamente">Regla eliminada correctamente</string>
+    <string name="regla_modificada">Regla modificada</string>
+    <string name="se_a_modificado_correctamente">" se a modificado correctamente"</string>
+    <string name="regla_modificada_correctamente">Regla modificada correctamente</string>
+    <string name="editar_equipamiento">Editar equipamiento</string>
+    <string name="editar_estadisticas_secundarias">Editar estadisticas secundarias</string>
+    <string name="editar_personaje">Editar personaje</string>
+    <string name="editar_habilidades">Editar habilidades</string>
+    <string name="personaje_editado_correctamente">Personaje editado correctamente</string>
+    <string name="personaje_editado">Personaje editado</string>
+    <string name="se_a_editado_correctamente_a">"Se a editado correctamente a: "</string>
+    <string name="editar_o_eliminar_personaje">Editar o eliminar personaje</string>
+    <string name="eliminar_personaje">Eliminar personaje</string>
+    <string name="seguro_que_quieres_eliminar_el_personaje">"Seguro que quieres eliminar el personaje: "</string>
+    <string name="personaje_eliminado_correctamente">Personaje eliminado correctamente</string>
+    <string name="estadisticas_secundarias">Estadisticas secundarias</string>
+    <string name="crear_personaje">Crear personaje</string>
+    <string name="este_personaje_ya_existe">Este personaje ya existe</string>
+    <string name="imagen_subida_correctamente">Imagen subida correctamente</string>
+    <string name="resultado_final2">"Resultado final: "</string>
+    <string name="inicio">Inicio</string>
+    <string name="crear_partida">Crear partida</string>
+    <string name="partida_creada_correctamente">Partida creada correctamente</string>
+    <string name="modificar_o_eliminar_partida">Modificar o eliminar partida</string>
+    <string name="eliminar_partida">Eliminar partida</string>
+    <string name="seguro_que_quieres_eliminar_la_partida">"Seguro que quieres eliminar la partida: "</string>
+    <string name="equipamineto_partida">Equipamiento partida</string>
+    <string name="estadisticas_secundarias_partida">Estadisticas secundarias partida</string>
+    <string name="partida_general">Partida general</string>
+    <string name="habilidades_partida">Habilidades partida</string>
+    <string name="partida_editada_correctamente">Partida editada correctamente</string>
+    <string name="partida_editada">Partida editada</string>
+    <string name="se_a_editado_correctamente_la_partida">"Se a editado correctamente la partida: "</string>
+    <string name="iniciar_sesion_fallido">Iniciar sesion fallido</string>
+    <string name="la_contrasena_no_puede_estar_vacia">La contraseña no puede estar vacia</string>
+    <string name="el_usuario_no_puede_estar_vacio">El usuario no puede estar vacio</string>
+    <string name="el_usuario_y_contrasena_no_pueden_estar_vacios">El usuario y la contraseña no pueden estar vacios</string>
+    <string name="email_o_contrasena_incorrectos">Correo o contraseña incorrectos</string>
+    <string name="recuperar_contrasena_fallido">Recuperar contraseña a fallado</string>
+    <string name="correo_incorrecto">Correo incorrecto</string>
+    <string name="accion">Accion</string>
+    <string name="accion_bonus">Accion bonus</string>
+    <string name="criticos">Criticos</string>
+    <string name="volver_al_inicio">Volver al inicio</string>
+    <string name="modificar_reglas">Modificar reglas</string>
+    <string name="selecciona_una_regla">Selecciona una regla:</string>
+    <string name="descripcion">Descripcion:</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="guardar">Guardar</string>
+    <string name="nombre_del_compendio">Nombre del compendio</string>
+    <string name="foto">Foto</string>
+    <string name="enlace_al_compendio">Enlace al compendio</string>
+    <string name="a_adir">Añadir</string>
+    <string name="descripcion_de_la_regla">Descripcion de la regla</string>
+    <string name="nombre_de_la_regla">Nombre de la regla</string>
+    <string name="escoge_personaje">Escoge personaje:</string>
+    <string name="personaje_seleccionado">Personaje seleccionado:</string>
+    <string name="nombre_partida">Nombre partida</string>
+    <string name="nombre_de_la_partida">Nombre de la partida</string>
+    <string name="crear">Crear</string>
+    <string name="norma_criticos">Norma criticos</string>
+    <string name="norma_dotes">Norma dotes</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="personaje">Personaje:</string>
+    <string name="editar">Editar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="idiomas">Idiomas</string>
+    <string name="t_animales">T. Animales</string>
+    <string name="j_de_manos">J. de manos</string>
+    <string name="supervivencia">Supervivencia</string>
+    <string name="investigaci_n">Investigación</string>
+    <string name="sigilo">Sigilo</string>
+    <string name="intimidaci_n">Intimidación</string>
+    <string name="habilidades_secundarias">Habilidades secundarias</string>
+    <string name="religi_n">Religión</string>
+    <string name="interpretaci_n">Interpretación</string>
+    <string name="persuasion">Persuasion</string>
+    <string name="historia">Historia</string>
+    <string name="perspicacia">Perspicacia</string>
+    <string name="enga_o">Engaño</string>
+    <string name="percepci_n">Percepción</string>
+    <string name="c_arcano">C. Arcano</string>
+    <string name="natura">Natura</string>
+    <string name="atletismo">Atletismo</string>
+    <string name="acrobacias">Acrobacias</string>
+    <string name="medicina">Medicina</string>
+    <string name="nombre_personaje">Nombre personaje</string>
+    <string name="maxima">Maxima</string>
+    <string name="puntos_de_vida">Puntos de vida</string>
+    <string name="alineamiento">Alineamiento</string>
+    <string name="raza">Raza</string>
+    <string name="classe">Clase</string>
+    <string name="trasfondo">Trasfondo</string>
+    <string name="magia">Magia</string>
+    <string name="habilidades">Habilidades</string>
+    <string name="norma_equipamiento">Norma equipamiento</string>
+    <string name="cr_ticos_realizados">Críticos realizados:</string>
+    <string name="cantidad_de_personajes">Cantidad de personajes:</string>
+    <string name="tiradas_realizadas">Tiradas realizadas:</string>
+    <string name="cantidad_de_partidas">Cantidad de Partidas:</string>
+    <string name="norma_estado_alterado">Norma estado alterado</string>
+    <string name="partida">Partida:</string>
+    <string name="norma_movimiento">Norma movimiento</string>
+    <string name="norma_multiclase">Norma multiclase</string>
+    <string name="norma_nivel">Norma nivel</string>
+    <string name="partida_nueva">Partida nueva</string>
+    <string name="norma_reaccion">Norma reaccion</string>
+    <string name="norma_trasfondo">Norma trasfondo</string>
+    <string name="esta_partida_ya_existe">Esta partida ya existe</string>
+    <string name="no_eres_admin">No eres admin</string>
+    <string name="primero_pon_un_nombre_al_personaje">Primero pon un nombre al personaje</string>
+    <string name="personaje_creado_correctamente">Personaje creado correctamente</string>
+    <string name="tirada_fallida">Tirada fallida</string>
+    <string name="todos_los_campos_tienen_que_estar_llenos">Todos los campos tienen que estar llenos</string>
+    <string name="el_numero_de_caras_no_inferior_1">El numero de caras no puede ser inferior a 1</string>
+    <string name="login_fallido">Login fallido</string>
+    <string name="el_usuario_contraseña_no_son_validos">El usuario o la contraseña no son validos</string>
+    <string name="recuperar_contraseña_fallido">Recuperar contraseña fallido</string>
+    <string name="el_campo_no_puede_estar_vacio">El campo no puede estar vacio</string>
+    <string name="primero_nombre_compendio">Primero escribe el nombre del comendio</string>
 
 </resources>

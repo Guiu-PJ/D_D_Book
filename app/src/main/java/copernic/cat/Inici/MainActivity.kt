@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavHostFragment
     private lateinit var appBarConfiguration: AppBarConfiguration
     @SuppressLint("ResourceType")
+    /**
+     * En el método onCreate, se infla el layout correspondiente
+     * y se establece la configuración del menú lateral y la barra de navegación.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -37,6 +41,11 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        /**
+         * Vinculamos el menu lateral
+         */
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.inici,R.id.estadisticas, R.id.perfil, R.id.partidas
@@ -54,12 +63,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp() || super.onSupportNavigateUp()
+    /**
+     * El boton de la appbar devuelve siempre al inicio
+     */
+     override fun onSupportNavigateUp(): Boolean {
+         val navController = findNavController(R.id.nav_host_fragment)
+         navController.navigate(R.id.inici)
+         return true
+        //  navController.navigateUp() || super.onSupportNavigateUp()
     }
 
-
-    }
+}
 

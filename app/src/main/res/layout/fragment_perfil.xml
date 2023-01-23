@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="104dp"
-            android:text="@string/humpty_dumpty"
+            android:text=""
             android:textColor="#000000"
             android:textSize="30dp"
             app:layout_constraintStart_toEndOf="@+id/img_perfil_perfil2"
@@ -42,8 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
             android:layout_marginTop="16dp"
-            android:text="@string/dumpty_humpty_copernic_cat"
-            android:textColor="#8ACED5"
+            android:text=""
+            android:textColor="#7E0B02"
             android:textSize="18dp"
             app:layout_constraintStart_toEndOf="@+id/img_perfil_perfil2"
             app:layout_constraintTop_toBottomOf="@+id/txt_nombre_perfil2" />
@@ -69,29 +69,6 @@
             android:text="@string/editar_perfil"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_perfil_perfil2" />
-
-        <TextView
-            android:id="@+id/txt_cerrar_sesion"
-            style="@style/txt_perfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="80dp"
-            android:text="@string/cerrar_sesi_n"
-            app:layout_constraintStart_toEndOf="@+id/btn_editar_perfil"
-            app:layout_constraintTop_toBottomOf="@+id/txt_correo_perfil2" />
-
-        <ImageButton
-            android:id="@+id/img_cerrar_sesion"
-            android:layout_width="61dp"
-            android:layout_height="61dp"
-            android:layout_marginTop="59dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/boton_cerrar_sesion"
-            android:scaleType="fitXY"
-            android:src="@drawable/cerrar_sesion"
-            app:layout_constraintStart_toEndOf="@+id/txt_cerrar_sesion"
-            app:layout_constraintTop_toBottomOf="@+id/txt_correo_perfil2" />
 
         <Button
             android:id="@+id/btn_nuevo_personaje"

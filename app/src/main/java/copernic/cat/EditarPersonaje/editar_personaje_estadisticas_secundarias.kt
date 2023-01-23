@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditPersonajeEquipamientoBinding
 import copernic.cat.databinding.FragmentEditarPersonajeEstadisticasSecundariasBinding
@@ -29,27 +30,37 @@ class editar_personaje_estadisticas_secundarias : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        // Inflate the layout for this fragment
-            _binding = FragmentEditarPersonajeEstadisticasSecundariasBinding.inflate(inflater, container, false)
-            return binding.root
+        (requireActivity() as MainActivity).title = getString(R.string.editar_estadisticas_secundarias)
+        _binding = FragmentEditarPersonajeEstadisticasSecundariasBinding.inflate(inflater, container, false)
+        return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
 
+        /**
+         * Recojemos le nombre del personaje
+         */
         val bundle = arguments
         val args = editar_personaje_estadisticas_secundariasArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
+        /**
+         * Corrutina que lee la base de datos y rellena los campos
+         */
         lifecycleScope.launch {
-            withContext(Dispatchers.Unconfined) {
+            withContext(Dispatchers.IO) {
                 bd.collection("Usuari").document(user!!.uid)
                     .collection("Personajes")
                     .document(nom.toString()).get()
@@ -77,14 +88,16 @@ class editar_personaje_estadisticas_secundarias : Fragment() {
                         binding.checkBoxSupervivencia.isChecked = it.get("supervivencia") as Boolean
                         binding.checkBoxJuegoDeManos.isChecked = it.get("juego_de_manos") as Boolean
                         binding.checkBoxTrataminetoAnimales.isChecked = it.get("trato_con_animales") as Boolean
-
                     }
             }
         }
 
+        /**
+         * Corrutina que actualiza los campos de la base de datos
+         */
         binding.btnSiguienteFichaPersonajeEstadisticasSecundarias.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {
+                withContext(Dispatchers.IO) {
                     bd.collection("Usuari").document(user!!.uid)
                         .collection("Personajes")
                         .document(nom.toString()).update(
@@ -114,6 +127,7 @@ class editar_personaje_estadisticas_secundarias : Fragment() {
                         )
                 }
             }
+            //Enviamos el nombre del personaje a la siguiente pantalla
             val action = editar_personaje_estadisticas_secundariasDirections.actionEditarPersonajeEstadisticasSecundariasToEditarPersonajeHabilidades(nom)
             view.findNavController().navigate(action)
         }

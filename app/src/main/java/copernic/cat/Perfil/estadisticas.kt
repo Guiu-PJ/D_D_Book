@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEstadisticasBinding
 import kotlinx.coroutines.Dispatchers
@@ -32,16 +33,20 @@ class estadisticas : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private  lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View{
+        (requireActivity() as MainActivity).title = getString(R.string.estadisticas)
         _binding = FragmentEstadisticasBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
@@ -50,19 +55,17 @@ class estadisticas : Fragment() {
                 llegirnovedades()
             }
         }
-        binding.imageButton2.setOnClickListener {
-            findNavController().navigate(R.id.action_estadisticas_to_inici)
-        }
-
 
     }
 
+    /**
+     * Lee la base de datos y muestra los campos
+     */
     fun llegirnovedades(){
         val user = auth.currentUser
         bd.collection("Usuari").document(user!!.uid).collection("Estadisticas").document("IdEstadisticas").get().addOnSuccessListener {
             binding.editCriticos.text = it.get("criticos") as String
             binding.editTiradas.text = it.get("numero_tiradas") as String
-            binding.editClase.text = it.get("clase_mas_jugada") as String
             binding.editPartidas.text = it.get("numero_de_partidas") as String
             binding.editPersonaje.text = it.get("numero_de_personajes") as String
         }

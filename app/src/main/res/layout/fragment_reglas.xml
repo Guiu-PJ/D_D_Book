@@ -11,92 +11,13 @@
         android:layout_height="match_parent"
         android:background="@drawable/pagina_libro">
 
-        <ScrollView
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerReglasUsuario"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginTop="5dp"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="51dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btn_accion"
-                    style="@style/btn_reglas"
-                    android:text="@string/acci_n" />
-
-                <Button
-                    android:id="@+id/btn_accionbonus"
-                    style="@style/btn_reglas"
-                    android:text="@string/acci_n_bonus" />
-
-                <Button
-                    android:id="@+id/btn_reaccion"
-                    style="@style/btn_reglas"
-                    android:text="@string/reacci_n" />
-
-                <Button
-                    android:id="@+id/btn_movimiento"
-                    style="@style/btn_reglas"
-                    android:text="@string/movimiento" />
-
-                <Button
-                    android:id="@+id/btn_estadosalt"
-                    style="@style/btn_reglas"
-                    android:text="@string/estados_alterados" />
-
-                <Button
-                    android:id="@+id/btn_alcance"
-                    style="@style/btn_reglas"
-                    android:text="@string/alcance" />
-
-                <Button
-                    android:id="@+id/btn_criticos"
-                    style="@style/btn_reglas"
-                    android:text="@string/cr_ticos" />
-
-                <Button
-                    android:id="@+id/btn_equipamiento"
-                    style="@style/btn_reglas"
-                    android:text="@string/equipamiento" />
-
-                <Button
-                    android:id="@+id/btn_trasfondos"
-                    style="@style/btn_reglas"
-                    android:text="@string/trasfondos" />
-
-                <Button
-                    android:id="@+id/btn_dotes"
-                    style="@style/btn_reglas"
-                    android:text="@string/dotes" />
-
-                <Button
-                    android:id="@+id/btn_nivel"
-                    style="@style/btn_reglas"
-                    android:text="@string/nivel" />
-
-                <Button
-                    android:id="@+id/btn_multiclase"
-                    style="@style/btn_reglas"
-                    android:text="@string/multiclase" />
-
-                <ImageButton
-                    android:id="@+id/btn_flecha_reglas"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="350dp"
-                    android:clickable="true"
-                    android:src="@drawable/flecha"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    tools:src="@drawable/flecha" />
-
-            </LinearLayout>
-        </ScrollView>
-
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

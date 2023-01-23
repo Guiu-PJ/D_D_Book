@@ -29,11 +29,18 @@ class login : AppCompatActivity() {
     //private lateinit var Usuari: usuaris
 
     @SuppressLint("MissingInflatedId")
+    /**
+     * En el método onCreate, se infla el layout correspondiente
+     * y se establecen los listener para los botones de inicio de sesión, registro y recuperar contraseña.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        /**
+        * Ocultamos la acction bar
+        */
         if (supportActionBar != null)
             supportActionBar!!.hide()
 
@@ -59,8 +66,8 @@ class login : AppCompatActivity() {
             }else{
                 if(email.isNotEmpty()&&password.isEmpty()){
                     val builder = AlertDialog.Builder(this)
-                    builder.setTitle("Login fallido")
-                    builder.setMessage("La contraseña no puede estar vacia")
+                    builder.setTitle(getString(R.string.iniciar_sesion_fallido))
+                    builder.setMessage(getString(R.string.la_contrasena_no_puede_estar_vacia))
                     builder.setPositiveButton("OK"){_, _ ->
                     }
                     val alertDialog: AlertDialog = builder.create()
@@ -68,8 +75,8 @@ class login : AppCompatActivity() {
                     alertDialog.show()
                 }else if(email.isEmpty()&&password.isNotEmpty()){
                     val builder = AlertDialog.Builder(this)
-                    builder.setTitle("Login fallido")
-                    builder.setMessage("El usuario no puede estar vacio")
+                    builder.setTitle(getString(R.string.iniciar_sesion_fallido))
+                    builder.setMessage(getString(R.string.el_usuario_no_puede_estar_vacio))
                     builder.setPositiveButton("OK"){_, _ ->
                     }
                     val alertDialog: AlertDialog = builder.create()
@@ -77,8 +84,8 @@ class login : AppCompatActivity() {
                     alertDialog.show()
                 }else if (email.isEmpty()&&password.isEmpty()){
                         val builder = AlertDialog.Builder(this)
-                        builder.setTitle("Login fallido")
-                        builder.setMessage("El usuario y la contraseña no pueden estar vacios")
+                        builder.setTitle(getString(R.string.iniciar_sesion_fallido))
+                        builder.setMessage(getString(R.string.el_usuario_y_contrasena_no_pueden_estar_vacios))
                         builder.setPositiveButton("OK"){_, _ ->
                         }
                         val alertDialog: AlertDialog = builder.create()
@@ -91,8 +98,13 @@ class login : AppCompatActivity() {
     }
 
 
-
-    private fun login(email: String, password: String) {
+    /**
+     * Comprueba el login del usuario
+     *
+     * @param email correo del usuario
+     * @param password contraseña del usuario
+     */
+    fun login(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this){ task ->
                 if(task.isSuccessful){
@@ -101,8 +113,8 @@ class login : AppCompatActivity() {
                     //finish()
                 }else{
                     val builder = AlertDialog.Builder(this)
-                    builder.setTitle("Login failed")
-                    builder.setMessage("L'email o la contrasenya no son correctes")
+                    builder.setTitle(getString(R.string.iniciar_sesion_fallido))
+                    builder.setMessage(getString(R.string.email_o_contrasena_incorrectos))
                     builder.setPositiveButton("OK"){_, _ ->
                     }
                     val alertDialog: AlertDialog = builder.create()
@@ -113,6 +125,10 @@ class login : AppCompatActivity() {
             }
     }
 
+    /**
+     * El método onStart se encarga de comprobar
+     * si el usuario ya ha iniciado sesión, y si es así, lo redirige a la actividad principal.
+     */
     override fun onStart() {
         super.onStart() //Cridem al la funció onStart() perquè ens mostri per pantalla l'activity
         auth = Firebase.auth
@@ -124,11 +140,14 @@ class login : AppCompatActivity() {
         }
     }
 
-    private fun createNotificationChannel() {
+    /**
+     * Crea el canal por donde se envian las notificaciones
+     */
+    fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "name"
             val descriptionText = "descripcion"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val importance = NotificationManager.IMPORTANCE_HIGH
             val channel = NotificationChannel("1", name, importance).apply {
             }
             val notificationManager: NotificationManager =
@@ -137,7 +156,13 @@ class login : AppCompatActivity() {
         }
     }
 
-    private fun checkEmpty(email: String, password: String): Boolean {
+    /**
+     * Comprueba que los campos no estan vacios
+     *
+     * @param email correo del usuario
+     * @param password contraseña del usuario
+     */
+    fun checkEmpty(email: String, password: String): Boolean {
         return email.isNotEmpty() && password.isNotEmpty()
     }
 

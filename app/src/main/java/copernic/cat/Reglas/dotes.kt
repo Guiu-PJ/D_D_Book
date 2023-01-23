@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentAccionBinding
 import copernic.cat.databinding.FragmentDotesBinding
@@ -35,6 +36,7 @@ class dotes : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.dotes)
         _binding = FragmentDotesBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -55,7 +57,7 @@ class dotes : Fragment() {
     }
     fun llegirnovedades() {
         bd.collection("Reglas").document("dotes").get().addOnSuccessListener {
-            binding.txtDotes.text = it.get("Descripcion") as String?
+            binding.txtDotes.text = it.get("descripcion") as String?
         }
     }
 }

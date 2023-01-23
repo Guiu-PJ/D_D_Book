@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditPersonajeEquipamientoBinding
 import copernic.cat.databinding.FragmentEditarOEliminarPersonajeBinding
@@ -33,28 +34,37 @@ class edit_personaje_equipamiento : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
+        (requireActivity() as MainActivity).title = getString(R.string.editar_equipamiento)
         _binding = FragmentEditPersonajeEquipamientoBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
 
+        /**
+         * Recoje el nombre del personaje seleccionado
+         */
         val bundle = arguments
         val args = editar_personaje_generalArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
-
+        /**
+         * Corrutina que recoje los campos para rellenar la pantalla con las estadisticas
+         */
         lifecycleScope.launch {
-            withContext(Dispatchers.Unconfined) {
+            withContext(Dispatchers.IO) {
                 bd.collection("Usuari").document(user!!.uid)
                     .collection("Personajes")
                     .document(nom.toString()).get()
@@ -82,10 +92,12 @@ class edit_personaje_equipamiento : Fragment() {
         }
 
 
-
+        /**
+         * Corrutina que actualiza los campos de la base de datos
+         */
         binding.btnSiguienteFichaPersonajeEquipamineto.setOnClickListener {
             lifecycleScope.launch {
-                withContext(Dispatchers.Unconfined) {
+                withContext(Dispatchers.IO) {
                     bd.collection("Usuari").document(user!!.uid)
                         .collection("Personajes")
                         .document(nom.toString()).update(
@@ -110,7 +122,12 @@ class edit_personaje_equipamiento : Fragment() {
                         )
                 }
             }
-            val action = edit_personaje_equipamientoDirections.actionEditPersonajeEquipamientoToEditarPersonajeEstadisticasSecundarias(nom)
+
+            /**
+             * Enviamos le nombre del personaje a la siguiente pantalla
+             */
+            val action = edit_personaje_equipamientoDirections
+                .actionEditPersonajeEquipamientoToEditarPersonajeEstadisticasSecundarias(nom)
             view.findNavController().navigate(action)
         }
     }

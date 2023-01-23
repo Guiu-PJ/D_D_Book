@@ -14,21 +14,44 @@
 
 
         <TextView
+            android:id="@+id/txt_descripcion_regla2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="248dp"
+            android:text="@string/descripcion_de_la_regla"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="140dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_nombre_regla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="136dp"
+            android:text="@string/nombre_de_la_regla"
             android:textSize="20dp"
-            android:text="@string/escribe_la_rega"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_descripcion_reglas"
+            android:layout_width="189dp"
+            android:layout_height="280dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginBottom="141dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="108dp"
-            android:layout_marginTop="164dp">
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nombre_regla">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txt_titulo_reglas"
@@ -36,28 +59,14 @@
                 android:layout_height="wrap_content"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="226dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_descripcion_reglas"
-                android:layout_width="196dp"
-                android:layout_height="400dp"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_añadir_regla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="17dp"
-            android:layout_marginBottom="26dp"
-            android:text="Añadir"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="664dp"
+            android:text="@string/a_adir"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -65,9 +74,9 @@
             android:id="@+id/btn_cancelar_regla"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="17dp"
-            android:layout_marginBottom="26dp"
-            android:text="Cancelar"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="664dp"
+            android:text="@string/cancelar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

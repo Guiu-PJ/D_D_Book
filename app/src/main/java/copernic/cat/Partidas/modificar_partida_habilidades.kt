@@ -16,6 +16,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import copernic.cat.EditarPersonaje.editar_personaje_habilidadesArgs
+import copernic.cat.Inici.MainActivity
 import copernic.cat.R
 import copernic.cat.databinding.FragmentEditarPersonajeHabilidadesBinding
 import copernic.cat.databinding.FragmentModificarPartidaHabilidadesBinding
@@ -38,26 +39,37 @@ class modificar_partida_habilidades : Fragment() {
     private val binding get() = _binding!!
     private var bd = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
-
+    /**
+     * En el método onCreateView, se establece el título de la actividad principal y se infla el layout correspondiente.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
+        (requireActivity() as MainActivity).title = getString(R.string.habilidades_partida)
         _binding = FragmentModificarPartidaHabilidadesBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    /**
+     * En el método onViewCreated, se establecen los listener para los diferentes botones de la vista, los cuales llevan a diferentes fragmentos.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
         val user = auth.currentUser
 
+        /**
+         * Recoje el nombre de la partida
+         */
         val bundle = arguments
         val args = modificar_partida_habilidadesArgs.fromBundle(bundle!!)
         val nom = args.nomp
 
+        /**
+         * Lee la base de datos y rellena los campos
+         */
         lifecycleScope.launch {
-            withContext(Dispatchers.Unconfined) {
+            withContext(Dispatchers.IO) {
                 bd.collection("Usuari").document(user!!.uid)
                     .collection("PerPartidas")
                     .document(nom.toString()).get()
@@ -79,6 +91,10 @@ class modificar_partida_habilidades : Fragment() {
                     }
             }
         }
+
+        /**
+         * Actualiza la base de datos con los edit text
+         */
         binding.btnSiguienteFichaPersonajeHabilidades.setOnClickListener {
             lifecycleScope.launch {
                 withContext(Dispatchers.Unconfined) {
@@ -103,15 +119,21 @@ class modificar_partida_habilidades : Fragment() {
                 }
             }
             findNavController().navigate(R.id.action_modificar_partida_habilidades_to_inici)
+
             notification(nom.toString())
-            Snackbar.make(view, "Partida editada correctamente", BaseTransientBottomBar.LENGTH_SHORT
+            Snackbar.make(view, getString(R.string.partida_editada_correctamente), BaseTransientBottomBar.LENGTH_SHORT
             ).show()
         }
     }
-    private fun notification(nom:String) {
+    /**
+     * Envia una notificacion de que se a creado el personaje
+     *
+     * @param nom nombre de la partida
+     */
+    fun notification(nom:String) {
         val notification = NotificationCompat.Builder(requireContext(),"1").also{ noti ->
-            noti.setContentTitle("Partida editada")
-            noti.setContentText("Se a editado correctamente la partida: " + nom)
+            noti.setContentTitle(getString(R.string.partida_editada))
+            noti.setContentText(getString(R.string.se_a_editado_correctamente_la_partida) + nom)
             noti.setSmallIcon(R.drawable.logo)
         }.build()
 
